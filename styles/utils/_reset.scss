@@ -60,6 +60,11 @@ article > * + * {
   margin-top: 1em;
 }
 
+button {
+  min-height: 48px;
+  min-width: 48px;
+}
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,
