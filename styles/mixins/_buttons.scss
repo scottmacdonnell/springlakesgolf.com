@@ -1,0 +1,54 @@
+@mixin GoogleSignInButton {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  cursor: pointer;
+  .ProviderAuthGoogleGrid {
+    margin: 0.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    .ProviderAuthGoogleText {
+      text-align: left;
+    }
+  }
+}
+
+@mixin TwitterSignInButton {
+  width: 100%;
+  background-color: #55ACEE;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  .ProviderAuthTwitterGrid {
+    margin: 0.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    .ProviderAuthTwitterText {
+      text-align: left;
+    }
+  }
+}
+
+@mixin FacebookSignInButton {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  cursor: pointer;
+  .ProviderAuthFacebookGrid {
+    margin: 0.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    .ProviderAuthFacebookText {
+      text-align: left;
+    }
+  }
+}
