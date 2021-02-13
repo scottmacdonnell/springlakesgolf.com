@@ -1,9 +1,10 @@
 import Head from 'next/head'
+
 import { AuthProvider } from '../lib/auth'
 
 import '../styles/globals.scss'
 
-function App({ Component, pageProps }) {
+function SpringLakesGolfClub({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -17,4 +18,4 @@ function App({ Component, pageProps }) {
   )
 }
 
-export default App
+export default SpringLakesGolfClub

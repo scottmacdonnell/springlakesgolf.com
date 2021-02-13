@@ -1,0 +1,22 @@
+.Navbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  .NavbarFlag {
+    display: flex;
+    svg {
+      height: 5rem;
+    }
+  }
+  .NavbarContent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+}
+
+.MainNav {
+  color: white;
+}

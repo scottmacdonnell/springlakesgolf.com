@@ -1,5 +1,5 @@
 {
-  "name": "springlakes",
+  "name": "springlakesgolf",
   "productName": "Spring Lakes Golf Club",
   "version": "0.1.0",
   "description": "The website for Spring Lakes Golf Club.",
@@ -12,12 +12,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "firebase": "^8.2.3",
+    "firebase": "^8.2.6",
     "firebase-admin": "^9.4.2",
     "js-cookie": "^2.2.1",
-    "next": "10.0.5",
+    "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "sass": "^1.32.4"
+    "sass": "^1.32.7"
   }
 }
