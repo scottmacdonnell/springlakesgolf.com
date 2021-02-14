@@ -11,7 +11,7 @@ export default function Banner() {
     <div className={styles.Banner}>
       <div className={styles.BannerImage}>
         <Image 
-          src="/images/banner/background.jpg"
+          src="/images/banner/index.jpg"
           layout="fill"
         />
       </div>

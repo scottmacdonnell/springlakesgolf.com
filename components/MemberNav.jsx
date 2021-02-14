@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { useAuth } from '../lib/auth'
 
@@ -7,9 +8,11 @@ export default function MemberNav() {
   const auth = useAuth()
   return (
     <div className={styles.MemberNav}>
-      <Avatar user={auth.user} />
-
-      
+      <Link href="/member">
+        <a>
+          <Avatar user={auth.user} />
+        </a>
+      </Link>
     </div>
   );
 }
