@@ -1,16 +1,77 @@
+import React, { useState } from 'react'
 import Link from 'next/link'
+
+import MemberNav from './MemberNav'
 
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar() {
   return (
     <div className={styles.Navbar}>
-      <div className={styles.NavbarFlag}>
+
+      <Desktop />
+      {/* <Mobile /> */}
+
+
+      {/* <div className={styles.NavbarFlag}>
         <Flag />
       </div>
 
       <div className={styles.NavbarContent}>
         <MainNav />
+      </div> */}
+    </div>
+  );
+}
+
+function Desktop() {
+  return (
+    <div className={styles.Desktop}>
+      <div className={styles.DesktopFlag}>
+        <Flag />
+      </div>
+
+      <div className={styles.DesktopMain}>
+        <MainNav />
+      </div>
+
+      <div className={styles.DesktopMember}>
+        <MemberNav />
+      </div>
+    </div>
+  )
+}
+
+function Mobile() {
+  const [mobileNavShown, setMobileNavShown] = useState(false)
+
+  const toggle = () => setMobileNavShown(!mobileNavShown)
+
+  return (
+    <div className={`${styles.Mobile} ${mobileNavShown ? styles.MobileActive : ''}`}>
+      <div className={styles.MobileSocialContainer}>
+        {/* <Social /> */}
+      </div>
+
+      <div className={styles.MobileLogoContainer}>
+        {/* <Logo /> */}
+      </div>
+
+      <div className={styles.MobileToggleContainer}>
+        <div className={styles.MobileToggle} onClick={toggle}>
+          <div className={styles.IconContainer}>
+            <div className={styles.Icon}>
+              <div className={styles.TopBar} />
+              <div className={styles.BtmBar} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.MobileContent}>
+        <div className={styles.MobileContainer}>
+          <MainNav />
+        </div>
       </div>
     </div>
   );

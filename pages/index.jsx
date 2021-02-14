@@ -16,7 +16,7 @@ export default function Index() {
         <Banner />
       </header>
 
-      <main>
+      <main id="main">
         <Hallway />
       </main>
 

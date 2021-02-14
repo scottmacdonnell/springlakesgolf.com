@@ -1,4 +1,5 @@
-@import '../utils/_fonts.scss';
+@import '../utils/breakpoints';
+@import '../utils/fonts.scss';
 
 .Banner {
   display: table;
@@ -25,13 +26,19 @@
     height: 100%;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
-    overflow:auto;
+    overflow: auto;
     .BannerContentWrapper {
       width: 100%;
       height: 100%;
-      div {
-        width: 100%;
+      .BannerContainer {
+        padding: 0;
         height: 100%;
+        max-width: $breakpointDesktop;
+        margin: 0 auto;
+        float: none;
+        @media only screen and (max-width: $breakpointMax) {
+          margin: 0 1rem;
+        }
       }
     }
   }
@@ -40,15 +47,14 @@
 .BannerGrid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  width: 100%;
+  grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
   .BannerHeader {
     grid-area: span 1;
   }
   .BannerMain {
     grid-area: span 1;
-    margin: -2rem 0;
+    padding-top: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,5 +65,12 @@
   }
   .BannerFooter {
     grid-area: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }

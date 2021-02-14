@@ -9,32 +9,7 @@ export default function MemberNav() {
     <div className={styles.MemberNav}>
       <Avatar user={auth.user} />
 
-      <div>
-        <h2>Auth</h2>
-        {auth.user ? (
-          <div>
-            <p>UID: {auth.user.uid}</p>
-            <p>Email: {auth.user.email}</p>
-            <p>Name: {auth.user.name}</p>
-            <p>Provider: {auth.user.provider}</p>
-            <p>Photo URL: {auth.user.photoUrl}</p>
-            <button onClick={(e) => auth.signOut()}>Sign Out</button>
-          </div>
-        ) : (
-          <div>
-            <button onClick={(e) => auth.signInWithGoogle()}>
-              signInWithGoogle
-            </button>
-            <button onClick={(e) => auth.signInWithTwitter()}>
-              signInWithTwitter
-            </button>
-            <button onClick={(e) => auth.signInWithFacebook()}>
-              signInWithFacebook
-            </button>
-          </div>
-        )}
-        <br />
-      </div>
+      
     </div>
   );
 }
@@ -47,10 +22,10 @@ function Avatar({ user }) {
             <div className={styles.AvatarActive}>
               <Image 
                 src={user.photoUrl}
-                width={50}
-                height={50}
+                width={30}
+                height={30}
+                layout="responsive"
               />
-
             </div>
           </div>
         ) : (

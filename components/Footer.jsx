@@ -13,9 +13,9 @@ export default function Footer() {
         </div>
 
         <div className={styles.FooterMain}>
-          <Container>
+          {/* <Container>
             <FooterNav />
-          </Container>
+          </Container> */}
         </div>
 
         <div className={styles.FooterTagline}>

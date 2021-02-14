@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
 import Container from './Container'
@@ -17,10 +18,11 @@ export default function Banner() {
       
       <div className={styles.BannerContent}>
         <div className={styles.BannerContentWrapper}>
-          <Container>
+          <div className={styles.BannerContainer}>
             <div className={styles.BannerGrid}>
               <div className={styles.BannerHeader}>
                 <Navbar />
+                {/* <p>nav</p> */}
               </div>
 
               <div className={styles.BannerMain}>
@@ -28,10 +30,16 @@ export default function Banner() {
               </div>
 
               <div className={styles.BannerFooter}>
-
+                <Link href="/#main" scroll={true} shallow>
+                  <a>
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </a>
+                </Link>
               </div>
             </div>
-          </Container>
+          </div>
         </div>
       </div>
     </div>

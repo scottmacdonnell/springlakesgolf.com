@@ -1,14 +1,8 @@
+@import '../utils/breakpoints';
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
 .Navbar {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
-  gap: 1rem;
-  .NavbarFlag {
-    display: flex;
-    svg {
-      height: 5rem;
-    }
-  }
   .NavbarContent {
     display: flex;
     justify-content: flex-end;
@@ -17,6 +11,44 @@
   }
 }
 
+.Desktop {
+  @media (max-width: $breakpointTablet) {
+    display: none;
+  }
+  @media (min-width: $breakpointTablet) {
+    // background-color: paleturquoise;
+    display: grid;
+    grid-template-columns: auto 1fr 30px;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    .DesktopFlag {
+      // background-color: aquamarine;
+      display: flex;
+      svg {
+        height: 5rem;
+      }
+    }
+    .DesktopMain {
+      // background-color: palevioletred;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      nav {
+        a {
+          margin-left: 0.25rem;
+        }
+      }
+    }
+    .DesktopMember {
+      // background-color: aliceblue; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
 .MainNav {
   color: white;
+  
 }
