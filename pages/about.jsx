@@ -13,7 +13,7 @@ export default function About() {
       <header>
         <Header
           title="About Us"
-          image="/images/header/placeholder1.jpg"
+          image="/images/header/about.jpg"
         />
       </header>
 
