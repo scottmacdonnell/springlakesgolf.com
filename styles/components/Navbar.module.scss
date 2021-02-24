@@ -12,13 +12,14 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
 
 .Desktop {
-  @media (max-width: $breakpointTablet) {
+  @media (max-width: $breakpointMedium) {
     display: none;
   }
-  @media (min-width: $breakpointTablet) {
+  @media (min-width: $breakpointMedium) {
     // background-color: paleturquoise;
     display: grid;
-    grid-template-columns: auto 1fr 30px;
+    // grid-template-columns: auto 1fr 30px;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
     gap: 1rem;
     .DesktopFlag {

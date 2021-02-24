@@ -35,9 +35,9 @@ function Desktop() {
         <MainNav />
       </div>
 
-      <div className={styles.DesktopMember}>
+      {/* <div className={styles.DesktopMember}>
         <MemberNav />
-      </div>
+      </div> */}
     </div>
   )
 }

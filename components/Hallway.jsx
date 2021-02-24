@@ -1,11 +1,35 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import styles from '../styles/components/Hallway.module.scss'
 
+const transition = {
+  duration: 1,
+  ease: [0.43, 0.13, 0.23, 0.96],
+}
+
+const imageVariants = {
+  exit: { y: '0%', opacity: 0, transition },
+  enter: {
+    y: '0%',
+    opacity: 1,
+    transition,
+  },
+}
+
+const titleVariants = {
+  exit: { y: '0%', opacity: 0, transition },
+  enter: {
+    y: '0%',
+    opacity: 1,
+    transition: { delay: 0.4, ...transition }
+  },
+}
+
 export default function Hallway() {
   return (
-    <div className={styles.Hallway}>
+    <motion.div className={styles.Hallway} initial="exit" animate="enter" exit="exit">
       <HallwayCard
         title="About Us"
         link="/about"
@@ -36,7 +60,7 @@ export default function Hallway() {
         link="/contact"
         image="/images/hallway/contact.jpg"
       />
-    </div>
+    </motion.div>
   )
 }
 
@@ -46,7 +70,7 @@ function HallwayCard({
   image
 }) {
   return (
-    <div className={styles.HallwayCard}>
+    <motion.div className={styles.HallwayCard} variants={imageVariants}>
       <Link href={link}>
         <a>
           <div className={styles.HallwayCardImage}>
@@ -65,6 +89,6 @@ function HallwayCard({
           </div>
         </a>
       </Link>
-    </div>
+    </motion.div>
   )
 }

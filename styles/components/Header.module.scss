@@ -1,5 +1,5 @@
 @import '../utils/breakpoints';
-@import '../utils/fonts.scss';
+@import '../mixins/typography';
 
 .Header {
   display: table;
@@ -8,37 +8,44 @@
   left: 0;
   width: 100%;
   height: 100%;
-  .HeaderImage {
-    height: 60vh;
-    min-height: 440px;
-    img {
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-      height: 100%;
-    }
+  h1 {
+    @include BaronNeueHeading;
+    margin: 0;
+    color: #FFFFFF;
   }
-  .HeaderContent {
-    position: absolute;
-    top: 0;
-    right: 0;
+}
+
+.HeaderImage {
+  height: 60vh;
+  min-height: 440px;
+  img {
+    object-fit: cover;
+    object-position: center;
     width: 100%;
     height: 100%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    overflow: auto;
-    .HeaderContentWrapper {
-      width: 100%;
+  }
+}
+
+.HeaderContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: auto;
+  .HeaderContentWrapper {
+    width: 100%;
+    height: 100%;
+    .HeaderContainer {
+      padding: 0;
       height: 100%;
-      .HeaderContainer {
-        padding: 0;
-        height: 100%;
-        max-width: $breakpointDesktop;
-        margin: 0 auto;
-        float: none;
-        @media only screen and (max-width: $breakpointMax) {
-          margin: 0 1rem;
-        }
+      max-width: $breakpointDesktop;
+      margin: 0 auto;
+      float: none;
+      @media only screen and (max-width: $breakpointMax) {
+        margin: 0 1rem;
       }
     }
   }
@@ -47,19 +54,26 @@
 .HeaderGrid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
-  .HeaderNav {
+  .HeaderHeader {
     grid-area: span 1;
   }
   .HeaderMain {
     grid-area: span 1;
+    padding-top: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    h1 {
-      font-family: 'baron_neuebold';
-      text-transform: lowercase;
+  }
+  .HeaderFooter {
+    grid-area: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 3rem;
+      height: 3rem;
     }
   }
 }
