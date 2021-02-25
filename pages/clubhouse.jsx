@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import Paragraph from '../components/Paragraph'
 import Header from '../components/Header'
 import MenuCards from '../components/MenuCards'
+import Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
 
@@ -35,9 +36,7 @@ export default function Clubhouse() {
       </main>
 
       <footer id="footer">
-        <Container>
-          <Paragraph>© 2021 Spring Lakes Golf Club. All Rights Reserved.</Paragraph>
-        </Container>
+        <Footer />
       </footer>
     </Page>
   )

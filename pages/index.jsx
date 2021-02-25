@@ -1,8 +1,7 @@
 import Page from '../components/Page'
-import Container from '../components/Container'
-import Paragraph from '../components/Paragraph'
 import Banner from '../components/Banner'
 import Hallway from '../components/Hallway'
+import Footer from '../components/Footer'
 
 export default function Index() {
   return (
@@ -22,9 +21,7 @@ export default function Index() {
       </main>
 
       <footer id="footer">
-        <Container>
-          <Paragraph>© 2021 Spring Lakes Golf Club. All Rights Reserved.</Paragraph>
-        </Container>
+        <Footer />
       </footer>
     </Page>
   )

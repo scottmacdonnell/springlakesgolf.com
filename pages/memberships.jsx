@@ -1,10 +1,10 @@
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
 import Paragraph from '../components/Paragraph'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
 
@@ -27,7 +27,7 @@ export default function Memberships() {
       pageName="Memberships"
       slug="/memberships"
     >
-      <header>
+      <header id="header">
         <Header
           title="Memberships"
           image="/images/header/contact.jpg"
@@ -38,54 +38,16 @@ export default function Memberships() {
         <motion.div className="single" initial="exit" animate="enter" exit="exit">
           <motion.div className="back" variants={backVariants}>
             <Container>
-              <Link href="/">
-                <a>Index</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/about">
-                <a>About Us</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/memberships">
-                <a>Memberships</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/game">
-                <a>Game Improvement</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/clubhouse">
-                <a>Clubhouse & Dining</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/events">
-                <a>Events</a>
-              </Link>
-
-              <br/>
-
-              <Link href="/contact">
-                <a>Contact Us</a>
-              </Link>
+              <Paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsam ducimus beatae iste soluta placeat nesciunt atque impedit, nisi quo asperiores quibusdam qui sed suscipit, sint nulla quos dicta ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sunt quidem blanditiis fuga eligendi dolore, nam esse similique optio? Maiores voluptatibus fugiat ut inventore officia ex iusto aliquam accusamus dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, harum aliquid excepturi saepe, nihil ab quasi explicabo voluptatibus quis ex culpa nisi placeat sed error cupiditate similique velit perferendis dolore!
+              </Paragraph>
             </Container>
           </motion.div>
         </motion.div>
       </main>
 
       <footer id="footer">
-        <Container>
-          <Paragraph>© 2021 Spring Lakes Golf Club. All Rights Reserved.</Paragraph>
-        </Container>
+        <Footer />
       </footer>
     </Page>
   )
