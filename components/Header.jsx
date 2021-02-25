@@ -44,12 +44,18 @@ export default function Header({
           />
         </motion.div>
 
+        <div className={styles.HeaderNavbar}>
+          <div className={styles.NavbarWrapper}>
+            <Navbar />
+          </div>
+        </div>
+
         <motion.div className={styles.HeaderContent} variants={imageVariants}>
           <div className={styles.HeaderContentWrapper}>
             <div className={styles.HeaderContainer}>
               <div className={styles.HeaderGrid}>
                 <div className={styles.HeaderHeader}>
-                  <Navbar />
+                  {/* Space for Navbar */}
                 </div>
 
                 <div className={styles.HeaderMain}>

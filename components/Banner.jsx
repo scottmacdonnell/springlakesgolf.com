@@ -55,12 +55,18 @@ export default function Banner({
           />
         </motion.div>
 
+        <div className={styles.BannerNavbar}>
+          <div className={styles.NavbarWrapper}>
+            <Navbar />
+          </div>
+        </div>
+
         <motion.div className={styles.BannerContent} variants={imageVariants}>
           <div className={styles.BannerContentWrapper}>
             <div className={styles.BannerContainer}>
               <div className={styles.BannerGrid}>
                 <div className={styles.BannerHeader}>
-                  <Navbar />
+                  {/* Space for Navbar */}
                 </div>
 
                 <div className={styles.BannerMain}>
