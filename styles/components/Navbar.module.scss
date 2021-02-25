@@ -1,21 +1,143 @@
 @import '../utils/breakpoints';
-
-$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+@import '../utils/variables';
 
 .Navbar {
-  .NavbarContent {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding-top: 2rem;
+  color: #fafafa;
+  // padding: 1.5rem 0;
+  // display: block;
+  // width: 100%;
+}
+
+.Mobile {
+  @media (min-width: $breakpointMedium) {
+    display: none;
+  }
+  @media (max-width: $breakpointMedium) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: $gap;
+    .MobileFlag {
+      grid-area: span 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      svg {
+        color: inherit;
+        height: 5rem;
+      }
+    }
+    .MobileMain {
+      grid-area: span 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .MobileToggle {
+      display: block;
+      z-index: 999;
+      height: 20px;
+      width: 20px;
+      margin: 0;
+      .IconContainer {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: all 0.3s;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        .Icon {
+          width: 20px;
+          height: 10px;
+          position: relative;
+          display: block;
+          margin: 3px auto;
+          top: 50%;
+          .TopBar {
+            width: 100%;
+            height: 1px;
+            display: block;
+            position: relative;
+            background: #ffffff;
+            transition: all 0.3s $cubic;
+            transition-delay: 0s;
+            transform: translateY(0px) rotate(0deg);
+          }
+          .BtmBar {
+            width: 100%;
+            height: 1px;
+            display: block;
+            position: relative;
+            background: #ffffff;
+            transition: all 0.3s $cubic;
+            transition-delay: 0s;
+            transform: translateY(8px) rotate(0deg);
+          }
+        }
+      }
+    }
+    .MobileContent {
+      display: block;
+      width: 100%;
+      height: 0vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0%;
+      z-index: 888;
+      transition-delay: 0.2s;
+      transition: opacity 0.25s ease;
+      .MobileContainer {
+        opacity: 0%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba($color: #000000, $alpha: 0.8);
+        color: #fafafa;
+      }
+    }
+  }
+}
+
+.MobileActive {
+  .MobileToggle {
+    .IconContainer {
+      transform: rotate(90deg);
+      .Icon {
+        .TopBar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          transform: translateY(6px) rotate(45deg);
+        }
+        .BtmBar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          transform: translateY(5px) rotate(-45deg);
+        }
+      }
+    }
+  }
+  .MobileContent {
+    z-index: 888;
+    display: block;
+    height: 100vh;
+    opacity: 100%;
+    transition-delay: 0.2s;
+    transition: opacity 0.25s ease;
+    .MobileContainer {
+      opacity: 100%;
+    }
   }
 }
 
 .Desktop {
-  @media (max-width: $breakpointMedium) {
+  @media (max-width: $breakpointMedium + 1px) {
     display: none;
   }
-  @media (min-width: $breakpointMedium) {
+  @media (min-width: $breakpointMedium + 1px) {
     // background-color: paleturquoise;
     display: grid;
     // grid-template-columns: auto 1fr 30px;
@@ -47,9 +169,4 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
       align-items: center;
     }
   }
-}
-
-.MainNav {
-  color: white;
-  
 }
