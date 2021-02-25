@@ -1,5 +1,6 @@
 @import '../utils/breakpoints';
 @import '../utils/variables';
+@import '../mixins/typography';
 
 .Navbar {
   color: #fafafa;
@@ -78,7 +79,8 @@
       }
     }
     .MobileContent {
-      display: block;
+      display: hidden;
+      position: relative;
       width: 100%;
       height: 0vh;
       position: fixed;
@@ -89,21 +91,38 @@
       transition-delay: 0.2s;
       transition: opacity 0.25s ease;
       .MobileContainer {
+        display: hidden;
         opacity: 0%;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba($color: #000000, $alpha: 0.8);
+        background: rgba($color: #000000, $alpha: 0.85);
         color: #fafafa;
+        .MobileWrapper {
+          display: hidden;
+          max-width: $breakpointDesktop;
+          margin: 0 1rem;
+          padding: 1rem 0;
+          float: none;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
+  }
+  nav {
+    display: none;
   }
 }
 
 .MobileActive {
   .MobileToggle {
+    position: fixed;
     .IconContainer {
       transform: rotate(90deg);
       .Icon {
@@ -121,7 +140,6 @@
     }
   }
   .MobileContent {
-    z-index: 888;
     display: block;
     height: 100vh;
     opacity: 100%;
@@ -131,12 +149,12 @@
       opacity: 100%;
     }
   }
+  nav {
+    display: flex;
+  }
 }
 
 .Desktop {
-  @media (max-width: $breakpointMedium + 1px) {
-    display: none;
-  }
   @media (min-width: $breakpointMedium + 1px) {
     // background-color: paleturquoise;
     display: grid;
@@ -167,6 +185,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+  @media (max-width: $breakpointMedium + 1px) {
+    display: none;
+  }
+}
+
+.MainNav {
+  @media (min-width: $breakpointMedium + 1px) {
+    a {
+      font-weight: 400;
+      opacity: 100%;
+      transition: opacity 0.1s ease;
+    }
+    a:hover,
+    a:active {
+      opacity: 50%;
+    }
+  }
+  @media (max-width: $breakpointMedium) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      @include BaronNeueHeading;
+      font-size: 2rem;
+      padding-top: 1rem;
     }
   }
 }

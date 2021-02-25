@@ -36,7 +36,9 @@ function Mobile() {
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
-          <MainNav />
+          <div className={styles.MobileWrapper}>
+            <MainNav />
+          </div>
         </div>
       </div>
     </div>
@@ -63,7 +65,7 @@ function Desktop() {
 
 function MainNav() {
   return (
-    <nav>
+    <nav className={styles.MainNav}>
       <Link href='/'>
         <a>Home</a>
       </Link>{' '}
