@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router'
 import { AnimatePresence } from 'framer-motion'
 
+import { AuthProvider } from '../lib/auth'
+
 import '../styles/globals.scss'
 
 function handleExitComplete() {
@@ -12,9 +14,12 @@ function handleExitComplete() {
 function SpringLakesGolfClub({ Component, pageProps }) {
   const router = useRouter()
   return (
-    <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
+
+    <AuthProvider>
+      <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
+    </AuthProvider>
   )
 }
 
