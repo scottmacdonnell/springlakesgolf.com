@@ -5,15 +5,12 @@ class MainDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* Open Graph */}
           <meta name="og:type" property="og:type" content="website" key="ogtype" />
           <meta property="og:locale" content="en_US" key="oglocale" />
           <meta name="og:site_name" property="og:site_name" content="Spring Lakes Golf Club" key="ogsitename" />
 
-          {/* Twitter Cards */}
           <meta name="twitter:card" content="summary_large_image" key="twcard" />
 
-          {/* Favicon */}
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -31,18 +28,19 @@ class MainDocument extends Document {
             sizes="16x16"
             href="/favicon/favicon-16x16.png"
           />
-          <link rel="manifest" href="/favicon/site.webmanifest" />
           <link
             rel="mask-icon"
             href="/favicon/safari-pinned-tab.svg"
             color="#000000"
           />
+          <link rel="manifest" href="/favicon/site.webmanifest" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
-          <meta name="msapplication-TileColor" content="#000000" key="msapplication-TileColor" />
+          <meta name="msapplication-TileColor" content="#041e42" key="msapplication-TileColor" />
           <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-          <meta name="theme-color" content="#000" />
+          <meta name="theme-color" content="#041e42" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
+
         <body>
           <Main />
           <NextScript />

@@ -1,28 +1,14 @@
 import Page from '../components/Page'
-import Banner from '../components/Banner'
-import Hallway from '../components/Hallway'
-import Footer from '../components/Footer'
+import Maintenance from '../components/Maintenance'
 
-export default function Index() {
+export default function UnderConstruction() {
   return (
-    <Page 
-      className="Index"
+    <Page
+      className="UnderConstruction"
+      pageName="Under Construction"
+      slug="/"
     >
-      <header id="header">
-        <Banner 
-          title="Spring Lakes Golf Club"
-          image="/images/banner/index.jpg"
-          chevron="/#main"
-        />
-      </header>
-
-      <main id="main">
-        <Hallway />
-      </main>
-
-      <footer id="footer">
-        <Footer />
-      </footer>
+      <Maintenance />
     </Page>
   )
 }

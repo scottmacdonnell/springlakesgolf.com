@@ -12,13 +12,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "firebase": "^8.2.6",
-    "firebase-admin": "^9.4.2",
-    "framer-motion": "^3.7.0",
+    "firebase": "^8.2.9",
+    "firebase-admin": "^9.5.0",
+    "framer-motion": "^3.9.0",
     "js-cookie": "^2.2.1",
-    "next": "10.0.6",
+    "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "sass": "^1.32.7"
-  }
+    "sass": "^1.32.8"
+  },
+  "devDependencies": {}
 }
