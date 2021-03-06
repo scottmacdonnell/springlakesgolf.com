@@ -1,12 +1,27 @@
-@import '../utils/breakpoints';
+@import '../utils/colors';
 @import '../utils/variables';
+@import '../utils/breakpoints';
+
 @import '../mixins/typography';
 
 .Navbar {
-  color: #fafafa;
-  // padding: 1.5rem 0;
-  // display: block;
-  // width: 100%;
+  z-index: 999;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: $accent0;
+}
+
+.NavbarContainer {
+  padding: 0;
+  max-width: $breakpointDesktop;
+  margin: 0 auto;
+  float: none;
+  @media only screen and (max-width: $breakpointMax) {
+    margin: 0 $gap;
+  }
 }
 
 .Mobile {

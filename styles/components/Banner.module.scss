@@ -1,4 +1,5 @@
 @import '../utils/breakpoints';
+
 @import '../mixins/typography';
 
 .Banner {
@@ -8,40 +9,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  h1 {
-    @include BaronNeueHeading;
-    margin: 0;
-    color: #FFFFFF;
-    text-align: center;
-  }
 }
 
 .BannerImage {
-  height: 75vh;
-  min-height: 540px;
+  height: 60vh;
+  min-height: 440px;
   img {
     object-fit: cover;
     object-position: center;
     width: 100%;
     height: 100%;
-  }
-}
-
-.BannerNavbar {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  width: 100%;
-  .NavbarWrapper {
-    padding: 0;
-    height: 100%;
-    max-width: $breakpointDesktop;
-    margin: 0 auto;
-    float: none;
-    @media only screen and (max-width: $breakpointMax) {
-      margin: 0 1rem;
-    }
   }
 }
 
@@ -54,6 +31,11 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
   overflow: auto;
+  h1 {
+    @include BaronNeueHeading;
+    margin: 0;
+    color: #FFFFFF;
+  }
   .BannerContentWrapper {
     width: 100%;
     height: 100%;
@@ -73,14 +55,14 @@
 .BannerGrid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 1fr 5rem;
   height: 100%;
   .BannerHeader {
     grid-area: span 1;
   }
   .BannerMain {
     grid-area: span 1;
-    padding-top: 2.5rem;
+    padding-top: 7.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,5 +79,12 @@
       width: 3rem;
       height: 3rem;
     }
+  }
+}
+
+.IndexBanner {
+  .BannerImage {
+    height: 75vh;
+    min-height: 540px;
   }
 }
