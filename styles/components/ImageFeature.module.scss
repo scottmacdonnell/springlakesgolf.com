@@ -1,0 +1,40 @@
+@import '../utils/breakpoints';
+@import '../utils/colors';
+
+@import '../mixins/grid';
+
+.ImageFeature {
+  padding: 2rem 0;
+  .ImageFeatureGrid {
+    @include Grid;
+    gap: 3rem;
+  }
+  .ImageFeatureContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .ImageFeatureImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: $breakpointMedium) {
+    .ImageFeatureContent {
+      grid-area: span 1 / span 3;
+    }
+    .ImageFeatureImage {
+      grid-area: span 1 / span 3;
+    }
+  }
+  @media screen and (max-width: $breakpointMedium) {
+    .ImageFeatureContent {
+      grid-area: span 1 / span 6;
+    }
+    .ImageFeatureImage {
+      grid-area: span 1 / span 6;
+    }
+  }
+}
