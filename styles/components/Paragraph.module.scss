@@ -3,11 +3,11 @@
 
 .Paragraph {
   text-align: center;
-  margin: 2rem auto;
-  padding: $gap;
+  margin: 1rem auto;
+  padding: 2rem 0;
   max-width: $breakpointMedium;
   float: none;
   @media only screen and (max-width: $breakpointMedium) {
-    margin: $gap;
+    padding: 2rem;
   }
 }
