@@ -56,7 +56,7 @@ function MenuCardLarge({
           <div className={styles.MenuCardLargeTitle}>
             <div className={styles.MenuCardLargeTitleImage}>
               <Image 
-                src="/images/clubhouse/menucard-title.jpg"
+                src="/images/clubhouse/menucard-background.jpg"
                 width={360}
                 height={360}
                 layout="responsive"
@@ -107,7 +107,7 @@ function MenuCardSmall({
           <div className={styles.MenuCardSmallTitle}>
             <div className={styles.MenuCardSmallTitleImage}>
               <Image 
-                src="/images/clubhouse/menucard-title.jpg"
+                src="/images/clubhouse/menucard-background.jpg"
                 width={800}
                 height={240}
                 layout="responsive"
