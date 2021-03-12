@@ -1,8 +1,10 @@
 import Page from '../components/Page'
 import Container from '../components/Container'
+import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
+import GoogleMaps from '../components/GoogleMaps'
 
 export default function Contact() {
   return (
@@ -12,7 +14,7 @@ export default function Contact() {
       slug="/contact"
     >
       <header id="header">
-        <Navbar />
+        <Navbar mainNav />
       </header>
 
       <main id="main">
@@ -25,9 +27,19 @@ export default function Contact() {
 
         <section id="intro">
           <Container>
-            <Paragraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsam ducimus beatae iste soluta placeat nesciunt atque impedit, nisi quo asperiores quibusdam qui sed suscipit, sint nulla quos dicta ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sunt quidem blanditiis fuga eligendi dolore, nam esse similique optio? Maiores voluptatibus fugiat ut inventore officia ex iusto aliquam accusamus dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, harum aliquid excepturi saepe, nihil ab quasi explicabo voluptatibus quis ex culpa nisi placeat sed error cupiditate similique velit perferendis dolore!
-            </Paragraph>
+            <Heading>
+              <h2>Spring Lakes Golf Club</h2>
+              <h3>4962 Stouffville Rd,</h3>
+              <h3>Whitchurch-Stouffville, ON L4A 3S8</h3>
+            </Heading>
+          </Container>
+        </section>
+
+        <section id="maps">
+          <Container>
+            {/* <GoogleMaps
+              placeId="ChIJbRDnhVcp1YkRBpOnX3ACSsc"
+            /> */}
           </Container>
         </section>
       </main>

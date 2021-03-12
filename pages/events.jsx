@@ -12,7 +12,7 @@ export default function About() {
       slug="/events"
     >
       <header id="header">
-        <Navbar />
+        <Navbar mainNav />
       </header>
 
       <main id="main">

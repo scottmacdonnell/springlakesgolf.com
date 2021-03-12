@@ -3,18 +3,22 @@ import Link from 'next/link'
 
 import styles from '../styles/components/Navbar.module.scss'
 
-export default function Navbar() {
+export default function Navbar({
+  mainNav = false
+}) {
   return (
     <div className={styles.Navbar}>
       <div className={styles.NavbarContainer}>
-        <Desktop />
-        <Mobile />
+        <Desktop mainNav={mainNav} />
+        <Mobile mainNav={mainNav} />
       </div>
     </div>
   )
 }
 
-function Mobile() {
+function Mobile({
+  mainNav = false
+}) {
   const [mobileNavShown, setMobileNavShown] = useState(false)
   const toggle = () => setMobileNavShown(!mobileNavShown)
   return (
@@ -23,16 +27,18 @@ function Mobile() {
         <Flag />
       </div>
 
-      <div className={styles.MobileMain}>
-        <div className={styles.MobileToggle} onClick={toggle}>
-          <div className={styles.IconContainer}>
-            <div className={styles.Icon}>
-              <div className={styles.TopBar} />
-              <div className={styles.BtmBar} />
+      {mainNav ? (
+        <div className={styles.MobileMain}>
+          <div className={styles.MobileToggle} onClick={toggle}>
+            <div className={styles.IconContainer}>
+              <div className={styles.Icon}>
+                <div className={styles.TopBar} />
+                <div className={styles.BtmBar} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : ''}
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
@@ -45,7 +51,9 @@ function Mobile() {
   );
 }
 
-function Desktop() {
+function Desktop({
+  mainNav = false
+}) {
   return (
     <div className={styles.Desktop}>
       <div className={styles.DesktopFlag}>
@@ -53,7 +61,7 @@ function Desktop() {
       </div>
 
       <div className={styles.DesktopMain}>
-        <MainNav />
+        {mainNav ? <MainNav /> : ''}
       </div>
 
       {/* <div className={styles.DesktopMember}>

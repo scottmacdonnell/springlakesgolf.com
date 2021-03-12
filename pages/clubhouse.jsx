@@ -14,7 +14,7 @@ export default function Clubhouse() {
       slug="/clubhouse"
     >
       <header id="header">
-        <Navbar />
+        <Navbar mainNav />
       </header>
 
       <main id="main">

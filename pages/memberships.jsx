@@ -12,7 +12,7 @@ export default function Game() {
       slug="/memberships"
     >
       <header id="header">
-        <Navbar />
+        <Navbar mainNav />
       </header>
 
       <main id="main">

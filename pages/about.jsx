@@ -4,6 +4,7 @@ import Paragraph from '../components/Paragraph'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
+import Team from '../components/Team'
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
       slug="/about"
     >
       <header id="header">
-        <Navbar />
+        <Navbar mainNav />
       </header>
 
       <main id="main">
@@ -37,6 +38,14 @@ export default function About() {
             </ImageFeature>
           </Container>
         </section>
+
+        <section id="team">
+          <Container>
+            <Team />
+          </Container>
+        </section>
+
+        
       </main>
 
       {/* <footer id="footer">
