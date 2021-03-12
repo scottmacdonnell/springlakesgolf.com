@@ -37,9 +37,7 @@ export default function Contact() {
 
         <section id="maps">
           <Container>
-            {/* <GoogleMaps
-              placeId="ChIJbRDnhVcp1YkRBpOnX3ACSsc"
-            /> */}
+            <GoogleMaps />
           </Container>
         </section>
       </main>
