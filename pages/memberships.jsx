@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import Paragraph from '../components/Paragraph'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
+import MembershipForm from '../components/MembershipForm'
 
 export default function Game() {
   return (
@@ -30,6 +31,8 @@ export default function Game() {
             </Paragraph>
           </Container>
         </section>
+
+        <MembershipForm />
       </main>
 
       {/* <footer id="footer">

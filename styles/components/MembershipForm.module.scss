@@ -1,0 +1,104 @@
+.MembershipForm {
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+    .FormDate {
+      input[type=date] {
+        font: inherit;
+        border: none;
+        box-sizing: border-box;
+        outline: 0;
+        padding: .75rem;
+        position: relative;
+        width: 100%;
+        font-size: 100%;
+        width: 100%;
+        min-width: 0;
+        display: inline-flex;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+        padding: 0 12px;
+        background: #FFFFFF;
+        color: #000000;
+        height: 40px;
+        line-height: normal;
+        order: 1;
+        outline: none;
+        transition: border-color .15s ease;
+      }
+    }
+    .FormCheckbox {
+      label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        input[type=checkbox] {
+          margin: 0 1rem;
+        }
+      }
+
+    }
+    label {
+      cursor: text;
+      display: block;
+      font-size: .75rem;
+      font-weight: 500;
+      color: #666666;
+      text-transform: uppercase;
+      // margin-bottom: 6px;
+      max-width: 100%;
+    }
+
+    input {
+      -webkit-writing-mode: horizontal-tb !important;
+      text-rendering: auto;
+      color: -internal-light-dark(black, white);
+      letter-spacing: normal;
+      word-spacing: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      margin: 0em;
+      font: 400 13.3333px Arial;
+      padding: 1px 2px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+      border-image: initial;
+    }
+
+    input[type=text],
+    input[type=tel],
+    input[type=email] {
+      font: inherit;
+      font-size: 100%;
+      width: 100%;
+      min-width: 0;
+      display: inline-flex;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      padding: 0 12px;
+      background: #FFFFFF;
+      color: #000000;
+      height: 40px;
+      line-height: normal;
+      order: 1;
+      outline: none;
+      transition: border-color .15s ease;
+    }
+  }
+}
