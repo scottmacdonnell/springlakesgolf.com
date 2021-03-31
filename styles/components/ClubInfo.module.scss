@@ -1,0 +1,26 @@
+@import '../utils/breakpoints';
+
+@import '../mixins/grid';
+@import '../mixins/typography';
+
+.ClubInfo {
+  @include Grid;
+  // @include BaronNeueHeading;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 2rem 0;
+  max-width: $breakpointMedium;
+  float: none;
+  @media only screen and (max-width: $breakpointMedium) {
+    padding: 2rem;
+  }
+  .Hours {
+    grid-area: span 1 / span 2 / 1;
+  }
+  .ContactInfo {
+    grid-area: span 1 / span 2 / 1;
+  }
+  .Extentions {
+    grid-area: span 1 / span 2 / 1;
+  }
+}
