@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import Page from '../../components/Page'
+import Navbar from '../../components/Navbar'
 
 import { useAuth } from '../../lib/auth'
 
@@ -22,6 +23,7 @@ export default function MemberIndex() {
       { auth.user ? (
         <>
           <header id="header">
+            <Navbar invert mainNav />
           </header>
 
           <main id="main">

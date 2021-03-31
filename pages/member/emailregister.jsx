@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 
 import Page from '../../components/Page'
+import Navbar from '../../components/Navbar'
 import EmailAuth from '../../components/EmailAuth'
 
 import { useAuth } from '../../lib/auth'
@@ -23,7 +24,7 @@ export default function MemberEmailRegister() {
       { auth.user ? <div /> : (
         <>
           <header id="header">
-            
+            <Navbar invert mainNav />
           </header>
 
           <main id="main">
