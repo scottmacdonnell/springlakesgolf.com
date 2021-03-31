@@ -11,6 +11,17 @@ body {
   scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }
+*::-moz-selection { color: white; background: #141618; text-shadow: none; }
+*::selection { color: white; background: #141618; text-shadow: none; }

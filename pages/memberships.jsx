@@ -4,6 +4,7 @@ import Paragraph from '../components/Paragraph'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import MembershipForm from '../components/MembershipForm'
+import Footer from '../components/Footer'
 
 export default function Game() {
   return (
@@ -32,14 +33,18 @@ export default function Game() {
           </Container>
         </section>
 
-        <MembershipForm />
+        <section id="intro">
+          <Container>
+            <MembershipForm />
+          </Container>
+        </section>
+
+        
       </main>
 
-      {/* <footer id="footer">
-        <Container>
-          <p>© 2021 Spring Lakes Golf Club. All Rights Reserved.</p>
-        </Container>
-      </footer> */}
+      <footer id="footer">
+        <Footer />
+      </footer>
     </Page>
   )
 }

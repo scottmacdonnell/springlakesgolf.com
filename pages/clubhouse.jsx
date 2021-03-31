@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import MenuNav from '../components/MenuNav'
 
+import Footer from '../components/Footer'
+
 export default function Clubhouse() {
   return (
     <Page
@@ -40,11 +42,9 @@ export default function Clubhouse() {
         </section>
       </main>
 
-      {/* <footer id="footer">
-        <Container>
-          <p>© 2021 Spring Lakes Golf Club. All Rights Reserved.</p>
-        </Container>
-      </footer> */}
+      <footer id="footer">
+        <Footer />
+      </footer>
     </Page>
   )
 }

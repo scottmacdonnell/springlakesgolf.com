@@ -5,6 +5,7 @@ import Paragraph from '../components/Paragraph'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import GoogleMaps from '../components/GoogleMaps'
+import ClubInfo from '../components/ClubInfo'
 
 export default function Contact() {
   return (
@@ -38,6 +39,12 @@ export default function Contact() {
         <section id="maps">
           <Container>
             <GoogleMaps />
+          </Container>
+        </section>
+
+        <section id="info">
+          <Container>
+            <ClubInfo />
           </Container>
         </section>
       </main>

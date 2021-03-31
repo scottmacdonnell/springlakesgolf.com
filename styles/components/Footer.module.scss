@@ -1,0 +1,96 @@
+@import '../utils/breakpoints';
+
+.Footer {
+  background-color: #252422;
+  color: #FFFFFF;
+  margin: 1rem 0;
+  padding: 2rem 0;
+}
+
+.FooterContainer {
+  padding: 0;
+  max-width: $breakpointDesktop;
+  margin: 0 auto;
+  float: none;
+  @media only screen and (max-width: $breakpointMax) {
+    margin: 0 1rem;
+  }
+}
+
+.FooterGrid {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+}
+
+.FooterNav {
+  background-color: black;
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  svg {
+    height: 5rem;
+    fill: currentColor;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Line {
+  margin: 1rem 0;
+  height: 1px;
+  width: 100%;
+  background-color: #FFFFFF;
+  opacity: 25%;
+}
+
+.Tagline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0.5rem;
+  
+  p, a {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.TaglineLeft {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.TaglineRight {
+  display: inline-flex;
+  justify-content: flex-end;
+  @media screen and (max-width: $breakpointMedium) {
+    justify-content: flex-start;
+  }
+}
