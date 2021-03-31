@@ -14,6 +14,10 @@
   color: $accent0;
 }
 
+.NavbarInvert {
+  color: $accent9;
+}
+
 .NavbarContainer {
   padding: 0;
   max-width: $breakpointDesktop;
@@ -75,7 +79,7 @@
             height: 1px;
             display: block;
             position: relative;
-            background: #ffffff;
+            background: currentColor;
             transition: all 0.3s $cubic;
             transition-delay: 0s;
             transform: translateY(0px) rotate(0deg);
@@ -85,7 +89,7 @@
             height: 1px;
             display: block;
             position: relative;
-            background: #ffffff;
+            background: currentColor;
             transition: all 0.3s $cubic;
             transition-delay: 0s;
             transform: translateY(8px) rotate(0deg);
@@ -142,11 +146,13 @@
       transform: rotate(90deg);
       .Icon {
         .TopBar {
+          background: #FFFFFF;
           transition: all 0.4s $cubic;
           transition-delay: 0.2s;
           transform: translateY(6px) rotate(45deg);
         }
         .BtmBar {
+          background: #FFFFFF;
           transition: all 0.4s $cubic;
           transition-delay: 0.2s;
           transform: translateY(5px) rotate(-45deg);

@@ -4,10 +4,11 @@ import Link from 'next/link'
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar({
-  mainNav = false
+  mainNav = false,
+  invert = false
 }) {
   return (
-    <div className={styles.Navbar}>
+    <div className={`${styles.Navbar} ${invert ? styles.NavbarInvert : ''}`}>
       <div className={styles.NavbarContainer}>
         <Desktop mainNav={mainNav} />
         <Mobile mainNav={mainNav} />
