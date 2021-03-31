@@ -1,54 +1,60 @@
 import Image from 'next/image'
 
-import styles from '../styles/components/Team.module.scss'
+import Container from './Container'
 
+import styles from '../styles/components/Team.module.scss'
 export default function Team() {
   return (
-    <div className={styles.Team}>
-      <div className={styles.TeamHeader}>
-        <h2>Meet Our Team</h2>
+    <Container>
+      <TeamComponent>
+        <TeamHeader>
+          <h2>Meet Our Team</h2>
+          <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</h5>
+        </TeamHeader>
 
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-      </div>
+        <TeamMain>
+          <TeamMember
+            image="/images/team/jim.jpg"
+          >
+            <h5>Jim</h5>
+            <p>General Manager</p>
+          </TeamMember>
 
-      <div className={styles.TeamGrid}>
-        <TeamMember
-          name="Jim"
-          title="General Manager"
-          image="/images/team/jim.jpg"
-        />
+          <TeamMember
+            image="/images/team/chris.jpg"
+          >
+            <h5>Chris</h5>
+            <p>Head Grounds Crew</p>
+          </TeamMember>
 
-        <TeamMember
-          name="Chris"
-          title="Head Grounds Crew"
-          image="/images/team/chris.jpg"
-        />
+          <TeamMember
+            image="/images/team/shane.jpg"
+          >
+            <h5>Shane</h5>
+            <p>Golf Pro</p>
+          </TeamMember>
 
-        <TeamMember
-          name="Shane"
-          title="Golf Pro"
-          image="/images/team/shane.jpg"
-        />
+          <TeamMember
+            image="/images/team/laura.jpg"
+          >
+            <h5>Laura</h5>
+            <p>Event Coordinator</p>
+          </TeamMember>
 
-        <TeamMember
-          name="Laura"
-          title="Event Coordinator"
-          image="/images/team/laura.jpg"
-        />
-
-        <TeamMember
-          name="Tracey"
-          title="Head Chef"
-          image="/images/team/tracey.jpg"
-        />
-      </div>
-    </div>
+          <TeamMember
+            image="/images/team/tracey.jpg"
+          >
+            <h5>Tracey</h5>
+            <p>Head Chef</p>
+          </TeamMember>
+        </TeamMain>
+      </TeamComponent>
+    </Container>
   )
 }
 
 function TeamMember({
-  name,
-  title,
+  children,
   image,
 }) {
   return (
@@ -56,19 +62,41 @@ function TeamMember({
       <div className={styles.TeamMemberImage}>
         <Image
           src={image}
-          alt={title}
-          title={title}
+          alt="Team Member"
           width={600}
           height={800}
           layout="intrinsic"
-          objectFit="cover"
+          objectFit="contain"
         />
       </div>
 
       <div className={styles.TeamMemberContent}>
-        <h3>{name}</h3>
-        <h4>{title}</h4>
+        {children}
       </div>
+    </div>
+  )
+}
+
+function TeamMain(props) {
+  return (
+    <div className={styles.TeamMain}>
+      {props.children}
+    </div>
+  )
+}
+
+function TeamHeader(props) {
+  return (
+    <div className={styles.TeamHeader}>
+      {props.children}
+    </div>
+  )
+}
+
+function TeamComponent(props) {
+  return (
+    <div className={styles.Team}>
+      {props.children}
     </div>
   )
 }
