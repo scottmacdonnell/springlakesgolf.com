@@ -1,10 +1,7 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 import Page from '../../components/Page'
-import Navbar from '../../components/Navbar'
 import EmailAuth from '../../components/EmailAuth'
-import ProviderAuth from '../../components/ProviderAuth'
 
 import { useAuth } from '../../lib/auth'
 

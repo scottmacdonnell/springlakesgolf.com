@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 import Page from '../../components/Page'
 import SignupForm from '../../components/SignupForm'
-import Footer from '../../components/Footer'
 
 import { useAuth } from '../../lib/auth'
 
