@@ -106,7 +106,7 @@ const mapElementStyle = { height: "100%" };
 const RegularMap = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap
-      defaultZoom={16}
+      defaultZoom={15}
       defaultCenter={locationInfo.location}
       defaultOptions={defaultOptions}
     >
