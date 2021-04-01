@@ -91,7 +91,7 @@ let defaultOptions = {
       elementType: "all",
       stylers: [
         {
-          color: "#A5D9B9",
+          color: "#adc2df",
         },
         {
           visibility: "on",
