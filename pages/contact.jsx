@@ -31,9 +31,7 @@ export default function Contact() {
           </Heading>
         </Container>
 
-        <Container>
-          <GoogleMaps />
-        </Container>
+        <GoogleMaps />
 
         <Container>
           <ClubInfo />

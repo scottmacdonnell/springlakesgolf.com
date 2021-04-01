@@ -1,5 +1,7 @@
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 
+import Container from './Container'
+
 const locationInfo = {
   name: "Spring Lakes Golf Club",
   placeId: "ChIJbRDnhVcp1YkRBpOnX3ACSsc",
@@ -119,11 +121,13 @@ const RegularMap = withScriptjs(
 
 export default function GoogleMaps() {
   return (
-    <RegularMap
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`}
-      loadingElement={<div style={loadingElementStyle} />}
-      containerElement={<div style={containerElementStyle} />}
-      mapElement={<div style={mapElementStyle} />}
-    />
+    <Container>
+      <RegularMap
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`}
+        loadingElement={<div style={loadingElementStyle} />}
+        containerElement={<div style={containerElementStyle} />}
+        mapElement={<div style={mapElementStyle} />}
+      />
+    </Container>
   )
 }
