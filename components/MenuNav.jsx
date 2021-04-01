@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import Container from './Container'
+
 import styles from '../styles/components/MenuNav.module.scss'
 
 export default function MenuNav() {

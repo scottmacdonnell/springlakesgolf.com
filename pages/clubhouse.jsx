@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import MenuNav from '../components/MenuNav'
 import Paragraph from '../components/Paragraph'
-import Footer from '../components/Footer'
 
 export default function Clubhouse() {
   return (
@@ -30,7 +29,7 @@ export default function Clubhouse() {
       </main>
 
       <footer>
-        <Footer />
+        
       </footer>
     </Page>
   )
