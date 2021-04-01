@@ -22,11 +22,13 @@ export default function MemberIndex() {
     >
       { auth.user ? (
         <>
-          <header id="header">
+          <header>
             <Navbar invert mainNav />
           </header>
 
-          <main id="main">
+          <main>
+            <br/><br/><br/><br/>
+
             <h1>MemberIndex</h1>
 
             <Image
@@ -41,7 +43,7 @@ export default function MemberIndex() {
             <button onClick={(e) => auth.signOut()}>Sign Out</button>
           </main>
         
-          <footer id="footer">
+          <footer>
             
           </footer>
         </>

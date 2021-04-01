@@ -6,7 +6,7 @@ import EmailAuth from '../../components/EmailAuth'
 
 import { useAuth } from '../../lib/auth'
 
-export default function MemberEmailRegister() {
+export default function MemberEmailSignup() {
   const router = useRouter()
   const auth = useAuth()
 
@@ -17,21 +17,21 @@ export default function MemberEmailRegister() {
   
   return (
     <Page
-      className="MemberEmailRegister"
-      pageName="Email Sign Up"
+      className="MemberEmailSignup"
+      pageName="Sign Up with Email"
       slug="/member/emailregister"
     >
       { auth.user ? <div /> : (
         <>
-          <header id="header">
+          <header>
             <Navbar invert mainNav />
           </header>
 
-          <main id="main">
+          <main>
             <EmailAuth auth={auth} />
           </main>
         
-          <footer id="footer">
+          <footer>
             
           </footer>
         </>

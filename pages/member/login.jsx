@@ -18,20 +18,20 @@ export default function MemberLogin() {
   return (
     <Page
       className="MemberLogin"
-      pageName="Login"
+      pageName="Member Log In"
       slug="/member/login"
     >
       { auth.user ? <div /> : (
         <>
-          <header id="header">
+          <header>
             <Navbar invert mainNav />
           </header>
 
-          <main id="main">
+          <main>
             <LoginForm auth={auth} />
           </main>
         
-          <footer id="footer">
+          <footer>
             
           </footer>
         </>

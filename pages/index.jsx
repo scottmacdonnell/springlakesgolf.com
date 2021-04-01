@@ -1,9 +1,7 @@
 import Page from '../components/Page'
-import Container from '../components/Container'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import Hallway from '../components/Hallway'
-import HallwayCard from '../components/HallwayCard'
 
 export default function Index() {
   return (
@@ -11,11 +9,11 @@ export default function Index() {
       className="Index"
       slug="/"
     >
-      <header id="header">
+      <header>
         <Navbar />
       </header>
 
-      <main id="main">
+      <main>
         <Banner 
           title="Spring Lakes Golf Club"
           image="/images/index/banner.jpg"
@@ -26,11 +24,9 @@ export default function Index() {
         <Hallway id="hallway" />
       </main>
 
-      {/* <footer id="footer">
-        <Container>
-          <p>© 2021 Spring Lakes Golf Club. All Rights Reserved.</p>
-        </Container>
-      </footer> */}
+      <footer>
+        
+      </footer>
     </Page>
   )
 }

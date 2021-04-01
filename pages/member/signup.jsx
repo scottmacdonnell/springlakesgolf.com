@@ -23,15 +23,15 @@ export default function MemberSignup() {
     >
       { auth.user ? <div /> : (
         <>
-          <header id="header">
+          <header>
             <Navbar invert mainNav />
           </header>
 
-          <main id="main">
+          <main>
             <SignupForm auth={auth} />
           </main>
         
-          <footer id="footer">
+          <footer>
 
           </footer>
         </>
