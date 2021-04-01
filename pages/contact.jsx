@@ -33,9 +33,7 @@ export default function Contact() {
 
         <GoogleMaps />
 
-        <Container>
-          <ClubInfo />
-        </Container>
+        <ClubInfo />
       </main>
 
       <footer>
