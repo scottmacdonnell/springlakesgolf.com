@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Container from './Container'
 
 import styles from '../styles/components/Team.module.scss'
+
 export default function Team() {
   return (
     <Container>
