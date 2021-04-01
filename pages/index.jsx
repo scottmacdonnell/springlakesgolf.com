@@ -16,49 +16,14 @@ export default function Index() {
       </header>
 
       <main id="main">
-        <section id="banner">
-          <Banner 
-            title="Spring Lakes Golf Club"
-            image="/images/index/banner.jpg"
-            chevron="#hallway"
-            index
-          />
-        </section>
+        <Banner 
+          title="Spring Lakes Golf Club"
+          image="/images/index/banner.jpg"
+          chevron="#hallway"
+          index
+        />
 
-        <section id="hallway">
-          <Hallway>
-            <HallwayCard
-              title="About Us"
-              link="/about"
-              image="/images/index/hallway-about.jpg"
-            />
-            <HallwayCard
-              title="Memberships"
-              link="/memberships"
-              image="/images/index/hallway-memberships.jpg"
-            />
-            <HallwayCard
-              title="Game Improvement"
-              link="/game"
-              image="/images/index/hallway-game.jpg"
-            />
-            <HallwayCard
-              title="Clubhouse & Dining"
-              link="/clubhouse"
-              image="/images/index/hallway-clubhouse.jpg"
-            />
-            <HallwayCard
-              title="Events"
-              link="/events"
-              image="/images/index/hallway-events.jpg"
-            />
-            <HallwayCard
-              title="Contact Us"
-              link="/contact"
-              image="/images/index/hallway-contact.jpg"
-            />
-          </Hallway>
-        </section>
+        <Hallway id="hallway" />
       </main>
 
       {/* <footer id="footer">
