@@ -29,9 +29,7 @@ export default function Clubhouse() {
           </Paragraph>
         </Container>
 
-        <Container>
-          <MenuNav />
-        </Container>
+        <MenuNav />
       </main>
 
       <footer>

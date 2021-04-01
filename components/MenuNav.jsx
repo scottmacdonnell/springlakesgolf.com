@@ -5,42 +5,44 @@ import styles from '../styles/components/MenuNav.module.scss'
 
 export default function MenuNav() {
   return(
-    <div className={styles.MenuNav}>
-      <div className={styles.MenuCardsLarge}>
-        <MenuCardLarge 
-          title="Restaurant Menu"
-          image="/images/clubhouse/menucard-restaurant.jpg"
-          link="#"
-        />
+    <Container>
+      <div className={styles.MenuNav}>
+        <div className={styles.MenuCardsLarge}>
+          <MenuCardLarge 
+            title="Restaurant Menu"
+            image="/images/clubhouse/menucard-restaurant.jpg"
+            link="#"
+          />
 
-        <MenuCardLarge 
-          title="Stanley's Nest Menu"
-          image="/images/clubhouse/menucard-stanley.jpg"
-          link="#"
-        />
+          <MenuCardLarge 
+            title="Stanley's Nest Menu"
+            image="/images/clubhouse/menucard-stanley.jpg"
+            link="#"
+          />
 
-        <MenuCardLarge
-          title="Halfway House Menu"
-          image="/images/clubhouse/menucard-halfway.jpg"
-          link="#"
-        />
+          <MenuCardLarge
+            title="Halfway House Menu"
+            image="/images/clubhouse/menucard-halfway.jpg"
+            link="#"
+          />
+        </div>
+        <div className={styles.MenuCardsSmall}>
+          <MenuCardSmall
+            title="Weekly Specials"
+            image="/images/clubhouse/menucard-weekly.jpg"
+            link="#"
+          />
+          
+          <MenuCardSpacer />
+          
+          <MenuCardSmall 
+            title="Clubhouse Refreshers"
+            image="/images/clubhouse/menucard-refreshers.jpg"
+            link="#"
+          />
+        </div>
       </div>
-      <div className={styles.MenuCardsSmall}>
-        <MenuCardSmall
-          title="Weekly Specials"
-          image="/images/clubhouse/menucard-weekly.jpg"
-          link="#"
-        />
-        
-        <MenuCardSpacer />
-        
-        <MenuCardSmall 
-          title="Clubhouse Refreshers"
-          image="/images/clubhouse/menucard-refreshers.jpg"
-          link="#"
-        />
-      </div>
-    </div>
+    </Container>
   )
 }
 
