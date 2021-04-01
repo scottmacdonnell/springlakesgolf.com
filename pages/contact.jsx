@@ -1,7 +1,6 @@
 import Page from '../components/Page'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
-import Container from '../components/Container'
 import Heading from '../components/Heading'
 import GoogleMaps from '../components/GoogleMaps'
 import ClubInfo from '../components/ClubInfo'
