@@ -23,13 +23,11 @@ export default function Contact() {
           image="/images/contact/banner.jpg"
         />
 
-        <Container>
-          <Heading>
-            <h2>Spring Lakes Golf Club</h2>
-            <h3>4962 Stouffville Rd,</h3>
-            <h3>Whitchurch-Stouffville, ON L4A 3S8</h3>
-          </Heading>
-        </Container>
+        <Heading>
+          <h2>Spring Lakes Golf Club</h2>
+          <h3>4962 Stouffville Rd,</h3>
+          <h3>Whitchurch-Stouffville, ON L4A 3S8</h3>
+        </Heading>
 
         <GoogleMaps />
 
