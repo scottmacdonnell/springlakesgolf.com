@@ -1,28 +1,73 @@
 import Image from 'next/image'
 
+import Container from './Container'
+
 import styles from '../styles/components/ImageFeature.module.scss'
 
 export default function ImageFeature({
   children,
   imageSrc,
-  imageWidth,
-  imageHeight
+  imageRight = false
 }) {
+  return (
+    <Container>
+      {imageRight ? (
+        <ImageFeatureComponent>
+          <ImageFeatureContent>
+            {children}
+          </ImageFeatureContent>
+
+          <ImageFeatureImage>
+            <Image
+              src={imageSrc}
+              width={720}
+              height={1080}
+              objectFit="cover"
+              alt="Featured Image"
+            />
+          </ImageFeatureImage>
+        </ImageFeatureComponent>
+      ) : (
+        <ImageFeatureComponent>
+          <ImageFeatureImage>
+            <Image
+              src={imageSrc}
+              width={720}
+              height={1080}
+              alt="Featured Image"
+            />
+          </ImageFeatureImage>
+          
+          <ImageFeatureContent>
+            {children}
+          </ImageFeatureContent>
+        </ImageFeatureComponent>
+      )}
+    </Container>
+  )
+}
+
+function ImageFeatureImage(props) {
+  return (
+    <div className={styles.ImageFeatureImage}>
+      {props.children}
+    </div>
+  )
+}
+
+function ImageFeatureContent(props) {
+  return (
+    <div className={styles.ImageFeatureContent}>
+      {props.children}
+    </div>
+  )
+}
+
+function ImageFeatureComponent(props) {
   return (
     <div className={styles.ImageFeature}>
       <div className={styles.ImageFeatureGrid}>
-        <div className={styles.ImageFeatureContent}>
-          {children}
-        </div>
-
-        <div className={styles.ImageFeatureImage}>
-          <Image
-            src={imageSrc}
-            width={imageWidth}
-            height={imageHeight}
-            alt="Featured Image"
-          />
-        </div>
+        {props.children}
       </div>
     </div>
   )
