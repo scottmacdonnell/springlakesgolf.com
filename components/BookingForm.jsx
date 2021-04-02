@@ -1,8 +1,72 @@
+import React, { useState } from 'react'
+
 import Container from './Container'
 
 import styles from '../styles/components/BookingForm.module.scss'
 
 export default function BookingForm() {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
+
+  const [inputs, setInputs] = useState({
+    title: 'Event Booking Inquires',
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg }
+      })
+      setInputs({
+        title: 'Event Booking Inquires',
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    } else {
+      setStatus({
+        info: { error: true, msg: msg }
+      })
+    }
+  }
+
+  const handleChange = e => {
+    e.persist()
+    setInputs(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null }
+    })
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('/api/email/send-event-booking-inquiry', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(inputs)
+    })
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
+
   return (
     <BookingFormComponent>
       <BookingFormHeader>
@@ -10,25 +74,57 @@ export default function BookingForm() {
       </BookingFormHeader>
 
       <BookingFormMain>
-        <form className={styles.BookingFormContent}>
+        <form className={styles.BookingFormContent} onSubmit={handleSubmit}>
           <div>
-            <input type='text' id='name' name='name' placeholder='Name' autoComplete='off' aria-required />
+            <input
+              type="text"
+              onChange={handleChange}
+              id="name"
+              name="name"
+              placeholder="Name"
+              autoComplete="off"
+              aria-required
+            />
 
             <span className={styles.Spacer} />
 
-            <input type='email' id='email' name='email' placeholder='Email Address' autoComplete='off' aria-required />
+            <input
+              type="email"
+              onChange={handleChange}
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              autoComplete="off"
+              aria-required
+            />
 
             <span className={styles.Spacer} />
 
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number" autoComplete="off" aria-required />
+            <input
+              type="tel"
+              onChange={handleChange}
+              id="phone"
+              name="phone"
+              placeholder="Phone Number"
+              autoComplete="off"
+              aria-required
+              />
           </div>
           
           <div>
-            <input type="textarea" id="message" name="message" placeholder="Message" autoComplete="off" aria-required />
+            <textarea
+              type="textarea"
+              onChange={handleChange}
+              id="message"
+              name="message"
+              placeholder="Message"
+              autoComplete="off"
+              aria-required
+            />
 
             <span className={styles.Spacer} />
 
-            <button type='submit' id='submit' name='submit'>
+            <button type='submit' id='submit' name='submit' disabled={status.submitting}>
               <span className={styles.Prefix}>
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -37,11 +133,21 @@ export default function BookingForm() {
               </span>
 
               <span className={styles.Content}>
-                Submit
+                {!status.submitting
+                  ? !status.submitted
+                    ? 'Submit'
+                    : 'Submitted'
+                  : 'Submitting...'}
               </span>
             </button>
           </div>
         </form>
+        {status.info.error && (
+          <div className="error">Error: {status.info.msg}</div>
+        )}
+        {!status.info.error && status.info.msg && (
+          <div className="success">{status.info.msg}</div>
+        )}
       </BookingFormMain>
     </BookingFormComponent>
   )
