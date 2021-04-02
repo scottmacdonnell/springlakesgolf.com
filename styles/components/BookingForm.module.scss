@@ -53,6 +53,41 @@
   font-size: 1rem;
 }
 
+@mixin Textarea {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 108px;
+  min-height: 108px;
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0;
+  display: inline-flex;
+  -webkit-appearance: none;
+  padding: 12px 12px;
+  line-height: normal;
+  order: 1;
+  outline: none;
+  transition: border-color .15s ease;
+  font-size: 1rem;
+  resize: vertical;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
 @mixin Spacer {
   display: block;
   width: 1px;
@@ -210,20 +245,28 @@
 // }
 
 .BookingFormContent {
+  position: relative;
   width: 100%;
   align-self: center;
   display: grid;
+  overflow: none;
 
-  input {
+  input,
+  textarea {
     color: -internal-light-dark(black, white);
     background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   }
 
+  textarea {
+    @include Textarea;
+    background: #ffffff;
+    color: #000000;
+  }
+
   input[type=text],
   input[type=email],
-  input[type=tel],
-  input[type=textarea] {
+  input[type=tel] {
     @include TextInputLarge;
     border: 1px solid #eaeaea;
     background: #ffffff;
@@ -233,7 +276,7 @@
   input[type=text]:focus,
   input[type=email]:focus,
   input[type=tel]:focus,
-  input[type=textarea]:focus {
+  textarea:focus {
     border-color: #666666;
   }
 
@@ -242,6 +285,7 @@
     color: #eec035;
     background: #041e42;
     border: 1px solid #041e42;
+    margin-top: -6px;
   }
   button[type=submit]:hover {
     background: #FFFFFF;
