@@ -1,0 +1,66 @@
+@import '../utils/breakpoints';
+
+.EventsShowcase {
+  background: #99cf9c;
+  padding: 2rem 0;
+}
+
+.EventsShowcaseGrid {
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (min-width: $breakpointMedium) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+  }
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+  }
+}
+
+.EventsShowcaseCard {
+  background: #111111;
+  color: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #333333;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  @media screen and (min-width: $breakpointMedium) {
+    grid-area: span 1 / span 3 / auto / 4;
+  }
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-area: span 1 / span 1;
+  }
+}
+
+.EventsShowcaseCard:nth-child(2n) {
+  background: #FAFAFA;
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  @media screen and (min-width: $breakpointMedium) {
+    grid-area: span 1 / span 3 / auto / 5;
+  }
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-area: span 1 / span 1;
+  }
+}
+
+.EventsShowcaseCardMain {
+  padding: 0 12px;
+}
