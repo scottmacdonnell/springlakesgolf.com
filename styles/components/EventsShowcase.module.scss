@@ -1,7 +1,7 @@
 @import '../utils/breakpoints';
 
 .EventsShowcase {
-  background: #648767;
+  // background: #648767;
   padding: 2rem 0;
 }
 
@@ -29,8 +29,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
   img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
 
   @media screen and (min-width: $breakpointMedium) {
@@ -43,13 +43,13 @@
 }
 
 .EventsShowcaseCard:nth-child(2n) {
-  background: #FAFAFA;
+  background: #FFFFFF;
   color: #000000;
   border-radius: 5px;
   border: 1px solid #eaeaea;
   img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
 
   @media screen and (min-width: $breakpointMedium) {
