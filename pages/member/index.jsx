@@ -35,7 +35,6 @@ export default function MemberIndex() {
               chevron="#hallway"
               index
             />
-            <br/><br/><br/><br/>
 
             <h1>MemberIndex</h1>
 
