@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Page from '../../components/Page'
 import Navbar from '../../components/Navbar'
+import Banner from '../../components/Banner'
 
 import { useAuth } from '../../lib/auth'
 
@@ -23,10 +24,17 @@ export default function MemberIndex() {
       { auth.user ? (
         <>
           <header>
-            <Navbar invert mainNav />
+            <Navbar mainNav />
           </header>
 
           <main>
+            <Banner 
+              title="Spring Lakes Golf Club"
+              subtitle={`Welcome, ${auth.user.name}`}
+              image="/images/index/banner.jpg"
+              chevron="#hallway"
+              index
+            />
             <br/><br/><br/><br/>
 
             <h1>MemberIndex</h1>

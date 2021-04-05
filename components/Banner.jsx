@@ -5,6 +5,7 @@ import styles from '../styles/components/Banner.module.scss'
 
 export default function Banner({
   title,
+  subtitle,
   image,
   chevron,
   index = false
@@ -17,7 +18,7 @@ export default function Banner({
           alt="Banner Background"
           layout="fill"
           objectFit="cover"
-          objectPosition="center"
+          objectPosition="top"
         />
       </div>
 
@@ -27,6 +28,9 @@ export default function Banner({
             <div className={styles.BannerGrid}>
               <div className={styles.BannerMain}>
                 <h1>{title}</h1>
+                {subtitle ? (
+                  <h2>{subtitle}</h2>
+                ) : <div />}
               </div>
 
               {chevron ? (

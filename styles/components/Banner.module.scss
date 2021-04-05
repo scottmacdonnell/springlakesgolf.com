@@ -64,8 +64,29 @@
     grid-area: span 1;
     padding-top: 7.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    h2 {
+      font-weight: 400;
+      text-transform: none;
+      max-width: 76ch;
+      font-size: 1.25rem;
+      line-height: 1.41em;
+      letter-spacing: -.01125rem;
+      margin: 1.5rem 0;
+      display: block;
+      margin-block-start: 0.25em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      text-align: center;
+  
+      @media screen and (max-width: $breakpointMedium) {
+        font-size: 1rem;
+      }
+    }
   }
   .BannerFooter {
     grid-area: span 1;
