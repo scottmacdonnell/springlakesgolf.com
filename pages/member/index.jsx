@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 import Page from '../../components/Page'
 import Navbar from '../../components/Navbar'
-import Banner from '../../components/Banner'
+import Dashboard from '../../components/Dashboard'
 
 import { useAuth } from '../../lib/auth'
 
-export default function MemberIndex() {
+export default function Member() {
   const router = useRouter()
   const auth = useAuth()
 
@@ -15,39 +15,21 @@ export default function MemberIndex() {
     router.push('/member/login')
     console.log("Not Signed In...")
   }
-
+  
   return (
     <Page
-      className="MemberIndex"
+      className="Member"
+      pageName="Member"
       slug="/member"
     >
       { auth.user ? (
         <>
           <header>
-            <Navbar mainNav />
+            <Navbar invert mainNav />
           </header>
 
           <main>
-            <Banner 
-              title="Spring Lakes Golf Club"
-              subtitle={`Welcome, ${auth.user.name}`}
-              image="/images/index/banner.jpg"
-              chevron="#hallway"
-              index
-            />
-
-            <h1>MemberIndex</h1>
-
-            <Image
-              src={auth?.user?.photoUrl}
-              width={32}
-              height={32}
-            />
-
-            <h3>{auth.user.name}</h3>
-            <p>{auth.user.email}</p>
-            <p>Provider: {auth.user.provider}</p>
-            <button onClick={(e) => auth.signOut()}>Sign Out</button>
+            <Dashboard auth={auth} />
           </main>
         
           <footer>

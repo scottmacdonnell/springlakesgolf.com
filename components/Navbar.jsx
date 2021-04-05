@@ -25,7 +25,9 @@ function Mobile({
   return (
     <div className={`${styles.Mobile} ${mobileNavShown ? styles.MobileActive : ''}`}>
       <div className={styles.MobileFlag}>
-        <Flag />
+        <Link href="/">
+          <a style={{ display: 'contents' }}><Flag /></a>
+        </Link>
       </div>
 
       {mainNav ? (
@@ -58,7 +60,9 @@ function Desktop({
   return (
     <div className={styles.Desktop}>
       <div className={styles.DesktopFlag}>
-        <Flag />
+        <Link href="/">
+          <a style={{ display: 'contents' }}><Flag /></a>
+        </Link>
       </div>
 
       <div className={styles.DesktopMain}>
