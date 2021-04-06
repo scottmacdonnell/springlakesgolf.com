@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 
 import Container from './Container'
 
+import InputText from './ui/InputText'
+import InputEmail from './ui/InputEmail'
+import InputTel from './ui/InputTel'
+import InputTextArea from './ui/InputTextArea'
+import FormSpacer from './ui/FormSpacer'
+
 import styles from '../styles/components/BookingForm.module.scss'
 
 export default function BookingForm() {
@@ -76,53 +82,45 @@ export default function BookingForm() {
       <BookingFormMain>
         <form className={styles.BookingFormContent} onSubmit={handleSubmit}>
           <div>
-            <input
-              type="text"
-              onChange={handleChange}
-              id="name"
+            <InputText
               name="name"
               placeholder="Name"
               autoComplete="off"
-              aria-required
+              required
+              onChange={handleChange}
             />
 
-            <span className={styles.Spacer} />
+            <FormSpacer />
 
-            <input
-              type="email"
-              onChange={handleChange}
-              id="email"
+            <InputEmail
               name="email"
               placeholder="Email Address"
               autoComplete="off"
-              aria-required
+              required
+              onChange={handleChange}
             />
 
-            <span className={styles.Spacer} />
+            <FormSpacer />
 
-            <input
-              type="tel"
-              onChange={handleChange}
-              id="phone"
+            <InputTel
               name="phone"
               placeholder="Phone Number"
               autoComplete="off"
-              aria-required
-              />
+              required
+              onChange={handleChange}
+            />
           </div>
           
           <div>
-            <textarea
-              type="textarea"
-              onChange={handleChange}
-              id="message"
+            <InputTextArea
               name="message"
               placeholder="Message"
               autoComplete="off"
-              aria-required
+              required
+              onChange={handleChange}
             />
 
-            <span className={styles.Spacer} />
+            <FormSpacer />
 
             <button type='submit' id='submit' name='submit' disabled={status.submitting}>
               <span className={styles.Prefix}>
