@@ -34,7 +34,7 @@
   }
   @media (max-width: $breakpointMedium) {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 20px 32px;
     grid-template-rows: 1fr;
     gap: $gap;
     .MobileFlag {
@@ -52,6 +52,13 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+    }
+    .MobileMember {
+      grid-area: span 1 / 3 / 1 / 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
     .MobileToggle {
       display: block;
@@ -177,21 +184,19 @@
 
 .Desktop {
   @media (min-width: $breakpointMedium + 1px) {
-    // background-color: paleturquoise;
     display: grid;
-    // grid-template-columns: auto 1fr 30px;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr 32px;
     grid-template-rows: 1fr;
     gap: 1rem;
     .DesktopFlag {
-      // background-color: aquamarine;
+      grid-area: span 1;
       display: flex;
       svg {
         height: 5rem;
       }
     }
     .DesktopMain {
-      // background-color: palevioletred;
+      grid-area: span 1;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -202,10 +207,11 @@
       }
     }
     .DesktopMember {
-      // background-color: aliceblue; 
+      grid-area: span 1 / 3 / 1 / 4;
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
   }
   @media (max-width: $breakpointMedium + 1px) {

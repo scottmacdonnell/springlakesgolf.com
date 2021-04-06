@@ -4,7 +4,11 @@ import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
 import Team from '../components/Team'
 
+import { useAuth } from '../lib/auth'
+
 export default function About() {
+  const auth = useAuth()
+  
   return (
     <Page
       className="About"
@@ -12,7 +16,7 @@ export default function About() {
       slug="/about"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

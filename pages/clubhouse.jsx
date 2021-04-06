@@ -4,7 +4,11 @@ import Banner from '../components/Banner'
 import MenuNav from '../components/MenuNav'
 import Paragraph from '../components/Paragraph'
 
+import { useAuth } from '../lib/auth'
+
 export default function Clubhouse() {
+  const auth = useAuth()
+
   return (
     <Page
       className="Clubhouse"
@@ -12,7 +16,7 @@ export default function Clubhouse() {
       slug="/clubhouse"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

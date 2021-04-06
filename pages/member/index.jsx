@@ -25,7 +25,7 @@ export default function Member() {
       { auth.user ? (
         <>
           <header>
-            <Navbar invert mainNav />
+            <Navbar auth={auth} invert mainNav />
           </header>
 
           <main>

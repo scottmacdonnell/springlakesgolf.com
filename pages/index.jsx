@@ -14,7 +14,7 @@ export default function Index() {
       slug="/"
     >
       <header>
-        <Navbar />
+        <Navbar auth={auth} />
       </header>
 
       <main>

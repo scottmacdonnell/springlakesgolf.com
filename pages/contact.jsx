@@ -5,7 +5,11 @@ import Heading from '../components/Heading'
 import GoogleMaps from '../components/GoogleMaps'
 import ClubInfo from '../components/ClubInfo'
 
+import { useAuth } from '../lib/auth'
+
 export default function Contact() {
+  const auth = useAuth()
+  
   return (
     <Page
       className="Contact"
@@ -13,7 +17,7 @@ export default function Contact() {
       slug="/contact"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

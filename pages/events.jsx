@@ -5,7 +5,11 @@ import Paragraph from '../components/Paragraph'
 import EventsShowcase from '../components/EventsShowcase'
 import BookingForm from '../components/BookingForm'
 
+import { useAuth } from '../lib/auth'
+
 export default function Events() {
+  const auth = useAuth()
+  
   return (
     <Page
       className="Events"
@@ -13,7 +17,7 @@ export default function Events() {
       slug="/events"
     >
       <header>
-        <Navbar mainNav />
+      <Navbar auth={auth} mainNav />
       </header>
 
       <main>

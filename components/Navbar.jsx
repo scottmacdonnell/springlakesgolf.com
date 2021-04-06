@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
+import Avatar from './Avatar'
+
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar({
+  auth,
   mainNav = false,
   invert = false
 }) {
   return (
     <div className={`${styles.Navbar} ${invert ? styles.NavbarInvert : ''}`}>
       <div className={styles.NavbarContainer}>
-        <Desktop mainNav={mainNav} />
-        <Mobile mainNav={mainNav} />
+        <Desktop auth={auth} mainNav={mainNav} />
+        <Mobile auth={auth} mainNav={mainNav} />
       </div>
     </div>
   )
 }
 
 function Mobile({
+  auth,
   mainNav = false
 }) {
   const [mobileNavShown, setMobileNavShown] = useState(false)
@@ -43,6 +47,14 @@ function Mobile({
         </div>
       ) : ''}
 
+      <Link href="/member">
+        <div className={styles.MobileMember}>
+          <Avatar
+            src={auth?.user?.photoUrl}
+          />
+        </div>
+      </Link>
+
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
           <div className={styles.MobileWrapper}>
@@ -55,6 +67,7 @@ function Mobile({
 }
 
 function Desktop({
+  auth,
   mainNav = false
 }) {
   return (
@@ -69,9 +82,13 @@ function Desktop({
         {mainNav ? <MainNav /> : ''}
       </div>
 
-      {/* <div className={styles.DesktopMember}>
-        <MemberNav />
-      </div> */}
+      <Link href="/member">
+        <div className={styles.DesktopMember}>
+          <Avatar
+            src={auth?.user?.photoUrl}
+          />
+        </div>
+      </Link>
     </div>
   )
 }
