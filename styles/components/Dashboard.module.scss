@@ -83,25 +83,6 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   text-align: center;
-
-
-  // font-weight: 400;
-  // text-transform: none;
-  // max-width: 76ch;
-  // font-size: 1.25rem;
-  // line-height: 1.41em;
-  // letter-spacing: -.01125rem;
-  // margin: 1.5rem 0;
-  // display: block;
-  // margin-block-start: 1em;
-  // margin-block-end: 0em;
-  // margin-inline-start: 0px;
-  // margin-inline-end: 0px;
-  // text-align: center;
-
-  // @media screen and (max-width: $breakpointMedium) {
-  //   font-size: 1rem;
-  // }
 }
 
 @mixin Heading5 {
@@ -123,11 +104,10 @@
 }
 
 .Dashboard {
+  padding: 10rem 0 3.5rem 0;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
   gap: 1.5rem;
 
   h1 {
@@ -145,22 +125,6 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
   }
-
-  //Only Chrome 29+
-  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-    height: 100vh;
-    min-height: 100vh;
-  }
-
-  // Safari
-  @media screen and (min-width: $breakpointMedium) {
-    height: 100vh;
-    max-height: -webkit-fill-available;
-  }
-  @media screen and (max-width: $breakpointMedium) {
-    height: 100vh;
-    max-height: -webkit-fill-available;
-  }
 }
 
 .DashboardHeader {
@@ -177,7 +141,7 @@
   align-items: center;
 }
 
-.Overview {
+.Section {
   margin: 1.5rem;
   width: 100%;
   max-width: $breakpointMedium;
@@ -187,21 +151,49 @@
   position: relative;
 }
 
-.OverviewHeader,
-  .OverviewFooter {
-    padding: 0.75rem 1.5rem;
+.SectionHeader,
+.SectionFooter {
+  padding: 0.75rem 1.5rem;
+}
+
+.SectionHeader {
+  border-bottom: 1px solid #eaeaea;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .SectionHeaderLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h2 {
+      color: #666666;
+      margin: 0;
+      font-size: .75rem;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
   }
-  .OverviewHeader {
-    border-bottom: 1px solid #eaeaea;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    .OverviewHeaderLeft {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      h2 {
-        color: #666666;
+  .SectionHeaderRight {
+    min-height: 33px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .Badge {
+      border-radius: 5px;
+      background: #ceedff;
+      padding: 0.5rem;
+      color: #153e75;
+      padding: 6px 12px;
+
+      span {
         margin: 0;
+        padding: 1px 0;
         font-size: .75rem;
         line-height: 1.6;
         letter-spacing: -0.02em;
@@ -214,91 +206,69 @@
         margin-inline-end: 0px;
       }
     }
-    .OverviewHeaderRight {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      .Badge {
-        border-radius: 5px;
-        background: #ceedff;
-        padding: 0.5rem;
-        color: #153e75;
-        padding: 6px 12px;
+  }
+}
 
-        span {
-          margin: 0;
-          padding: 1px 0;
-          font-size: .75rem;
-          line-height: 1.6;
-          letter-spacing: -0.02em;
-          text-transform: uppercase;
-          font-weight: 700;
-          display: block;
-          margin-block-start: 0em;
-          margin-block-end: 0em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-        }
-      }
-    }
-  }
-  .OverviewMain {
-    padding: 1.5rem;
-  }
-  .OverviewFooter {
-    background: #fafafa;
-    border-top: 1px solid #eaeaea;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    .OverviewFooterLeft {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      span {
-        color: #666666;
-        margin: 0;
-        font-size: .875rem;
-        line-height: 1.6;
-        display: block;
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-      }
-    }
-    .OverviewFooterRight {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      &:nth-child(n) {
-        margin-left: 1.5rem;
-      }
-      button.SignOut {
-        @include ButtonMedium;
-        margin: 0 0 0 0.75rem;
-        color: #000000;
-        background: #fafafa;
-        border: 1px solid #fafafa;
-      }
-      button.SignOut:hover,
-      button.SignOut:focus {
-        color: #000000;
-        background: #fafafa;
-        border: 1px solid #000000;
-      }
+.SectionMain {
+  padding: 1.5rem;
+}
 
-      button.Settings {
-        @include ButtonMedium;
-        margin: 0 0 0 0.75rem;
-        color: #ffffff;
-        background: #000000;
-        border: 1px solid #000000;
-      }
-      button.Settings:hover,
-      button.Settings:focus {
-        color: #000000;
-        background: #fafafa;
-        border: 1px solid #000000;
-      }
+.SectionFooter {
+  background: #fafafa;
+  border-top: 1px solid #eaeaea;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .SectionFooterLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+      color: #666666;
+      margin: 0;
+      font-size: .875rem;
+      line-height: 1.6;
+      display: block;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
     }
   }
+  .SectionFooterRight {
+    min-height: 33px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &:nth-child(n) {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+button.Inverted {
+  @include ButtonMedium;
+  margin: 0 0 0 0.75rem;
+  color: #000000;
+  background: #fafafa;
+  border: 1px solid #fafafa;
+}
+button.Inverted:hover,
+button.Inverted:focus {
+  color: #000000;
+  background: #fafafa;
+  border: 1px solid #000000;
+}
+
+button.Normal {
+  @include ButtonMedium;
+  margin: 0 0 0 0.75rem;
+  color: #ffffff;
+  background: #000000;
+  border: 1px solid #000000;
+}
+button.Normal:hover,
+button.Normal:focus {
+  color: #000000;
+  background: #fafafa;
+  border: 1px solid #000000;
+}

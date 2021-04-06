@@ -4,6 +4,8 @@ import AccountBadge from './AccountBadge'
 
 import styles from '../styles/components/Dashboard.module.scss'
 
+const userType = 'user' 
+
 export default function Dashboard({ auth }) {
   return (
     <Container>
@@ -20,70 +22,98 @@ export default function Dashboard({ auth }) {
         </DashboardHeader>
 
         <DashboardMain>
-          <Overview>
-            <OverviewHeader>
-              <div className={styles.OverviewHeaderLeft}>
+          <Section>
+            <SectionHeader>
+              <div className={styles.SectionHeaderLeft}>
                 <h2>Account</h2>
               </div>
 
-              <div className={styles.OverviewHeaderRight}>
-                <AccountBadge type='admin' />
+              <div className={styles.SectionHeaderRight}>
+                <AccountBadge type={userType} />
               </div>
-            </OverviewHeader>
+            </SectionHeader>
 
-            <OverviewMain>
+            <SectionMain>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorum sit nemo pariatur, minima porro, voluptatibus facere nulla sed ducimus ex, aliquam accusamus recusandae! Repellat repellendus voluptate dolore ad illo.</p>
-            </OverviewMain>
+            </SectionMain>
 
-            <OverviewFooter>
-              <div className={styles.OverviewFooterLeft}>
+            <SectionFooter>
+              <div className={styles.SectionFooterLeft}>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
               </div>
 
-              <div className={styles.OverviewFooterRight}>
-                <button className={styles.SignOut} onClick={(e) => auth.signOut()}>
+              <div className={styles.SectionFooterRight}>
+                <button className={styles.Inverted} onClick={(e) => auth.signOut()}>
                   <span className={styles.Content}>Log Out</span>
                 </button>
 
-                <button className={styles.Settings}>
+                <button className={styles.Normal}>
                   <span className={styles.Content}>Settings</span>
                 </button>
               </div>
-            </OverviewFooter>
-          </Overview>
+            </SectionFooter>
+          </Section>
+
+          { userType === 'user' ? (
+            <Section>
+              <SectionHeader>
+                <div className={styles.SectionHeaderLeft}>
+                  <h2>Member Code</h2>
+                </div>
+
+                <div className={styles.SectionHeaderRight} />
+              </SectionHeader>
+
+              <SectionMain>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorum sit nemo pariatur, minima porro, voluptatibus facere nulla sed ducimus ex, aliquam accusamus recusandae! Repellat repellendus voluptate dolore ad illo.</p>
+              </SectionMain>
+
+              <SectionFooter>
+                <div className={styles.SectionFooterLeft}>
+                  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </div>
+
+                <div className={styles.SectionFooterRight}>
+                  <button className={styles.Normal}>
+                    <span className={styles.Content}>Save</span>
+                  </button>
+                </div>
+              </SectionFooter>
+            </Section>
+          ) : <div /> }
         </DashboardMain>
       </DashboardComponent>
     </Container>
   )
 }
 
-function OverviewFooter(props) {
+function SectionFooter(props) {
   return (
-    <div className={styles.OverviewFooter}>
+    <div className={styles.SectionFooter}>
       {props.children}
     </div>
   )
 }
 
-function OverviewMain(props) {
+function SectionMain(props) {
   return (
-    <div className={styles.OverviewMain}>
+    <div className={styles.SectionMain}>
       {props.children}
     </div>
   )
 }
 
-function OverviewHeader(props) {
+function SectionHeader(props) {
   return (
-    <div className={styles.OverviewHeader}>
+    <div className={styles.SectionHeader}>
       {props.children}
     </div>
   )
 }
 
-function Overview(props) {
+function Section(props) {
   return (
-    <div className={styles.Overview}>
+    <div className={styles.Section}>
       {props.children}
     </div>
   )
