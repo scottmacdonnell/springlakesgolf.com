@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Container from './Container'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
@@ -47,7 +49,7 @@ export default function MembershipShowcase() {
             </span>
           </MembershipShowcaseCard>
           
-          <MembershipShowcaseCard>
+          <MembershipShowcaseCard href="#membershipForm">
             <h3>Become a Member</h3>
             <span className={styles.Prefix}>
               <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision" style={{ margin: '31' }}>
@@ -62,11 +64,31 @@ export default function MembershipShowcase() {
   )
 }
 
-function MembershipShowcaseCard(props) {
+function MembershipShowcaseCard({
+  children,
+  href
+}) {
+  const formattedhref = href ? href : ''
   return (
-    <div className={styles.MembershipShowcaseCard}>
-      {props.children}
-    </div>
+    <>
+      { href ? (
+        <Link 
+          href={href}
+          style={{ display: 'contents' }}
+        >
+          <div
+            className={styles.MembershipShowcaseCard}
+            style={{ cursor: 'pointer' }}
+          >
+            {children}
+          </div>
+        </Link>
+      ) : (
+        <div className={styles.MembershipShowcaseCard}>
+          {children}
+        </div>
+      )}
+    </>
   )
 }
 

@@ -27,7 +27,8 @@ export default function Memberships() {
         />
 
         <MembershipShowcase />
-        
+
+        <div id="membershipForm" />
         <MembershipForm />
       </main>
 
