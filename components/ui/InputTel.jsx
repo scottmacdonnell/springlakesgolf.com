@@ -10,6 +10,7 @@ export default function InputTel(props) {
       autoComplete={props.autoComplete}
       aria-required={props.required}
       onChange={props.onChange}
+      value={props.value}
       className={styles.InputText}
     />
   )
