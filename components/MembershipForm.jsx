@@ -65,12 +65,21 @@ export default function MembershipForm() {
         info: { error: false, msg: msg }
       })
       setInputs({
-        title: 'Event Booking Inquires',
+        title: 'Membership Application',
         name: '',
         email: '',
         phone: '',
-        message: ''
+        previousCourse: '',
+        referral: '',
+        comments: ''
       })
+      setTimeout(() => {
+        setStatus({
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: msg }
+        })
+      }, 5000);
     } else {
       setStatus({
         info: { error: true, msg: msg }
@@ -95,6 +104,7 @@ export default function MembershipForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.name}
             />
 
             <FormSpacer />
@@ -105,6 +115,7 @@ export default function MembershipForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.email}
             />
 
             <FormSpacer />
@@ -115,6 +126,7 @@ export default function MembershipForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.phone}
             />
 
             <FormSpacer />
@@ -127,6 +139,7 @@ export default function MembershipForm() {
                   autoComplete="off"
                   required
                   onChange={handleChange}
+                  value={inputs.previousCourse}
                 />
 
                 <FormSpacer />
@@ -149,6 +162,7 @@ export default function MembershipForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.referral}
             />
 
             <FormSpacer />
@@ -159,6 +173,7 @@ export default function MembershipForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.comments}
             />
 
             <FormSpacer />
@@ -177,21 +192,31 @@ export default function MembershipForm() {
               </span>
 
               <span className={styles.Content}>
-                {!status.submitting
-                  ? !status.submitted
-                    ? 'Submit'
-                    : 'Submitted'
-                  : 'Submitting...'}
+                {!status.submitting ? (
+                  !status.submitted ? (
+                    'Submit'
+                  ) : (
+                        <div className={styles.ButtonCheck}>
+                          <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
+                            <polyline points="6.66 12 10.43 16.41 17.32 8.34" />
+                          </svg>
+                        </div>
+                  )
+                ) : (
+                  <div className={styles.ButtonSpinnerContainer}>
+                    <div className={styles.ButtonSpinner} />
+                  </div>
+                )}
               </span>
             </button>
           </div>
         </form>
-        {status.info.error && (
+        {/* {status.info.error && (
           <div className="error">Error: {status.info.msg}</div>
         )}
         {!status.info.error && status.info.msg && (
           <div className="success">{status.info.msg}</div>
-        )}
+        )} */}
       </MembershipFormMain>
     </MembershipFormComponent>
   )
