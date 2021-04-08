@@ -55,6 +55,8 @@
 
   h2 {
     @include Heading2;
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
     margin-block-start: 0.5em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
@@ -114,5 +116,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  h3 {
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
   }
 }

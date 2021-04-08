@@ -9,6 +9,11 @@
   display: grid;
   gap: 3rem;
 
+  h1, h2, h3 {
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
+  }
+
   @media screen and (min-width: $breakpointMedium) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;

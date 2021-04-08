@@ -56,6 +56,8 @@
 
   h2 {
     @include Heading2;
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
     margin-block-start: 0em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
@@ -122,6 +124,8 @@
   }
 
   h5 {
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
     font-size: 1.5rem;
     letter-spacing: -.05em;
     margin: 0 0 6px;
