@@ -34,7 +34,8 @@
   }
   @media (max-width: $breakpointMedium) {
     display: grid;
-    grid-template-columns: auto 20px 32px;
+    // grid-template-columns: auto 20px 32px;
+    grid-template-columns: auto 20px;
     grid-template-rows: 1fr;
     gap: $gap;
     .MobileFlag {
@@ -185,7 +186,8 @@
 .Desktop {
   @media (min-width: $breakpointMedium + 1px) {
     display: grid;
-    grid-template-columns: auto 1fr 32px;
+    grid-template-columns: auto 1fr;
+    // grid-template-columns: auto 1fr 32px;
     grid-template-rows: 1fr;
     gap: 1rem;
     .DesktopFlag {

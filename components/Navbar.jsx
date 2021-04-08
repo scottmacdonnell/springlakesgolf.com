@@ -47,13 +47,13 @@ function Mobile({
         </div>
       ) : ''}
 
-      <Link href="/member">
+      {/* <Link href="/member">
         <div className={styles.MobileMember}>
           <Avatar
             src={auth?.user?.photoUrl}
           />
         </div>
-      </Link>
+      </Link> */}
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
@@ -82,13 +82,13 @@ function Desktop({
         {mainNav ? <MainNav /> : ''}
       </div>
 
-      <Link href="/member">
+      {/* <Link href="/member">
         <div className={styles.DesktopMember}>
           <Avatar
             src={auth?.user?.photoUrl}
           />
         </div>
-      </Link>
+      </Link> */}
     </div>
   )
 }
