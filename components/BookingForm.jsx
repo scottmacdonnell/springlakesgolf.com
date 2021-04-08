@@ -88,6 +88,7 @@ export default function BookingForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.name}
             />
 
             <FormSpacer />
@@ -98,6 +99,7 @@ export default function BookingForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.email}
             />
 
             <FormSpacer />
@@ -108,6 +110,7 @@ export default function BookingForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.phone}
             />
           </div>
           
@@ -118,6 +121,7 @@ export default function BookingForm() {
               autoComplete="off"
               required
               onChange={handleChange}
+              value={inputs.message}
             />
 
             <FormSpacer />
