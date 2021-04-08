@@ -122,7 +122,12 @@ export default function BookingForm() {
 
             <FormSpacer />
 
-            <button type='submit' id='submit' name='submit' disabled={status.submitting}>
+            <button 
+              type='submit'
+              id='submit'
+              name='submit'
+              disabled={status.submitting}
+            >
               <span className={styles.Prefix}>
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -131,21 +136,31 @@ export default function BookingForm() {
               </span>
 
               <span className={styles.Content}>
-                {!status.submitting
-                  ? !status.submitted
-                    ? 'Submit'
-                    : 'Submitted'
-                  : 'Submitting...'}
+                {!status.submitting ? (
+                  !status.submitted ? (
+                    'Submit'
+                  ) : (
+                        <div className={styles.ButtonCheck}>
+                          <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
+                            <polyline points="6.66 12 10.43 16.41 17.32 8.34" />
+                          </svg>
+                        </div>
+                  )
+                ) : (
+                  <div className={styles.ButtonSpinnerContainer}>
+                    <div className={styles.ButtonSpinner} />
+                  </div>
+                )}
               </span>
             </button>
           </div>
         </form>
-        {status.info.error && (
+        {/* {status.info.error && (
           <div className="error">Error: {status.info.msg}</div>
         )}
         {!status.info.error && status.info.msg && (
           <div className="success">{status.info.msg}</div>
-        )}
+        )} */}
       </BookingFormMain>
     </BookingFormComponent>
   )

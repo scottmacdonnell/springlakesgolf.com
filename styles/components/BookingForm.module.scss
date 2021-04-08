@@ -19,6 +19,8 @@
   }
 }
 
+
+
 @mixin ButtonLarge {
   appearance: auto;
   writing-mode: horizontal-tb;
@@ -65,7 +67,10 @@
     margin-right: 8px;
     display: flex;
   }
+
   .Content {
+    $offset: 187;
+    $duration: 1.4s;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     user-select: none;
@@ -79,6 +84,42 @@
     overflow: hidden;
     margin-right: auto;
     margin-left: auto;
+
+    .ButtonSpinnerContainer {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .ButtonSpinner {
+        display: inline;
+        width: 16px;
+        height: 16px;
+        clear: both;
+        margin: 10px auto;
+        border: 2px rgba(#f1f1f1, 0.25) solid;
+        border-top: 2px rgba(#f1f1f1, 1) solid;
+        border-radius: 50%;
+        -webkit-animation: spCircRot .6s infinite linear;
+        animation: spCircRot .6s infinite linear;
+        @-webkit-keyframes spCircRot {
+          from { -webkit-transform: rotate(0deg); }
+          to { -webkit-transform: rotate(359deg); }
+        }
+        @keyframes spCircRot {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(359deg); }
+        }
+      }
+    }
+
+    .ButtonCheck {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
@@ -104,6 +145,8 @@
 
   h2 {
     @include Heading2;
+    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
     margin-block-start: 0em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
@@ -124,15 +167,15 @@
 
   button[type=submit] {
     @include ButtonLarge;
-    color: #eec035;
+    color: #FFFFFF;
     background: #041e42;
     border: 1px solid #041e42;
     margin-top: -6px;
   }
   button[type=submit]:hover {
-    background: #FFFFFF;
-    border: 1px solid #07316b;
-    color: #07316b;
+    color: #eec035;
+    background: #041e42;
+    border: 1px solid #041e42;
   }
 
   @media screen and (min-width: $breakpointMedium) {
