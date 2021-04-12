@@ -158,8 +158,6 @@ export default function PrivacyPolicy() {
             <a>https://springlakesgolf.com/contact</a>
           </Link>
         </span>
-
-
       </div>
     </Container>
   )
