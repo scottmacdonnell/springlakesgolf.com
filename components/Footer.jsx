@@ -68,11 +68,33 @@ function FooterNavLegal(props) {
         <ul>
           <li>
             <Link
-              href="/privacy"
+              href="/legal/privacy"
               style={{ display: 'contents' }}
             >
               <a>
                 <span>Privacy Policy</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/legal/terms"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Terms of Service</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/legal/cookies"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Cookie Policy</span>
               </a>
             </Link>
           </li>
