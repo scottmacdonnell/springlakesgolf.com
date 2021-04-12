@@ -13,7 +13,22 @@
   gap: 2rem;
 }
 
-.FooterHeader,
+.FooterHeader {
+  // background-color: #111111;
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (min-width: $breakpointMedium) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
 .FooterMain {
   // background-color: #111111;
   display: grid;
@@ -140,3 +155,5 @@
     justify-content: center;
   }
 }
+
+
