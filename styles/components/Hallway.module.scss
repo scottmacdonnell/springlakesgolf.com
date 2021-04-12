@@ -1,3 +1,5 @@
+@import '../breakpoints';
+
 .Hallway {
   margin: 0;
   padding: 0.25rem;
@@ -5,6 +7,10 @@
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
   gap: 0.25rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .HallwayCard {
@@ -14,20 +20,27 @@
   right: 0;
   width: 100%;
   height: 100%;
-  a {
-    h2 {
-      opacity: 75%;
-      transition: opacity 0.1s ease;
-      text-align: center;
+  text-align: center;
+
+  h2 {
+    max-width: 12ch;
+  }
+
+  @media screen and (min-width: $breakpointMedium) {
+    a {
+      h2 {
+        opacity: 85%;
+        transition: opacity 0.05s ease-in-out;
+      }
+    }
+    a:hover,
+    a:active {
+      h2 {
+        opacity: 100%;
+      }
     }
   }
-  
-  a:hover,
-  a:active {
-    h2 {
-    opacity: 100%;
-    }
-  }
+
   .HallwayCardImage {
     img {
       width: 100%;
@@ -41,14 +54,9 @@
     width: 100%;
     height: 100%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.45);
     overflow: auto;
-    padding: 1rem;
-    h2 {
-      margin: 0;
-      font-family: 'baron_neuebold';
-      text-transform: lowercase;
-    }
+    padding: 2rem;
     .HallwayCardContentWrapper {
       display: block;
       width: 100%;

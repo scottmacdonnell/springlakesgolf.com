@@ -4,50 +4,50 @@
 
 // ? Baron Neue
 @font-face {
-  font-family: 'baron_neueblack';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-black-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-black-webfont.woff') format('woff');
-  font-weight: normal;
+  font-weight: 900;
   font-style: normal;
 } // Black
 
 @font-face {
-  font-family: 'baron_neueblack_italic';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-blackitalic-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-blackitalic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 900;
+  font-style: italic;
 } // Black Italic
 
 @font-face {
-  font-family: 'baron_neuebold';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-bold-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-bold-webfont.woff') format('woff');
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 } // Bold
 
 @font-face {
-  font-family: 'baron_neuebold_italic';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-bolditalic-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-bolditalic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 700;
+  font-style: italic;
 } // Bold Italic
 
 @font-face {
-  font-family: 'baron_neueitalic';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-italic-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 400;
+  font-style: italic;
 } // Regular Italic
 
 @font-face {
-  font-family: 'baron_neueregular';
+  font-family: 'baronneue';
   src: url('/fonts/baronneue/baronneue-regular-webfont.woff2') format('woff2'),
        url('/fonts/baronneue/baronneue-regular-webfont.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 } // Regular
 
@@ -55,82 +55,100 @@
 
 // * Style -- Start
 
-p {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.6;
+h1, h2, h3, h4, h5, h6, p, a {
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  strong {
-    font-weight: bold;
-  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0px 0px 0.5rem;
-  line-height: 1.5em;
+h1, h2, h3 {
+  font-family: 'baronneue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-transform: lowercase;
+  letter-spacing: -.049375rem;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-transform: none;
 }
 
 h1 {
-  font-size: 3rem;
-  letter-spacing: -0.066875rem;
-  font-weight: 700;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 2rem;
+  font-size: 3.5rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 2.75rem;
   }
 }
 
 h2 {
-  font-size: 2.25rem;
-  letter-spacing: -0.049375rem;
-  font-weight: 600;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 1.5rem;
+  font-size: 3rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 2.25rem;
   }
 }
 
 h3 {
-  font-size: 1.5rem;
-  letter-spacing: -0.029375rem;
-  font-weight: 600;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: -.029375rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.75rem;
   }
 }
 
 h4 {
-  font-size: 1.25rem;
-  letter-spacing: -0.020625rem;
+  font-size: 2rem;
+  line-height: 1.41em;
+  letter-spacing: -.029375rem;
   font-weight: 600;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 0.75rem;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.75rem;
   }
 }
 
 h5 {
-  font-size: 1rem;
-  letter-spacing: -0.01125rem;
-  font-weight: 600;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 0.65rem;
+  font-size: 1.5rem;
+  line-height: 1.41em;
+  letter-spacing: -.01125rem;
+  font-weight: 400;
+
+  @media screen and (max-width: $breakpointMedium) {
+    font-size: 1.25rem;
   }
 }
 
 h6 {
   font-size: 0.875rem;
-  letter-spacing: -0.005625rem;
-  font-weight: 600;
-  @media only screen and (max-width: $breakpointMedium) {
-    font-size: 0.5rem;
-  }
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+p {
+  margin: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 blockquote {
   margin: 0;
-  margin-top: 0;
   margin-bottom: 16px;
   padding: 0 1em;
   &:first-child() {
@@ -142,16 +160,16 @@ blockquote {
 }
 
 ul {
+  margin: 12px;
+  margin-left: 24px;
+  padding: 0;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
-  padding: 0;
   list-style-type: none;
-  margin: 12px;
-  margin-left: 24px;
   li {
     box-sizing: inherit;
     display: list-item;
@@ -170,6 +188,8 @@ ul {
 }
 
 ol {
+  margin: 12px;
+  padding: 0;
   display: block;
   list-style-type: decimal;
   margin-block-start: 1em;
@@ -177,8 +197,6 @@ ol {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
-  padding: 0;
-  margin: 12px;
   margin-left: 24px;
 
   li {
@@ -190,7 +208,7 @@ ol {
     margin-bottom: 10px;
   }
 
-  li.MDXListItem {
+  li::before {
     unicode-bidi: isolate;
     font-variant-numeric: tabular-nums;
     text-transform: none;
@@ -200,7 +218,5 @@ ol {
     color: #888888;
   }
 }
-
-
 
 // * Style -- End

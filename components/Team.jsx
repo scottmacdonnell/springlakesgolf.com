@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import Container from './Container'
+import Container from './ui/Container'
 
 import styles from '../styles/components/Team.module.scss'
 
@@ -15,35 +15,35 @@ export default function Team() {
 
         <TeamMain>
           <TeamMember
-            image="/images/team/jim.jpg"
+            image="/images/about/jim.jpg"
           >
             <h5>Jim</h5>
             <p>General Manager</p>
           </TeamMember>
 
           <TeamMember
-            image="/images/team/chris.jpg"
+            image="/images/about/chris.jpg"
           >
             <h5>Chris</h5>
             <p>Head Grounds Crew</p>
           </TeamMember>
 
           <TeamMember
-            image="/images/team/shane.jpg"
+            image="/images/about/shane.jpg"
           >
             <h5>Shane</h5>
             <p>Golf Pro</p>
           </TeamMember>
 
           <TeamMember
-            image="/images/team/laura.jpg"
+            image="/images/about/laura.jpg"
           >
             <h5>Laura</h5>
             <p>Event Coordinator</p>
           </TeamMember>
 
           <TeamMember
-            image="/images/team/tracey.jpg"
+            image="/images/about/tracey.jpg"
           >
             <h5>Tracey</h5>
             <p>Head Chef</p>

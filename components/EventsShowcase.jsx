@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import Container from './Container'
+import Container from './ui/Container'
 
 import styles from '../styles/components/EventsShowcase.module.scss'
 
@@ -10,25 +10,25 @@ export default function EventsShowcase() {
       <EventsShowcaseCard
         image="/images/events/celebrations.jpg"
       >
-        <h2>Celebrations & Functions</h2>
+        <h3>Celebrations & Functions</h3>
       </EventsShowcaseCard>
 
       <EventsShowcaseCard
         image="/images/events/simparties.jpg"
       >
-        <h2>Private Sim Parties</h2>
+        <h3>Private Sim Parties</h3>
       </EventsShowcaseCard>
 
       <EventsShowcaseCard
         image="/images/events/wedding.jpg"
       >
-        <h2>Weddings/Formal Gathering</h2>
+        <h3>Weddings/Formal Gathering</h3>
       </EventsShowcaseCard>
 
       <EventsShowcaseCard
         image="/images/events/tournaments.jpg"
       >
-        <h2>Tournaments</h2>
+        <h3>Tournaments</h3>
       </EventsShowcaseCard>
     </EventsShowcaseComponent>
   )

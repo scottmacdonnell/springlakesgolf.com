@@ -1,15 +1,11 @@
 import Page from '../components/Page'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
-import Paragraph from '../components/Paragraph'
-import MembershipForm from '../components/MembershipForm'
 import MembershipShowcase from  '../components/MembershipShowcase'
-
-import { useAuth } from '../lib/auth'
+import MembershipForm from '../components/MembershipForm'
+import Footer from '../components/Footer'
 
 export default function Memberships() {
-  const auth = useAuth()
-  
   return (
     <Page
       className="Memberships"
@@ -17,7 +13,7 @@ export default function Memberships() {
       slug="/memberships"
     >
       <header>
-        <Navbar auth={auth} mainNav />
+        <Navbar mainNav />
       </header>
 
       <main>
@@ -33,7 +29,7 @@ export default function Memberships() {
       </main>
 
       <footer>
-        
+        <Footer />
       </footer>
     </Page>
   )

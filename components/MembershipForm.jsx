@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Container from './Container'
+import Container from './ui/Container'
 
 import InputText from './ui/InputText'
 import InputEmail from './ui/InputEmail'

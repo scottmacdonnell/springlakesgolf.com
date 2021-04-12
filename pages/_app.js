@@ -1,13 +1,7 @@
-import { AuthProvider } from '../lib/auth'
-
 import '../styles/globals.scss'
 
 function springlakesgolf({ Component, pageProps }) {
-  return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
-  )
+  return <Component {...pageProps} />
 }
 
 export default springlakesgolf

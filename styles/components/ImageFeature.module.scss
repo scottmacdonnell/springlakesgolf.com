@@ -1,7 +1,7 @@
-@import '../utils/breakpoints';
-@import '../utils/colors';
+@import '../breakpoints';
 
 .ImageFeature {
+  margin: 1rem 0;
   padding: 2rem 0;
 }
 
@@ -9,9 +9,23 @@
   display: grid;
   gap: 3rem;
 
-  h1, h2, h3 {
-    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    text-transform: lowercase;
+  h2, h3 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    @media screen and (max-width: $breakpointMedium) {
+      max-width: 12ch;
+    }
+  }
+
+  p {
+    color: #666666;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 
   @media screen and (min-width: $breakpointMedium) {
@@ -21,6 +35,14 @@
   @media screen and (max-width: $breakpointMedium) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
+    text-align: center;
+    
+    ul {
+      padding-inline-start: 0px;
+      li::before {
+        display: none;
+      }
+    }
 
     .ImageFeatureImage {
       grid-area: 1 / 1 / 1 / 1;
@@ -30,7 +52,7 @@
       align-items: center;
 
       img {
-        height: 480px;
+        max-height: 480px;
       }
     }
   }
@@ -41,4 +63,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media screen and (max-width: $breakpointMedium) {
+    text-align: center;
+    align-items: center;
+  }
 }

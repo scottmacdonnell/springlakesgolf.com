@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import Container from './Container'
+import Container from './ui/Container'
 
 import styles from '../styles/components/ImageFeature.module.scss'
 
@@ -22,7 +22,7 @@ export default function ImageFeature({
               src={imageSrc}
               width={720}
               height={1080}
-              objectFit="cover"
+              objectFit="contain"
               alt="Featured Image"
             />
           </ImageFeatureImage>
@@ -35,6 +35,7 @@ export default function ImageFeature({
               width={720}
               height={1080}
               alt="Featured Image"
+              objectFit="cover"
             />
           </ImageFeatureImage>
           

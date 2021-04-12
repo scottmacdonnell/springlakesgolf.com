@@ -1,8 +1,7 @@
-@import '../utils/colors';
-@import '../utils/variables';
-@import '../utils/breakpoints';
+@import '../colors';
+@import '../breakpoints';
 
-@import '../mixins/typography';
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
 .Navbar {
   z-index: 999;
@@ -24,7 +23,7 @@
   margin: 0 auto;
   float: none;
   @media only screen and (max-width: $breakpointMax) {
-    margin: 0 $gap;
+    margin: 0 1rem;
   }
 }
 
@@ -37,7 +36,7 @@
     // grid-template-columns: auto 20px 32px;
     grid-template-columns: auto 20px;
     grid-template-rows: 1fr;
-    gap: $gap;
+    gap: 1rem;
     .MobileFlag {
       grid-area: span 1;
       display: flex;
@@ -240,7 +239,7 @@
     justify-content: center;
     align-items: center;
     a {
-      @include BaronNeueHeading;
+      // @include BaronNeueHeading;
       font-size: 2rem;
       padding-top: 1rem;
     }

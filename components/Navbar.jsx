@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-import Avatar from './Avatar'
-
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar({

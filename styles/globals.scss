@@ -1,5 +1,7 @@
-@import './utils/reset';
-@import './utils/typography';
+@import './reset';
+@import './colors';
+
+@import './typography';
 
 html,
 body {
@@ -23,5 +25,5 @@ html {
 *::-webkit-scrollbar {
   display: none;
 }
-*::-moz-selection { color: #eec035; background: #041e42; text-shadow: none; }
-*::selection { color: #eec035; background: #041e42; text-shadow: none; }
+*::-moz-selection { color: $brandGold; background: $brandNavy; text-shadow: none; }
+*::selection { color: $brandGold; background: $brandNavy; text-shadow: none; }

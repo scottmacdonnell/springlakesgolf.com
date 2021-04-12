@@ -1,5 +1,4 @@
-@import '../utils/variables';
-@import '../utils/breakpoints';
+@import '../../breakpoints';
 
 .Container {
   padding: 0;
@@ -7,6 +6,6 @@
   margin: 0 auto;
   float: none;
   @media only screen and (max-width: $breakpointMax) {
-    margin: 0 $gap;
+    margin: 0 1rem;
   }
 }

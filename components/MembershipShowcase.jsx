@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Container from './Container'
+import Container from './ui/Container'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
 

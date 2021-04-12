@@ -7,9 +7,9 @@ import InputTel from './ui/InputTel'
 import InputTextArea from './ui/InputTextArea'
 import FormSpacer from './ui/FormSpacer'
 
-import styles from '../styles/components/BookingForm.module.scss'
+import styles from '../styles/components/ContactForm.module.scss'
 
-export default function BookingForm() {
+export default function ContactForm() {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -17,7 +17,7 @@ export default function BookingForm() {
   })
 
   const [inputs, setInputs] = useState({
-    title: 'Event Booking Inquires',
+    title: 'Contact Us',
     name: '',
     email: '',
     phone: '',
@@ -32,7 +32,7 @@ export default function BookingForm() {
         info: { error: false, msg: msg }
       })
       setInputs({
-        title: 'Event Booking Inquires',
+        title: 'Contact Us',
         name: '',
         email: '',
         phone: '',
@@ -61,7 +61,7 @@ export default function BookingForm() {
   const handleSubmit = async e => {
     e.preventDefault()
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
-    const res = await fetch('/api/email/send-event-booking-inquiry', {
+    const res = await fetch('/api/email/send-contact-message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -73,13 +73,13 @@ export default function BookingForm() {
   }
 
   return (
-    <BookingFormComponent>
-      <BookingFormHeader>
-        <h2>Event Booking Inquires</h2>
-      </BookingFormHeader>
+    <ContactFormComponent>
+      <ContactFormHeader>
+        <h2>Send Us A Message</h2>
+      </ContactFormHeader>
 
-      <BookingFormMain>
-        <form className={styles.BookingFormContent} onSubmit={handleSubmit}>
+      <ContactFormMain>
+        <form className={styles.ContactFormContent} onSubmit={handleSubmit}>
           <div>
             <InputText
               name="name"
@@ -164,32 +164,32 @@ export default function BookingForm() {
         {!status.info.error && status.info.msg && (
           <div className="success">{status.info.msg}</div>
         )} */}
-      </BookingFormMain>
-    </BookingFormComponent>
+      </ContactFormMain>
+    </ContactFormComponent>
   )
 }
 
-function BookingFormMain(props) {
+function ContactFormMain(props) {
   return (
-    <div className={styles.BookingFormMain}>
+    <div className={styles.ContactFormMain}>
       {props.children}
     </div>
   )
 }
 
-function BookingFormHeader(props) {
+function ContactFormHeader(props) {
   return (
-    <div className={styles.BookingFormHeader}>
+    <div className={styles.ContactFormHeader}>
       {props.children}
     </div>
   )
 }
 
-function BookingFormComponent(props) {
+function ContactFormComponent(props) {
   return (
-    <div className={styles.BookingForm}>
+    <div className={styles.ContactForm}>
       <Container>
-        <div className={styles.BookingFormBox}>
+        <div className={styles.ContactFormBox}>
           {props.children}
         </div>
       </Container>

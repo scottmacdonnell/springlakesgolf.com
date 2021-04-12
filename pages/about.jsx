@@ -3,12 +3,9 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
 import Team from '../components/Team'
-
-import { useAuth } from '../lib/auth'
+import Footer from '../components/Footer'
 
 export default function About() {
-  const auth = useAuth()
-  
   return (
     <Page
       className="About"
@@ -16,7 +13,7 @@ export default function About() {
       slug="/about"
     >
       <header>
-        <Navbar auth={auth} mainNav />
+        <Navbar mainNav />
       </header>
 
       <main>
@@ -38,7 +35,7 @@ export default function About() {
       </main>
 
       <footer>
-        
+        <Footer />
       </footer>
     </Page>
   )

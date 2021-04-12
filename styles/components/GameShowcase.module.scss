@@ -1,43 +1,7 @@
-@import '../utils/breakpoints';
-
-@mixin Heading2 {
-  margin: 0;
-  text-transform: none;
-  max-width: 38ch;
-  font-size: 2rem;
-  line-height: 1.2em;
-  font-weight: 700;
-  letter-spacing: -.049375rem;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-
-  @media screen and (max-width: $breakpointMedium) {
-    font-size: 1.75rem;
-  }
-}
-
-@mixin Heading5 {
-  font-weight: 400;
-  text-transform: none;
-  font-size: 1.25rem;
-  line-height: 1.41em;
-  letter-spacing: -.01125rem;
-  margin: 1.5rem 0;
-  display: block;
-  margin-block-start: 1.67em;
-  margin-block-end: 1.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-
-  @media screen and (max-width: $breakpointMedium) {
-    font-size: 1rem;
-  }
-}
+@import '../breakpoints';
 
 .GameShowcase {
+  margin: 1rem 0;
   padding: 2rem 0;
   display: grid;
   flex-direction: column;
@@ -54,33 +18,10 @@
   align-items: center;
 
   h2 {
-    @include Heading2;
-    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    text-transform: lowercase;
     margin-block-start: 0.5em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-  }
-
-  h5 {
-    font-weight: 400;
-    text-transform: none;
-    max-width: 76ch;
-    font-size: 1.25rem;
-    line-height: 1.41em;
-    letter-spacing: -.01125rem;
-    margin: 1.5rem 0;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    text-align: center;
-
-    @media screen and (max-width: $breakpointMedium) {
-      font-size: 1rem;
-    }
   }
 }
 
@@ -110,26 +51,48 @@
   width: 100%;
   border-radius: 5px;
   border: 1px solid #eaeaea;
-  padding: 2rem;
+  padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  text-align: center;
-  h3 {
-    font-family: 'baron_neuebold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    text-transform: lowercase;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
+
   &:nth-child(n) {
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.41em;
+    letter-spacing: -0.01125rem;
+    max-width: 8ch;
+    font-weight: 600;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+  
+    @media screen and (max-width: $breakpointMedium) {
+      font-size: 1.75rem;
+      line-height: 1.41em;
+      letter-spacing: -.029375rem;
+      max-width: 12ch;
+      font-weight: 600;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      text-align: center;
+    }
+  }
+
+  svg {
+    height: 5rem;
+    width: 5rem;
   }
 }
