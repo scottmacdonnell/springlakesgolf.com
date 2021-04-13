@@ -9,6 +9,7 @@ export default function Footer() {
     <FooterComponent>
       <FooterHeader>
         <FooterNavMain />
+        <FooterNavClub />
         <FooterNavLegal />
       </FooterHeader>
 
@@ -95,6 +96,61 @@ function FooterNavLegal(props) {
             >
               <a>
                 <span>Cookie Policy</span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  )
+}
+
+function FooterNavClub(props) {
+  return (
+    <div className={styles.FooterNavClub}>
+      <span><strong>Club</strong></span>
+      <nav>
+        <ul>
+          <li>
+            <Link
+              href="/courses"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>The Courses</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/course/north"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>North Course</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/course/south"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>South Course</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/course/east"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>East Course</span>
               </a>
             </Link>
           </li>
