@@ -21,7 +21,7 @@ export default function MembershipForm() {
   })
 
   const [inputs, setInputs] = useState({
-    title: 'Membership Application',
+    title: 'Membership Request',
     name: '',
     email: '',
     phone: '',
@@ -65,7 +65,7 @@ export default function MembershipForm() {
         info: { error: false, msg: msg }
       })
       setInputs({
-        title: 'Membership Application',
+        title: 'Membership Request',
         name: '',
         email: '',
         phone: '',
@@ -90,7 +90,7 @@ export default function MembershipForm() {
   return (
     <MembershipFormComponent>
       <MembershipFormHeader>
-        <h2>Apply for a Membership</h2>
+        <h2>Membership Request</h2>
       </MembershipFormHeader>
 
       <MembershipFormMain>
@@ -178,7 +178,7 @@ export default function MembershipForm() {
 
             <FormSpacer />
 
-            <button 
+            <button
               type='submit'
               id='submit'
               name='submit'
@@ -186,15 +186,16 @@ export default function MembershipForm() {
             >
               <span className={styles.Prefix}>
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <path d="M22 6l-10 7L2 6" />
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16l4-4-4-4"/>
+                  <path d="M8 12h8"/>
                 </svg>
               </span>
 
               <span className={styles.Content}>
                 {!status.submitting ? (
                   !status.submitted ? (
-                    'Submit'
+                    'Become a Member'
                   ) : (
                         <div className={styles.ButtonCheck}>
                           <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
