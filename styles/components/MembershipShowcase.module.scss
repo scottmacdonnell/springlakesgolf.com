@@ -47,6 +47,78 @@
   }
 }
 
+.MembershipShowcaseNewMember {
+  display: grid;
+  gap: 2rem;
+
+  .MembershipShowcaseCardButtons {
+    .Button1 {
+      border-radius: 5px;
+      border: 1px solid #eaeaea;
+      padding: 0 1rem;
+      h5 {
+        font-family: 'baronneue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        text-transform: lowercase;
+        letter-spacing: -.049375rem;
+        font-weight: 700;
+      }
+    }
+
+    .Button1:active,
+    .Button1:hover {
+      -webkit-box-shadow: 0 0 2.5px 1px #fafafa;
+      -moz-box-shadow:    0 0 2.5px 1px #fafafa;
+      box-shadow:         0 0 2.5px 1px #fafafa;
+    }
+
+    .Button2 {
+      text-align: center;
+
+      h5 {
+        text-decoration: underline;
+        text-align: center;
+      }
+      h5:active,
+      h5:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpointMedium) {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    float: none;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+
+    .MembershipShowcaseCardButtons {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .Button1 {
+        margin: 2rem 0;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $breakpointMedium) {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    .MembershipShowcaseCardButtons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      gap: 2rem;
+    }
+  }
+}
+
 .MembershipShowcaseMain {
   width: 100%;
   height: 100%;
@@ -64,8 +136,61 @@
   }
 }
 
+.MembershipShowcaseMainItem {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+
+
+  .MembershipShowcaseCardButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2rem;
+
+    .Button1 {
+      border-radius: 5px;
+      border: 1px solid #eaeaea;
+      padding: 0 1rem;
+      text-align: center;
+
+      h5 {
+        font-family: 'baronneue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        text-transform: lowercase;
+        letter-spacing: -.049375rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+
+    .Button1:active,
+    .Button1:hover {
+      -webkit-box-shadow: 0 0 2.5px 1px #eaeaea;
+      -moz-box-shadow:    0 0 2.5px 1px #eaeaea;
+      box-shadow:         0 0 2.5px 1px #eaeaea;
+    }
+
+    .Button2 {
+      text-align: center;
+
+      h5 {
+        text-decoration: underline;
+        text-align: center;
+      }
+      h5:active,
+      h5:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 .MembershipShowcaseCard {
   width: 100%;
+  height: 100%;
   border-radius: 5px;
   border: 1px solid #eaeaea;
   padding: 2rem 0;
@@ -73,6 +198,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
+  transition-property: box-shadow;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+
   &:nth-child(n) {
     display: flex;
     flex: 1;
@@ -97,4 +226,11 @@
       font-size: 1.75rem;
     }
   }
+}
+
+.MembershipShowcaseCard:active,
+.MembershipShowcaseCard:hover {
+  -webkit-box-shadow: 0 0 2.5px 1px #eaeaea;
+  -moz-box-shadow:    0 0 2.5px 1px #eaeaea;
+  box-shadow:         0 0 2.5px 1px #eaeaea;
 }
