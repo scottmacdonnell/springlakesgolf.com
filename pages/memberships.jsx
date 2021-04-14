@@ -29,7 +29,7 @@ export default function Memberships() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer noContact />
       </footer>
     </Page>
   )

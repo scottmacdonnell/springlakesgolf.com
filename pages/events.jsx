@@ -33,7 +33,7 @@ export default function Events() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer noContact />
       </footer>
     </Page>
   )

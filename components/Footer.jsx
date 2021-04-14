@@ -5,10 +5,12 @@ import ContactForm from './ContactForm'
 
 import styles from '../styles/components/Footer.module.scss'
 
-export default function Footer() {
+export default function Footer({
+  noContact = false
+}) {
   return (
     <>
-      <ContactForm />
+      {noContact ? '' : <ContactForm /> }
       <FooterComponent>
         <FooterHeader>
           <FooterNavMain />
