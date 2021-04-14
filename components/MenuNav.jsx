@@ -13,22 +13,22 @@ export default function MenuNav() {
           <MenuCardLarge 
             title="Restaurant Menu"
             image="/images/clubhouse/menucard-restaurant.jpg"
-            link="#"
+            link="/docs/clubhouse/simulator.pdf"
           />
 
           <MenuCardLarge 
             title="Stanley's Nest Menu"
             image="/images/clubhouse/menucard-stanley.jpg"
-            link="#"
+            link="/docs/clubhouse/stanley.pdf"
           />
 
           <MenuCardLarge
             title="Halfway House Menu"
             image="/images/clubhouse/menucard-halfway.jpg"
-            link="#"
+            link="/docs/clubhouse/halfway.pdf"
           />
         </div>
-        <div className={styles.MenuCardsSmall}>
+        {/* <div className={styles.MenuCardsSmall}>
           <MenuCardSmall
             title="Weekly Specials"
             image="/images/clubhouse/menucard-weekly.jpg"
@@ -42,7 +42,7 @@ export default function MenuNav() {
             image="/images/clubhouse/menucard-refreshers.jpg"
             link="#"
           />
-        </div>
+        </div> */}
       </div>
     </Container>
   )
