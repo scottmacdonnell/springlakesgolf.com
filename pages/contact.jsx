@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
 import GoogleMaps from '../components/GoogleMaps'
-import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 
 export default function Contact() {
@@ -67,8 +66,6 @@ export default function Contact() {
         </ImageFeature>
 
         <GoogleMaps />
-
-        <ContactForm />
       </main>
 
       <footer>

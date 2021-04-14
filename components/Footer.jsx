@@ -1,38 +1,42 @@
 import Link from 'next/link'
 
 import Container from './ui/Container'
+import ContactForm from './ContactForm'
 
 import styles from '../styles/components/Footer.module.scss'
 
 export default function Footer() {
   return (
-    <FooterComponent>
-      <FooterHeader>
-        <FooterNavMain />
-        <FooterNavClub />
-        <FooterNavLegal />
-      </FooterHeader>
+    <>
+      <ContactForm />
+      <FooterComponent>
+        <FooterHeader>
+          <FooterNavMain />
+          <FooterNavClub />
+          <FooterNavLegal />
+        </FooterHeader>
 
-      <FooterMain>
-        <FooterTagline>
-          <span>© 2021 Spring Lakes Golf Club. All Rights Reserved.</span>
-        </FooterTagline>
+        <FooterMain>
+          <FooterTagline>
+            <span>© 2021 Spring Lakes Golf Club. All Rights Reserved.</span>
+          </FooterTagline>
 
-        <FooterSocial>
-          <Facebook
-            href="https://www.facebook.com/springlakesgolf"
-          />
+          <FooterSocial>
+            <Facebook
+              href="https://www.facebook.com/springlakesgolf"
+            />
 
-          <Twitter
-            href="https://www.twitter.com/SpringLakesGC/"
-          />
+            <Twitter
+              href="https://www.twitter.com/SpringLakesGC/"
+            />
 
-          <Instagram
-            href="https://www.instagram.com/springlakesgolfclub/"
-          />
-        </FooterSocial>
-      </FooterMain>
-    </FooterComponent>
+            <Instagram
+              href="https://www.instagram.com/springlakesgolfclub/"
+            />
+          </FooterSocial>
+        </FooterMain>
+      </FooterComponent>
+    </>
   )
 }
 
@@ -243,16 +247,6 @@ function FooterNavMain(props) {
             </Link>
           </li>
         </ul>
-      </nav>
-    </div>
-  )
-}
-
-function FooterNav(props) {
-  return (
-    <div className={styles.FooterNav}>
-      <nav>
-        {props.children}
       </nav>
     </div>
   )
