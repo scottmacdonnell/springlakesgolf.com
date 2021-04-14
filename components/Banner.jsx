@@ -8,6 +8,7 @@ export default function Banner({
   alignImage = "center",
   image,
   chevron,
+  subtitle,
   index = false
 }) {
   return (
@@ -28,6 +29,9 @@ export default function Banner({
             <div className={styles.BannerGrid}>
               <div className={styles.BannerMain}>
                 <h1>{title}</h1>
+                {subtitle ? (
+                  <span>Canada’s Only Private 54 Hole Golf Course</span>
+                ) : ''}
               </div>
 
               {chevron ? (

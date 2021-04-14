@@ -20,6 +20,7 @@ export default function Index() {
           image="/images/index/banner.jpg"
           chevron="#main"
           alignImage="top"
+          subtitle
           index
         />
 
