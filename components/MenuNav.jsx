@@ -28,7 +28,7 @@ export default function MenuNav() {
             link="/docs/clubhouse/halfway.pdf"
           />
         </div>
-        <div className={styles.MenuCardsSmall}>
+        {/* <div className={styles.MenuCardsSmall}>
           <MenuCardSmall
             title="Weekly Specials"
             image="/images/clubhouse/menucard-weekly.jpg"
@@ -42,7 +42,7 @@ export default function MenuNav() {
             image="/images/clubhouse/menucard-refreshers.jpg"
             link="#"
           />
-        </div>
+        </div> */}
       </div>
     </Container>
   )
