@@ -14,8 +14,8 @@ export default function Footer({
       <FooterComponent>
         <FooterHeader>
           <FooterNavMain />
-          <FooterNavClub />
-          <FooterNavMember />
+          {/* <FooterNavClub /> */}
+          {/* <FooterNavMember /> */}
           <FooterNavLegal />
         </FooterHeader>
 

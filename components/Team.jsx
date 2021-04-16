@@ -10,7 +10,6 @@ export default function Team() {
       <TeamComponent>
         <TeamHeader>
           <h2>Meet Our Team</h2>
-          <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</h5>
         </TeamHeader>
 
         <TeamMain>
@@ -19,6 +18,8 @@ export default function Team() {
           >
             <h5>Jim</h5>
             <p>General Manager</p>
+            <br/>
+            <p>jim@springlakesgolf.com</p>
           </TeamMember>
 
           <TeamMember
@@ -26,6 +27,8 @@ export default function Team() {
           >
             <h5>Chris</h5>
             <p>Head Grounds Crew</p>
+            <br/>
+            <p>chris@springlakesgolf.com</p>
           </TeamMember>
 
           <TeamMember
@@ -33,6 +36,8 @@ export default function Team() {
           >
             <h5>Shane</h5>
             <p>Golf Pro</p>
+            <br/>
+            <p>shane@springlakesgolf.com</p>
           </TeamMember>
 
           <TeamMember
@@ -40,13 +45,8 @@ export default function Team() {
           >
             <h5>Laura</h5>
             <p>Event Coordinator</p>
-          </TeamMember>
-
-          <TeamMember
-            image="/images/about/tracey.jpg"
-          >
-            <h5>Tracey</h5>
-            <p>Head Chef</p>
+            <br/>
+            <p>laura@springlakesgolf.com</p>
           </TeamMember>
         </TeamMain>
       </TeamComponent>
@@ -64,8 +64,8 @@ function TeamMember({
         <Image
           src={image}
           alt="Team Member"
-          width={600}
-          height={800}
+          width={810}
+          height={1080}
           layout="intrinsic"
           objectFit="contain"
         />

@@ -4,7 +4,7 @@ import Container from './ui/Container'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
 
-export default function MembershipShowcase({ auth }) {
+export default function MembershipShowcase({ member }) {
   return (
     <MembershipShowcaseComponent>
       <MembershipShowcaseHeader>
@@ -24,7 +24,7 @@ export default function MembershipShowcase({ auth }) {
 
         <MembershipShowcaseCardButtons
             button1="#"
-            button2="#"
+            button2="/docs/memberships/new.pdf"
           />
       </MembershipShowcaseNewMember>
 
@@ -39,7 +39,7 @@ export default function MembershipShowcase({ auth }) {
 
           <MembershipShowcaseCardButtons
             button1="#"
-            button2="#"
+            button2="/docs/memberships/ji.pdf"
           />
         </MembershipShowcaseMainItem>
 
@@ -53,15 +53,15 @@ export default function MembershipShowcase({ auth }) {
 
           <MembershipShowcaseCardButtons
             button1="#"
-            button2="#"
+            button2="/docs/memberships/juinor.pdf"
           />
         </MembershipShowcaseMainItem>
 
-        {auth ? (
+        {member ? (
           <>
             <MembershipShowcaseMainItem>
               <MembershipShowcaseCard
-                href="#"
+                href="/docs/memberships/renewal.pdf"
               >
                 <h3>Membership Renewal</h3>
                 <span className={styles.Prefix}>
@@ -72,7 +72,7 @@ export default function MembershipShowcase({ auth }) {
 
             <MembershipShowcaseMainItem>
               <MembershipShowcaseCard
-                href="#"
+                href="/docs/memberships/ratesheet.pdf"
               >
                 <h3>2021 Rate Sheet</h3>
                 <span className={styles.Prefix}>

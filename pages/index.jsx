@@ -7,8 +7,8 @@ import Footer from '../components/Footer'
 import { useAuth } from '../lib/auth'
 
 export default function Index() {
-  // const auth = useAuth()
-  const auth = true
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -31,7 +31,7 @@ export default function Index() {
         />
 
         <div id="main" />
-        <Hallway auth={auth} />
+        <Hallway auth={authStatus} />
       </main>
 
       <footer>

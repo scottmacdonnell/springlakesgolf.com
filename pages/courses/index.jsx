@@ -18,7 +18,7 @@ export default function Courses() {
       <main>
         <Banner 
           title="The Courses"
-          image="/images/contact/banner.jpg"
+          image="/images/courses/banner.jpg"
         />
 
         <CoursesShowcase />

@@ -8,8 +8,8 @@ import Footer from '../components/Footer'
 import { useAuth } from '../lib/auth'
 
 export default function Memberships() {
-  // const auth = useAuth()
-  const auth = false
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -27,7 +27,7 @@ export default function Memberships() {
           image="/images/memberships/banner.jpg"
         />
 
-        <MembershipShowcase auth={auth} />
+        <MembershipShowcase member={authStatus} />
 
         <div id="membershipForm" />
         <MembershipForm />

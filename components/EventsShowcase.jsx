@@ -4,7 +4,7 @@ import Container from './ui/Container'
 
 import styles from '../styles/components/EventsShowcase.module.scss'
 
-export default function EventsShowcase() {
+export default function EventsShowcase({ member }) {
   return (
     <EventsShowcaseComponent>
       <EventsShowcaseCard
@@ -13,23 +13,27 @@ export default function EventsShowcase() {
         <h3>Celebrations & Functions</h3>
       </EventsShowcaseCard>
 
-      <EventsShowcaseCard
-        image="/images/events/simparties.jpg"
-      >
-        <h3>Private Sim Parties</h3>
-      </EventsShowcaseCard>
+      {member ? (
+        <>
+          <EventsShowcaseCard
+            image="/images/events/simparties.jpg"
+          >
+            <h3>Private Sim Parties</h3>
+          </EventsShowcaseCard>
 
-      <EventsShowcaseCard
-        image="/images/events/wedding.jpg"
-      >
-        <h3>Weddings/Formal Gathering</h3>
-      </EventsShowcaseCard>
+          <EventsShowcaseCard
+            image="/images/events/wedding.jpg"
+          >
+            <h3>Weddings/Formal Gathering</h3>
+          </EventsShowcaseCard>
 
-      <EventsShowcaseCard
-        image="/images/events/tournaments.jpg"
-      >
-        <h3>Tournaments</h3>
-      </EventsShowcaseCard>
+          <EventsShowcaseCard
+            image="/images/events/tournaments.jpg"
+          >
+            <h3>Tournaments</h3>
+          </EventsShowcaseCard>
+        </>
+      ) : '' }
     </EventsShowcaseComponent>
   )
 }

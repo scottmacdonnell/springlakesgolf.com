@@ -31,6 +31,12 @@
   @media screen and (min-width: $breakpointMedium) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
+
+    .ImageFeatureImage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   @media screen and (max-width: $breakpointMedium) {
     grid-template-columns: 1fr;

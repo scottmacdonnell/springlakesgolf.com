@@ -23,13 +23,13 @@ function HallwayMembers() {
 
       <HallwayCard
         title="Memberships"
-        link="#"
+        link="/memberships"
         image="/images/index/members/hallway-memberships.jpg"
       />
 
       <HallwayCard
         title="Clubhouse & Dining"
-        link="#"
+        link="/clubhouse"
         image="/images/index/members/hallway-clubhouse.jpg"
       />
 
