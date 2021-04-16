@@ -1,9 +1,9 @@
-import styles from '../../styles/components/ui/InputEmail.module.scss'
+import styles from '../../styles/components/ui/InputDate.module.scss'
 
-export default function InputEmail(props) {
+export default function InputDate(props) {
   return (
-    <input
-      type="email"
+    <input 
+      type="date"
       id={props.name}
       name={props.name}
       placeholder={props.placeholder}
@@ -11,7 +11,7 @@ export default function InputEmail(props) {
       aria-required={props.required}
       onChange={props.onChange}
       value={props.value}
-      className={styles.InputText}
+      className={styles.InputDate}
     />
   )
 }

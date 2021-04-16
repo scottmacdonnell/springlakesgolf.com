@@ -6,6 +6,7 @@ import InputText from './ui/InputText'
 import InputEmail from './ui/InputEmail'
 import InputTel from './ui/InputTel'
 import InputTextArea from './ui/InputTextArea'
+import InputDate from './ui/InputDate'
 import FormSpacer from './ui/FormSpacer'
 
 import styles from '../styles/components/MembershipForm.module.scss'
@@ -99,34 +100,34 @@ export default function MembershipForm() {
         >
           <div>
             <InputText
-              name="name"
-              placeholder="Name"
+              name="fname"
+              placeholder="First Name"
               autoComplete="off"
               required
               onChange={handleChange}
-              value={inputs.name}
+              value={inputs.fname}
             />
 
             <FormSpacer />
 
-            <InputEmail
-              name="email"
-              placeholder="Email Address"
+            <InputText
+              name="lname"
+              placeholder="Last Name"
               autoComplete="off"
               required
               onChange={handleChange}
-              value={inputs.email}
+              value={inputs.lname}
             />
 
             <FormSpacer />
 
-            <InputTel
-              name="phone"
-              placeholder="Phone Number"
+            <InputDate
+              name="dob"
+              placeholder="Date of Birth"
               autoComplete="off"
               required
               onChange={handleChange}
-              value={inputs.phone}
+              value={inputs.dob}
             />
 
             <FormSpacer />
@@ -156,6 +157,28 @@ export default function MembershipForm() {
           </div>
           
           <div>
+            <InputEmail
+              name="email"
+              placeholder="Email Address"
+              autoComplete="off"
+              required
+              onChange={handleChange}
+              value={inputs.email}
+            />
+
+            <FormSpacer />
+
+            <InputTel
+              name="phone"
+              placeholder="Phone Number"
+              autoComplete="off"
+              required
+              onChange={handleChange}
+              value={inputs.phone}
+            />
+
+            <FormSpacer />
+
             <InputText
               name="referral"
               placeholder="Member Referral"

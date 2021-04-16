@@ -7,7 +7,8 @@ import Footer from '../components/Footer'
 import { useAuth } from '../lib/auth'
 
 export default function Index() {
-  const auth = useAuth()
+  // const auth = useAuth()
+  const auth = true
 
   return (
     <Page
@@ -21,7 +22,7 @@ export default function Index() {
       <main>
         <Banner
           title="Spring Lakes Golf Club"
-          image="/images/index/banner.jpg"
+          image={auth ? "/images/index/members/banner.jpg" : "/images/index/public/banner.jpg"}
           chevron="#main"
           alignImage="top"
           subtitle
@@ -30,7 +31,7 @@ export default function Index() {
         />
 
         <div id="main" />
-        <Hallway />
+        <Hallway auth={auth} />
       </main>
 
       <footer>

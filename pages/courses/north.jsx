@@ -18,7 +18,7 @@ export default function CourseNorth() {
       <main>
         <Banner 
           title="The North Course"
-          image="/images/course/north/banner.jpg"
+          image="/images/courses/north/banner.jpg"
         />
 
         <CourseOverview
@@ -26,11 +26,11 @@ export default function CourseNorth() {
           par="71"
           yardage="Blue (6352) White (5912) Red (5618) Yellow (5258)"
           img1title="Hole 3"
-          img1src="/images/course/north/banner.jpg"
+          img1src="/images/courses/hole3.jpg"
           img2title="Hole 9"
-          img2src="/images/course/north/banner.jpg"
+          img2src="/images/courses/hole9.jpg"
           img3title="Hole 15"
-          img3src="/images/course/north/banner.jpg"
+          img3src="/images/courses/hole15.jpg"
         >
           <p>With plenty of bodies of water & trees, this golf course requires you to be accurate off of the tee boxes. Golfers do not have to hit it long off the tee, however, there are plenty of opportunities to gain a penalty. The North Course has smaller greens that requires accurate wedges. Come prepared to use all clubs and get creative with many challenging shots.</p>
 

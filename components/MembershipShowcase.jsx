@@ -4,7 +4,7 @@ import Container from './ui/Container'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
 
-export default function MembershipShowcase() {
+export default function MembershipShowcase({ auth }) {
   return (
     <MembershipShowcaseComponent>
       <MembershipShowcaseHeader>
@@ -57,27 +57,31 @@ export default function MembershipShowcase() {
           />
         </MembershipShowcaseMainItem>
 
-        <MembershipShowcaseMainItem>
-          <MembershipShowcaseCard
-            href="#"
-          >
-            <h3>Membership Renewal</h3>
-            <span className={styles.Prefix}>
-              <GolfFlagIcon />
-            </span>
-          </MembershipShowcaseCard>
-        </MembershipShowcaseMainItem>
+        {auth ? (
+          <>
+            <MembershipShowcaseMainItem>
+              <MembershipShowcaseCard
+                href="#"
+              >
+                <h3>Membership Renewal</h3>
+                <span className={styles.Prefix}>
+                  <GolfFlagIcon />
+                </span>
+              </MembershipShowcaseCard>
+            </MembershipShowcaseMainItem>
 
-        <MembershipShowcaseMainItem>
-          <MembershipShowcaseCard
-            href="#"
-          >
-            <h3>2021 Rate Sheet</h3>
-            <span className={styles.Prefix}>
-              <GolfRatesIcon />
-            </span>
-          </MembershipShowcaseCard>
-        </MembershipShowcaseMainItem>
+            <MembershipShowcaseMainItem>
+              <MembershipShowcaseCard
+                href="#"
+              >
+                <h3>2021 Rate Sheet</h3>
+                <span className={styles.Prefix}>
+                  <GolfRatesIcon />
+                </span>
+              </MembershipShowcaseCard>
+            </MembershipShowcaseMainItem>
+          </>
+        ) : ''}
       </MembershipShowcaseMain>
     </MembershipShowcaseComponent>
   )

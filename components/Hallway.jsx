@@ -3,40 +3,91 @@ import Image from 'next/image'
 
 import styles from '../styles/components/Hallway.module.scss'
 
-export default function Hallway(props) {
+export default function Hallway({ auth }) {
+
   return (
-    <div className={styles.Hallway}>
+    <HallwayComponent>
+      {auth ? <HallwayMembers /> : <HallwayPublic /> }
+    </HallwayComponent>
+  )
+}
+
+function HallwayMembers() {
+  return (
+    <>
+      <HallwayCard
+        title="The Courses"
+        link="/courses"
+        image="/images/index/members/hallway-courses.jpg"
+      />
+
+      <HallwayCard
+        title="Memberships"
+        link="#"
+        image="/images/index/members/hallway-memberships.jpg"
+      />
+
+      <HallwayCard
+        title="Clubhouse & Dining"
+        link="#"
+        image="/images/index/members/hallway-clubhouse.jpg"
+      />
+
+      <HallwayCard
+        title="Newsletter"
+        link="/newsletter"
+        image="/images/index/members/hallway-newsletter.jpg"
+      />
+
+      <HallwayCard
+        title="Events"
+        link="/events"
+        image="/images/index/public/hallway-events.jpg"
+      />
+
+      <HallwayCard
+        title="Contact Us"
+        link="/contact"
+        image="/images/index/members/hallway-contact.jpg"
+      />
+    </>
+  )
+}
+
+function HallwayPublic() {
+  return (
+    <>
       <HallwayCard
         title="About Us"
         link="/about"
-        image="/images/index/hallway-about.jpg"
+        image="/images/index/public/hallway-about.jpg"
       />
       <HallwayCard
         title="Memberships"
         link="/memberships"
-        image="/images/index/hallway-memberships.jpg"
+        image="/images/index/public/hallway-memberships.jpg"
       />
       <HallwayCard
         title="Game Improvement"
         link="/game"
-        image="/images/index/hallway-game.jpg"
+        image="/images/index/public/hallway-game.jpg"
       />
       <HallwayCard
         title="Clubhouse & Dining"
         link="/clubhouse"
-        image="/images/index/hallway-clubhouse.jpg"
+        image="/images/index/public/hallway-clubhouse.jpg"
       />
       <HallwayCard
         title="Events"
         link="/events"
-        image="/images/index/hallway-events.jpg"
+        image="/images/index/public/hallway-events.jpg"
       />
       <HallwayCard
         title="Contact Us"
         link="/contact"
-        image="/images/index/hallway-contact.jpg"
+        image="/images/index/public/hallway-contact.jpg"
       />
-    </div>
+    </>
   )
 }
 
@@ -66,6 +117,14 @@ function HallwayCard({
           </div>
         </a>
       </Link>
+    </div>
+  )
+}
+
+function HallwayComponent(props) {
+  return (
+    <div className={styles.Hallway}>
+      {props.children}
     </div>
   )
 }

@@ -5,7 +5,12 @@ import MembershipShowcase from  '../components/MembershipShowcase'
 import MembershipForm from '../components/MembershipForm'
 import Footer from '../components/Footer'
 
+import { useAuth } from '../lib/auth'
+
 export default function Memberships() {
+  // const auth = useAuth()
+  const auth = false
+
   return (
     <Page
       className="Memberships"
@@ -22,7 +27,7 @@ export default function Memberships() {
           image="/images/memberships/banner.jpg"
         />
 
-        <MembershipShowcase />
+        <MembershipShowcase auth={auth} />
 
         <div id="membershipForm" />
         <MembershipForm />

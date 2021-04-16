@@ -56,10 +56,10 @@ export default function Contact() {
           <div>
             <h5>Extentions</h5>
             <ul>
-              <li><strong>Proshop:</strong></li>
-              <li><strong>Restaurant:</strong></li>
-              <li><strong>Simulators:</strong></li>
-              <li><strong>General Inquiries:</strong></li>
+              <li><strong>Proshop:</strong> 231</li>
+              <li><strong>Restaurant:</strong> 224</li>
+              <li><strong>Simulators:</strong>brayden@springlakes.com</li>
+              <li><strong>General Inquiries:</strong> 229</li>
             </ul>
           </div>
 

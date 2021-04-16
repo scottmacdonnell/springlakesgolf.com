@@ -72,6 +72,7 @@ function FooterImage({
         title={title}
         width={640}
         height={640}
+        objectFit="cover"
       />
       <span>{title}</span>
     </div>

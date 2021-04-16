@@ -15,6 +15,7 @@ export default function Footer({
         <FooterHeader>
           <FooterNavMain />
           <FooterNavClub />
+          <FooterNavMember />
           <FooterNavLegal />
         </FooterHeader>
 
@@ -111,6 +112,61 @@ function FooterNavLegal(props) {
   )
 }
 
+function FooterNavMember(props) {
+  return (
+    <div className={styles.FooterNavLegal}>
+      <span><strong>Member</strong></span>
+      <nav>
+        <ul>
+          <li>
+            <Link
+              href="/member/login"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Log In</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/member/signup"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Sign Up</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/member/dashboard"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Dashboard</span>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/member/account"
+              style={{ display: 'contents' }}
+            >
+              <a>
+                <span>Settings</span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  )
+}
+
 function FooterNavClub(props) {
   return (
     <div className={styles.FooterNavClub}>
@@ -130,7 +186,7 @@ function FooterNavClub(props) {
 
           <li>
             <Link
-              href="/course/north"
+              href="/courses/north"
               style={{ display: 'contents' }}
             >
               <a>
@@ -141,7 +197,7 @@ function FooterNavClub(props) {
 
           <li>
             <Link
-              href="/course/south"
+              href="/courses/south"
               style={{ display: 'contents' }}
             >
               <a>
@@ -152,7 +208,7 @@ function FooterNavClub(props) {
 
           <li>
             <Link
-              href="/course/east"
+              href="/courses/east"
               style={{ display: 'contents' }}
             >
               <a>

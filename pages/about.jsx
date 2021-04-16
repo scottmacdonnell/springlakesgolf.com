@@ -17,7 +17,7 @@ export default function About() {
       </header>
 
       <main>
-        <Banner 
+        <Banner
           title="About Us"
           image="/images/about/banner.jpg"
         />

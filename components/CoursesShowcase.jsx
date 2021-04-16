@@ -11,20 +11,20 @@ export default function CoursesShowcase(props) {
       <div className={styles.CoursesShowcase}>
         <CourseCard
           title="The North Course"
-          link="/course/north"
-          image="/images/courses/north.jpg"
+          link="/courses/north"
+          image="/images/courses/north/banner.jpg"
         />
         
         <CourseCard
           title="The South Course"
-          link="/course/south"
-          image="/images/courses/south.jpg"
+          link="/courses/south"
+          image="/images/courses/south/banner.jpg"
         />
         
         <CourseCard
           title="The East Course"
-          link="/course/east"
-          image="/images/courses/east.jpg"
+          link="/courses/east"
+          image="/images/courses/east/banner.jpg"
         />
       </div>
 
