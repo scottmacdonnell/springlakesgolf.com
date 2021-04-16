@@ -9,21 +9,29 @@ export default function Banner({
   image,
   chevron,
   subtitle,
-  index = false
+  index = false,
+  noImage = false
 }) {
+  const background = noImage ? 'rgba(0, 0, 0, 0.0)' : 'rgba(0, 0, 0, 0.35)'
   return (
     <div className={`${styles.Banner} ${index ? styles.IndexBanner : ''}`}>
       <div className={styles.BannerImage}>
-        <Image 
-          src={image}
-          alt="Banner Background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition={alignImage}
-        />
+        {noImage ? '' : (
+          <Image 
+            src={image}
+            alt="Banner Background"
+            layout="fill"
+            objectFit="cover"
+            objectPosition={alignImage}
+          />
+        )}
       </div>
 
-      <div className={styles.BannerContent}>
+      <div
+        className={styles.BannerContent}
+        style={{background: background }}
+      
+      >
         <div className={styles.BannerContentWrapper}>
           <div className={styles.BannerContainer}>
             <div className={styles.BannerGrid}>

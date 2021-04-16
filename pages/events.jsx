@@ -1,6 +1,6 @@
 import Page from '../components/Page'
 import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
+import EventsBanner from '../components/EventsBanner'
 import TextFeature from '../components/ui/TextFeature'
 import EventsShowcase from '../components/EventsShowcase'
 import BookingForm from '../components/BookingForm'
@@ -18,24 +18,19 @@ export default function Events() {
       pageName="Events"
       slug="/events"
     >
-      <header>
-        <Navbar mainNav />
-      </header>
+      <div style={{ background: '#648767' }}>
+        <header>
+          <Navbar mainNav />
+        </header>
 
-      <main>
-        <Banner
-          title="Events"
-          image="/images/events/banner.jpg"
-        />
+        <main>
+          <EventsBanner />
 
-        <TextFeature>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsam ducimus beatae iste soluta placeat nesciunt atque impedit, nisi quo asperiores quibusdam qui sed suscipit, sint nulla quos dicta ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sunt quidem blanditiis fuga eligendi dolore, nam esse similique optio? Maiores voluptatibus fugiat ut inventore officia ex iusto aliquam accusamus dignissimos. </p>
-        </TextFeature>
+          <EventsShowcase member={authStatus} />
 
-        <EventsShowcase member={authStatus} />
-
-        <BookingForm />
-      </main>
+          <BookingForm />
+        </main>
+      </div>
 
       <footer>
         <Footer noContact />
