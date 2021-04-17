@@ -68,7 +68,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/freejunior.pdf"
+            href="/docs/game/free.pdf"
           >
             <h3>Free Juinor Clinic</h3>
             <span className={styles.Prefix}>
