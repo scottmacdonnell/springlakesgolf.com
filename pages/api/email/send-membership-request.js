@@ -3,7 +3,7 @@ import sgMail from '@sendgrid/mail'
 export default async function(req, res) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-  const { title, name, email, phone, previousCourse, referral, comments } = req.body
+  const { title, fname, lname, dob, previousCourse, email, phone, referral, comments } = req.body
 
   const content = {
     to: process.env.NEXT_PUBLIC_EMAIL_RECIPIANT,
@@ -12,10 +12,12 @@ export default async function(req, res) {
     templateId: 'd-7494c29493204336a5cc5faad098c2a8',
     dynamicTemplateData: {
       title: title,
-      name: name,
+      fname: fname,
+      lname: lname,
+      dob: dob,
+      previousCourse: previousCourse,
       email: email,
       phone: phone,
-      previousCourse: previousCourse,
       referral: referral,
       comments: comments
     },

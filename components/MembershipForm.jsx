@@ -23,10 +23,12 @@ export default function MembershipForm() {
 
   const [inputs, setInputs] = useState({
     title: 'Membership Request',
-    name: '',
+    fname: '',
+    lname: '',
+    dob: '',
+    previousCourse: '',
     email: '',
     phone: '',
-    previousCourse: '',
     referral: '',
     comments: ''
   })
@@ -47,7 +49,7 @@ export default function MembershipForm() {
   const handleSubmit = async e => {
     e.preventDefault()
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
-    const res = await fetch('/api/email/send-membership-application', {
+    const res = await fetch('/api/email/send-membership-request', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -67,10 +69,12 @@ export default function MembershipForm() {
       })
       setInputs({
         title: 'Membership Request',
-        name: '',
+        fname: '',
+        lname: '',
+        dob: '',
+        previousCourse: '',
         email: '',
         phone: '',
-        previousCourse: '',
         referral: '',
         comments: ''
       })
