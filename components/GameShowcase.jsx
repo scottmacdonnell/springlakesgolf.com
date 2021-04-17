@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Container from './ui/Container'
 
 import styles from '../styles/components/GameShowcase.module.scss'
@@ -11,75 +13,95 @@ export default function GameShowcase() {
         </GameShowcaseHeader>
 
         <GameShowcaseMain>
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/mens_golf.pdf"
+          >
             <h3>Men's Extreme Clinic</h3>
             <span className={styles.Prefix}>
               <MensExtremeIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/ladiesboot.pdf"
+          >
             <h3>Ladies Clinic</h3>
             <span className={styles.Prefix}>
               <LadiesIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/spring_golf.pdf"
+          >
             <h3>Spring Clinic</h3>
             <span className={styles.Prefix}>
               <SpringIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/fall_golf.pdf"
+          >
             <h3>Fall Clinic</h3>
             <span className={styles.Prefix}>
               <FallIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/tuneuptues.pdf"
+          >
             <h3>Tune-up Tuesday</h3>
             <span className={styles.Prefix}>
               <TuesdayIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/littleswingers.pdf"
+          >
             <h3>Juinor Camp</h3>
             <span className={styles.Prefix}>
               <JuinorIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/freejunior.pdf"
+          >
             <h3>Free Juinor Clinic</h3>
             <span className={styles.Prefix}>
               <JuinorFreeIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/employee_golf.pdf"
+          >
             <h3>Staff Clinic</h3>
             <span className={styles.Prefix}>
               <StaffIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          <GameShowcaseCard
+            href="/docs/game/ball_fitting.pdf"
+          >
             <h3>Ball Fitting</h3>
             <span className={styles.Prefix}>
               <BallIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard>
+          {/* <GameShowcaseCard
+            href="/docs/game/fall_golf.pdf"
+          >
             <h3>Golf Dates</h3>
             <span className={styles.Prefix}>
               <DatesIcon />
             </span>
-          </GameShowcaseCard>
+          </GameShowcaseCard> */}
 
         </GameShowcaseMain>
       </GameShowcaseComponent>
@@ -87,11 +109,19 @@ export default function GameShowcase() {
   )
 }
 
-function GameShowcaseCard(props) {
+function GameShowcaseCard({
+  children,
+  href
+}) {
   return (
-    <div className={styles.GameShowcaseCard}>
-      {props.children}
-    </div>
+    <Link
+      href={href ? href : ''}
+      style={{ display: 'contents' }}
+    >
+      <div className={styles.GameShowcaseCard}>
+        {children}
+      </div>
+    </Link>
   )
 }
 
