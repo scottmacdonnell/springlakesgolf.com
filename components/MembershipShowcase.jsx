@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Container from './ui/Container'
+import Modal from './ui/Modal'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
 
@@ -21,11 +22,17 @@ export default function MembershipShowcase({ member }) {
             <GolfClubsIcon />
           </span>
         </MembershipShowcaseCard>
+          
+        <MembershipShowcaseCardButtons>
+          <ViewOptions>
+            <h4>New Membership</h4>
+          </ViewOptions>
+        </MembershipShowcaseCardButtons>
 
-        <MembershipShowcaseCardButtons
+        {/* <MembershipShowcaseCardButtons
             button1="#"
             button2="/docs/memberships/new.pdf"
-          />
+          /> */}
       </MembershipShowcaseNewMember>
 
       <MembershipShowcaseMain>
@@ -36,11 +43,17 @@ export default function MembershipShowcase({ member }) {
               <GolfPoloIcon />
             </span>
           </MembershipShowcaseCard>
+          
+          <MembershipShowcaseCardButtons>
+            <ViewOptions>
+              <h4>Junior Intermediate Membership</h4>
+            </ViewOptions>
+          </MembershipShowcaseCardButtons>
 
-          <MembershipShowcaseCardButtons
+          {/* <MembershipShowcaseCardButtons
             button1="#"
             button2="/docs/memberships/ji.pdf"
-          />
+          /> */}
         </MembershipShowcaseMainItem>
 
         <MembershipShowcaseMainItem>
@@ -50,11 +63,17 @@ export default function MembershipShowcase({ member }) {
               <GolfPlayerIcon />
             </span>
           </MembershipShowcaseCard>
+          
+          <MembershipShowcaseCardButtons>
+            <ViewOptions>
+              <h4>Junior Membership</h4>
+            </ViewOptions>
+          </MembershipShowcaseCardButtons>
 
-          <MembershipShowcaseCardButtons
+          {/* <MembershipShowcaseCardButtons
             button1="#"
             button2="/docs/memberships/juinor.pdf"
-          />
+          /> */}
         </MembershipShowcaseMainItem>
 
         {member ? (
@@ -87,33 +106,20 @@ export default function MembershipShowcase({ member }) {
   )
 }
 
-function MembershipShowcaseCardButtons({
-  button1,
-  button2
-}) {
+function ViewOptions({ children }) {
+  return (
+    <Modal content={children}>
+      <div className={styles.Button1}>
+        <h5>View Options</h5>
+      </div>
+    </Modal>
+  )
+}
+
+function MembershipShowcaseCardButtons(props) {
   return (
     <div className={styles.MembershipShowcaseCardButtons}>
-      {button1 ? (
-        <Link
-          href={button1}
-          style={{ display: 'contents' }}
-        >
-          <div className={styles.Button1}>
-            <h5>View Options</h5>
-          </div>
-        </Link>
-      ) : '' }
-
-      {button2 ? (
-        <Link
-          href={button2}
-          style={{ display: 'contents' }}
-        >
-          <div className={styles.Button2}>
-            <h5>Print PDF</h5>
-          </div>
-        </Link>
-      ) : '' }
+      {props.children}
     </div>
   )
 }
