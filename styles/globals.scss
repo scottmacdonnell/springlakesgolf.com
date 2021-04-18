@@ -1,16 +1,29 @@
-@import './utils/reset';
-@import './utils/typography';
+@import './reset';
+@import './colors';
+
+@import './typography';
 
 html,
 body {
+  height: 100%;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  max-width: 100vw;
-  max-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 *::-webkit-scrollbar {
   display: none;
 }
+*::-moz-selection { color: $brandGold; background: $brandNavy; text-shadow: none; }
+*::selection { color: $brandGold; background: $brandNavy; text-shadow: none; }

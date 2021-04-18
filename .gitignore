@@ -18,6 +18,7 @@
 *.pem
 local
 /local
+/original
 
 # debug
 npm-debug.log*

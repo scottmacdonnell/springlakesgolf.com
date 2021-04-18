@@ -1,21 +1,13 @@
-import { useRouter } from 'next/router'
-import { AnimatePresence } from 'framer-motion'
+import { AuthProvider } from '../lib/auth'
 
 import '../styles/globals.scss'
 
-function handleExitComplete() {
-  if (typeof window !== 'undefined') {
-    window.scrollTo({ top: 0 })
-  }
-}
-
-function SpringLakesGolfClub({ Component, pageProps }) {
-  const router = useRouter()
+function springlakesgolf({ Component, pageProps }) {
   return (
-    <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
   )
 }
 
-export default SpringLakesGolfClub
+export default springlakesgolf

@@ -1,0 +1,59 @@
+@import '../breakpoints';
+
+.CoursesShowcase {
+  padding: 4rem 0 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+}
+
+.CourseCard {
+  grid-area: span 1;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition-property: box-shadow;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+
+  h2 {
+    max-width: 24ch;
+  }
+
+  .CourseCardImage {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .CourseCardContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    padding: 2rem;
+    .CourseCardContentWrapper {
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.CourseCard:active,
+.CourseCard:hover {
+  -webkit-box-shadow: 0 0 5px 2px #eaeaea;
+  -moz-box-shadow:    0 0 5px 2px #eaeaea;
+  box-shadow:         0 0 5px 2px #eaeaea;
+}
