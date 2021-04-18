@@ -27,6 +27,13 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
   }
+    
+  ul {
+    padding-inline-start: 1rem;
+    li::before {
+      display: none;
+    }
+  }
 
   @media screen and (min-width: $breakpointMedium) {
     grid-template-columns: repeat(2, 1fr);
@@ -42,13 +49,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
     text-align: center;
-    
-    ul {
-      padding-inline-start: 0px;
-      li::before {
-        display: none;
-      }
-    }
 
     .ImageFeatureImage {
       grid-area: 1 / 1 / 1 / 1;
