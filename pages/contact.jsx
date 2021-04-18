@@ -25,7 +25,7 @@ export default function Contact() {
         />
 
         <ImageFeature
-          imageSrc="/images/contact/banner.jpg"
+          imageSrc="/images/contact/info.jpg"
         >
           <h3>Spring Lakes Golf Club</h3>
           <p>4962 Stouffville Rd, Whitchurch-Stouffville, ON L4A 3S8</p>
