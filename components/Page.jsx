@@ -11,7 +11,7 @@ export default function Page({
   const siteName = 'Spring Lakes Golf Club'
   const siteURL = 'https://springlakesgolf.com'
   const siteDescription = 'A private golf club offering great rates and 3 exceptional championship golf courses just north of the city of Toronto.'
-  const siteImage = `${siteURL}/images/og/og.jpg`
+  const siteImage = `${siteURL}/images/og/main.jpg`
 
   const formattedPageName = pageName ? `${pageName} - ${siteName}` : siteName
   const formattedURL = slug ? `${siteURL}/${slug}` : siteURL
