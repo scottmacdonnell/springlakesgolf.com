@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Container from './ui/Container'
 
@@ -19,7 +20,9 @@ export default function Team() {
             <h5>Jim</h5>
             <p>General Manager</p>
             <br/>
-            <p>jim@springlakesgolf.com</p>
+            <Link href="mailto:jim@springlakesgolf.com">
+              <a><p>jim@springlakesgolf.com</p></a>
+            </Link>
           </TeamMember>
 
           <TeamMember
@@ -28,7 +31,9 @@ export default function Team() {
             <h5>Chris</h5>
             <p>Head Grounds Crew</p>
             <br/>
-            <p>chris@springlakesgolf.com</p>
+            <Link href="mailto:chris@springlakesgolf.com">
+              <a><p>chris@springlakesgolf.com</p></a>
+            </Link>
           </TeamMember>
 
           <TeamMember
@@ -37,7 +42,9 @@ export default function Team() {
             <h5>Shane</h5>
             <p>Golf Pro</p>
             <br/>
-            <p>shane@springlakesgolf.com</p>
+            <Link href="mailto:shane@springlakesgolf.com">
+              <a><p>shane@springlakesgolf.com</p></a>
+            </Link>
           </TeamMember>
 
           <TeamMember
@@ -46,7 +53,9 @@ export default function Team() {
             <h5>Laura</h5>
             <p>Event Coordinator</p>
             <br/>
-            <p>laura@springlakesgolf.com</p>
+            <Link href="mailto:laura@springlakesgolf.com">
+              <a><p>laura@springlakesgolf.com</p></a>
+            </Link>
           </TeamMember>
         </TeamMain>
       </TeamComponent>
