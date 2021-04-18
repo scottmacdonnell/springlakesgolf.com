@@ -25,14 +25,20 @@ export default function MembershipShowcase({ member }) {
           
         <MembershipShowcaseCardButtons>
           <ViewOptions>
-            <h4>New Membership</h4>
+            <h4>Option 1</h4>
+            <p>Option 1 is our “pay as you play” memberships. This membership allows you to pay a low cost annual fee, as well as the affordable green fees each time you come. This membership allows you to golf freely throughout the week. And allows daily access to all practice facilities, as well as dining facilities. This membership package is recommended for new members looking to get a feel of the Club.</p>
+            <h4>Option 2</h4>
+            <p>Option 2 is our “weekday” membership which allows the golfer to play during the week at a set annual price.  Golfers will have access to all 3 courses as well as practice facilities and access to the dining facilities. Weekday members have the ability to play on the weekend, at the weekend rate.</p>
+            <h4>Option 3</h4>
+            <p>Option 3 is our “full membership” that allows members to play as much as you would like at an annual price. This price includes all green fees, use of practice facilities and access to the dining facilities. This membership package is especially popular for golfers who look to play regularly.</p>
+            <h4>Option 4</h4>
+            <p>Newly introduced, Option 4 is our 9 hole weekday membership package. Option 4 similar to Option 2 is a 9 hole package that allows golfers to play 9 holes during the week . Golfers who have the 9 hole membership package will be limited to the East Course and can only play once a day.. If members with one of these options wish to play 18 holes, they will need to pay the 9 hole rate during the week or weekend.</p>
+            <h4>Option 5</h4>
+            <p>Newly introduced, Option 5 is our 9 hole full membership package.Option 5 similar to Option 3 is a 9 hole membership that includes the 9 hole package, 7 days a week Option 5 members are limited to the East Course only, one round a day. Option 5 members who wish to play 18 will pay the rate for 9 holes based on weekday or weekend rates.</p>
           </ViewOptions>
-        </MembershipShowcaseCardButtons>
 
-        {/* <MembershipShowcaseCardButtons
-            button1="#"
-            button2="/docs/memberships/new.pdf"
-          /> */}
+          <PrintPDF href="/docs/memberships/new.pdf" />
+        </MembershipShowcaseCardButtons>
       </MembershipShowcaseNewMember>
 
       <MembershipShowcaseMain>
@@ -46,14 +52,12 @@ export default function MembershipShowcase({ member }) {
           
           <MembershipShowcaseCardButtons>
             <ViewOptions>
-              <h4>Junior Intermediate Membership</h4>
+              <h4>Junior Intermediate</h4>
+              <p>This package was introduced last year! With tremendous success, we have looked to continue offering this package moving forward. The Junior Intermediate membership is priced to be affordable for all students. This membership is meant to bridge the gap from our junior to adult members. The Junior Intermediate package is for ages 18-25 for individuals in school. All green fees are included in this membership cost. </p>
             </ViewOptions>
-          </MembershipShowcaseCardButtons>
 
-          {/* <MembershipShowcaseCardButtons
-            button1="#"
-            button2="/docs/memberships/ji.pdf"
-          /> */}
+            <PrintPDF href="/docs/memberships/ji.pdf" />
+          </MembershipShowcaseCardButtons>
         </MembershipShowcaseMainItem>
 
         <MembershipShowcaseMainItem>
@@ -67,13 +71,11 @@ export default function MembershipShowcase({ member }) {
           <MembershipShowcaseCardButtons>
             <ViewOptions>
               <h4>Junior Membership</h4>
+              <p>Our Junior Package is a joy to offer.  This package is geared towards our younger demographic (7-18) with a love for the game. Our Junior packages allow golfers to golf as often as they wish at an annual set fee.  Restrictions apply, please read membership applications accordingly.</p>
             </ViewOptions>
-          </MembershipShowcaseCardButtons>
 
-          {/* <MembershipShowcaseCardButtons
-            button1="#"
-            button2="/docs/memberships/juinor.pdf"
-          /> */}
+            <PrintPDF href="/docs/memberships/juinor.pdf" />
+          </MembershipShowcaseCardButtons>
         </MembershipShowcaseMainItem>
 
         {member ? (
@@ -103,6 +105,16 @@ export default function MembershipShowcase({ member }) {
         ) : ''}
       </MembershipShowcaseMain>
     </MembershipShowcaseComponent>
+  )
+}
+
+function PrintPDF({ href }) {
+  return (
+    <Link href={href}>
+      <div className={styles.Button2}>
+        <h5>Print PDF</h5>
+      </div>
+    </Link>
   )
 }
 
