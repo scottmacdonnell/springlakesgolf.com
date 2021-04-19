@@ -39,11 +39,11 @@ export default function Team() {
           <TeamMember
             image="/images/about/shane.jpg"
           >
-            <h5>Shane</h5>
-            <p>Golf Pro</p>
+            <h5>Shayne</h5>
+            <p>Head Professional, P.G.A</p>
             <br/>
             <Link href="mailto:shane@springlakesgolf.com">
-              <a><p>shane@springlakesgolf.com</p></a>
+              <a><p>shayne@springlakesgolf.com</p></a>
             </Link>
           </TeamMember>
 
