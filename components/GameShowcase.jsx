@@ -61,7 +61,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/littleswingers.pdf"
           >
-            <h3>Juinor Camp</h3>
+            <h3>Junior Camp</h3>
             <span className={styles.Prefix}>
               <JuinorIcon />
             </span>
@@ -70,7 +70,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/free.pdf"
           >
-            <h3>Free Juinor Clinic</h3>
+            <h3>Free Junior Clinic</h3>
             <span className={styles.Prefix}>
               <JuinorFreeIcon />
             </span>
