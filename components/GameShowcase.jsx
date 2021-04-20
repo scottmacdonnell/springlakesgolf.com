@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Container from './ui/Container'
+import Modal from './ui/Modal'
 
 import styles from '../styles/components/GameShowcase.module.scss'
 
@@ -25,7 +26,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/ladiesboot.pdf"
           >
-            <h3>Ladies Clinic</h3>
+            <h3>Ladies Boot Camp</h3>
             <span className={styles.Prefix}>
               <LadiesIcon />
             </span>
@@ -34,7 +35,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/spring_golf.pdf"
           >
-            <h3>Spring Clinic</h3>
+            <h3>Golf "101" Spring Clinic</h3>
             <span className={styles.Prefix}>
               <SpringIcon />
             </span>
@@ -43,7 +44,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/fall_golf.pdf"
           >
-            <h3>Fall Clinic</h3>
+            <h3>Golf "101" Fall Clinic</h3>
             <span className={styles.Prefix}>
               <FallIcon />
             </span>
@@ -61,7 +62,7 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/littleswingers.pdf"
           >
-            <h3>Junior Camp</h3>
+            <h3>Junior Summer Camps</h3>
             <span className={styles.Prefix}>
               <JuinorIcon />
             </span>
@@ -70,20 +71,20 @@ export default function GameShowcase() {
           <GameShowcaseCard
             href="/docs/game/free.pdf"
           >
-            <h3>Free Junior Clinic</h3>
+            <h3>Free Junior Clinics</h3>
             <span className={styles.Prefix}>
               <JuinorFreeIcon />
             </span>
           </GameShowcaseCard>
 
-          <GameShowcaseCard
+          {/* <GameShowcaseCard
             href="/docs/game/employee_golf.pdf"
           >
             <h3>Staff Clinic</h3>
             <span className={styles.Prefix}>
               <StaffIcon />
             </span>
-          </GameShowcaseCard>
+          </GameShowcaseCard> */}
 
           <GameShowcaseCard
             href="/docs/game/ball_fitting.pdf"
@@ -93,6 +94,65 @@ export default function GameShowcase() {
               <BallIcon />
             </span>
           </GameShowcaseCard>
+
+          <GameShowcaseCard
+            href="/docs/game/inst.pdf"
+          >
+            <h3>Instruction & Coaching Flyer</h3>
+            <span className={styles.Prefix}>
+              <CoachingIcon />
+            </span>
+          </GameShowcaseCard>
+          
+          <RatesModal>
+            <h5>Teaching & Coaching Rates</h5>
+
+            <p><strong>Individual lesson rates</strong></p>
+            <ul>
+              <li>30 minute lesson — $40</li>
+              <li>60 minute lesson — $80</li>
+            </ul>
+            
+            <p><strong>Two person lesson rates</strong></p>
+            <ul>
+              <li>30 minute lesson — $50</li>
+              <li>60 minute lesson — $100</li>
+            </ul>
+
+            <p><strong>9-hole playing lesson</strong></p>
+            <ul>
+              <li>2 hours — $160</li>
+            </ul>
+
+            <p><strong>Monthly performance coaching package</strong> — $500</p>
+            <ul>
+              <li>Four 1 hour lessons</li>
+              <li>One playing lesson</li>
+              <li>Driving range tips upon request</li>
+              <li>Skills assessment</li>
+            </ul>
+
+            <p><strong>Six lesson package</strong></p>
+            <ul>
+              <li>30 minutes each — $200</li>
+              <li>60 minutes each — $400</li>
+            </ul>
+
+            <p><strong>Ball fitting lessons</strong></p>
+            <ul>
+              <li>Includes one dozen golf balls — $135</li>
+            </ul>
+
+            <p><strong>Golf Club Regripping Service</strong></p>
+            <ul>
+              Wide selection of grips available.<br/>Inquire in the Pro Shop.
+            </ul>
+
+            <p><strong>Winter Lessons - 2021/22</strong></p>
+            <ul>
+              In an effort to keep your swing tuned up during the winter months, private lessons will be offered by appointment only.
+            </ul>
+          </RatesModal>
 
           {/* <GameShowcaseCard
             href="/docs/game/fall_golf.pdf"
@@ -106,6 +166,16 @@ export default function GameShowcase() {
         </GameShowcaseMain>
       </GameShowcaseComponent>
     </Container>
+  )
+}
+
+function RatesModal({ children }) {
+  return (
+    <Modal content={children}>
+      <div className={styles.Button1}>
+        <h3>Teaching & Coaching Rates</h3>
+      </div>
+    </Modal>
   )
 }
 
@@ -235,11 +305,13 @@ function BallIcon() {
   )
 }
 
-function DatesIcon() {
+function CoachingIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="currentColor" shapeRendering="geometricPrecision">
-      <path d="M69.583 15.612a2.952 2.952 0 114.174 4.175 1.75 1.75 0 002.474 2.475 6.451 6.451 0 00-9.123-9.124 1.75 1.75 0 002.475 2.474zM86.616 25.8a2.952 2.952 0 114.174 4.175 1.75 1.75 0 102.475 2.474 6.451 6.451 0 00-9.123-9.124 1.75 1.75 0 102.474 2.475zM69.306 34.065a1.749 1.749 0 002.474 2.474 2.952 2.952 0 114.174 4.175 1.75 1.75 0 002.475 2.475 6.451 6.451 0 10-9.123-9.124zM88.748 41.168a1.75 1.75 0 102.475 2.475 2.951 2.951 0 014.177 4.174 1.75 1.75 0 102.475 2.475 6.452 6.452 0 00-9.124-9.124z"/>
-      <path d="M64 86.5a43.25 43.25 0 10-43.249-43.25A43.3 43.3 0 0064 86.5zm0-83a39.75 39.75 0 11-39.749 39.751A39.794 39.794 0 0164 3.5zM126.25 95.746H1.75A1.749 1.749 0 000 97.5v28.751A1.749 1.749 0 001.75 128h124.5a1.749 1.749 0 001.75-1.75V97.5a1.749 1.749 0 00-1.75-1.754zM11.5 124.5v-17.254h3.935V124.5zm16.844 0v-10.879h3.935V124.5zm16.844 0v-17.254h3.935V124.5zm16.844 0v-10.879h3.936V124.5zm16.845 0v-17.254h3.934V124.5zm16.844 0v-10.879h3.935V124.5zm16.844 0v-17.254h3.935V124.5zm11.935 0H120v-19a1.749 1.749 0 00-1.75-1.75h-7.435a1.75 1.75 0 00-1.75 1.75v19h-5.909v-12.629a1.749 1.749 0 00-1.75-1.75h-7.435a1.749 1.749 0 00-1.75 1.75V124.5h-5.91v-19a1.749 1.749 0 00-1.75-1.75h-7.434a1.749 1.749 0 00-1.75 1.75v19h-5.909v-12.629a1.749 1.749 0 00-1.75-1.75h-7.436a1.749 1.749 0 00-1.75 1.75V124.5h-5.909v-19a1.749 1.749 0 00-1.75-1.75h-7.435a1.75 1.75 0 00-1.75 1.75v19h-5.909v-12.629a1.749 1.749 0 00-1.75-1.75h-7.435a1.749 1.749 0 00-1.75 1.75V124.5h-5.909v-19a1.75 1.75 0 00-1.75-1.75H9.75A1.749 1.749 0 008 105.5v19H3.5V99.246h121z"/>
+      <defs/>
+      <circle cx="24.682" cy="103.649" r="3.562"/>
+      <circle cx="103.318" cy="103.649" r="3.562"/>
+      <path d="M120.25 86.087h-1V78.1a15.767 15.767 0 00-15.75-15.75h-6.033l-8.836-36.062h13.619a6.75 6.75 0 000-13.5H6.75a6.75 6.75 0 000 13.5h2.19v59.8H7.75a7.75 7.75 0 000 15.5h5.565a11.563 11.563 0 1022.735 0h55.9a11.563 11.563 0 1022.735 0h5.565a7.75 7.75 0 000-15.5zM93.864 62.354H89.23l-8.836-36.066h4.633zm-19.879 0l-8.106-8.265 4.4-3.865a1.75 1.75 0 10-2.31-2.63l-5.558 4.882a1.727 1.727 0 00-.325.246 1.68 1.68 0 00-.123.147l-5.525 4.853a1.75 1.75 0 102.309 2.63l4.5-3.95 8.253 8.417v9.4H45.085l-4.243-13.8a9.7 9.7 0 00-9.319-6.884H20.44V26.288h56.351l8.836 36.066zM3.5 19.538a3.254 3.254 0 013.25-3.25h95.5a3.25 3.25 0 010 6.5H6.75a3.254 3.254 0 01-3.25-3.25zm13.44 6.75v27.246h-4.5V26.288zm-4.5 30.746h19.083a6.219 6.219 0 015.977 4.413l4.62 15.037a1.749 1.749 0 001.672 1.236H73.25A1.751 1.751 0 0075 75.97V65.854h28.5A12.263 12.263 0 01115.75 78.1v7.983H12.44zm12.242 54.678a8.063 8.063 0 118.063-8.063 8.071 8.071 0 01-8.063 8.063zm78.636 0a8.063 8.063 0 118.062-8.063 8.072 8.072 0 01-8.062 8.063zm16.932-13.625h-6.793a11.567 11.567 0 00-20.278 0H34.821a11.567 11.567 0 00-20.279 0H7.75a4.25 4.25 0 010-8.5h112.5a4.25 4.25 0 010 8.5z"/>
     </svg>
   )
 }
