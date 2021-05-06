@@ -21,7 +21,7 @@ export default function EventsBanner({
             <div className={styles.BannerGrid}>
               <div className={styles.BannerMain}>
                 <h1>Events</h1>
-                <span>Unfortunatly, until there is further breakthough in Covid-19 cases, we will be postponing any upcoming events. We will be more than happy to start scheduling events once the circumstances allow.</span>
+                <span>Unfortunately, until there is further breakthough in Covid-19 cases, we will be postponing any upcoming events. We will be more than happy to start scheduling events once the circumstances allow.</span>
               </div>
             </div>
           </div>
