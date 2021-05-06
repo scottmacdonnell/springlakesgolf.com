@@ -116,6 +116,10 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
       z-index: 888;
       transition-delay: 0.2s;
       transition: opacity 0.25s ease;
+      a {
+        font-family: 'baronneue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        text-transform: lowercase;
+      }
       .MobileContainer {
         display: hidden;
         opacity: 0%;
