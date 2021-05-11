@@ -1,19 +1,6 @@
-import useSWR from 'swr'
-
-import fetcher from '../../lib/fetcher'
-
 import styles from '../../styles/components/ui/AccountBadge.module.scss'
 
-export default function AccountBadge({ userID }) {
-  const { data } = useSWR(`/api/user/${userID}`, fetcher)
-
-  if (!data) {
-    return null
-  }
-
-  // console.log(data)
-
-  const type = data.role
+export default function AccountBadge({ type }) {
 
   let {
     admin,
