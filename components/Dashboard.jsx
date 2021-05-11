@@ -20,8 +20,6 @@ export default function Dashboard({ auth }) {
 
   const type = data.role
 
-  console.log(type)
-
   return (
     <DashboardComponent>
       <DashboardHeader>
