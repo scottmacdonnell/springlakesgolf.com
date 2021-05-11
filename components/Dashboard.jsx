@@ -12,13 +12,9 @@ import fetcher from '../lib/fetcher'
 import styles from '../styles/components/Dashboard.module.scss'
 
 export default function Dashboard({ auth }) {
+  let type = ''
   const { data } = useSWR(`/api/user/type/${auth.user.uid}`, fetcher)
-
-  if (!data) {
-    return null
-  }
-
-  const type = data.role
+  type = data?.role
 
   return (
     <DashboardComponent>
