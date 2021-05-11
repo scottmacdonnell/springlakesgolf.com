@@ -12,9 +12,11 @@ import fetcher from '../lib/fetcher'
 import styles from '../styles/components/Dashboard.module.scss'
 
 export default function Dashboard({ auth }) {
-  let type = ''
   const { data } = useSWR(`/api/user/type/${auth.user.uid}`, fetcher)
-  type = data?.role
+
+  if (!data) {
+    return null
+  }
 
   return (
     <DashboardComponent>
@@ -30,37 +32,10 @@ export default function Dashboard({ auth }) {
       </DashboardHeader>
 
       <DashboardMain>
-        { type == 'user' ? <UserDashboard auth={auth} type={type} /> : '' }
-        { type == 'member' ? <MemberDashboard auth={auth} type={type} /> : '' }
-        { type == 'staff' ? <StaffDashboard auth={auth} type={type} /> : '' }
-        { type == 'admin' ? <AdminDashboard auth={auth} type={type} /> : '' }
-        {/* { type == 'user' ? (
-          <Section>
-            <SectionHeader>
-              <div className={styles.SectionHeaderLeft}>
-                <h2>Member Code</h2>
-              </div>
-
-              <div className={styles.SectionHeaderRight} />
-            </SectionHeader>
-
-            <SectionMain>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorum sit nemo pariatur, minima porro, voluptatibus facere nulla sed ducimus ex, aliquam accusamus recusandae! Repellat repellendus voluptate dolore ad illo.</p>
-            </SectionMain>
-
-            <SectionFooter>
-              <div className={styles.SectionFooterLeft}>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-              </div>
-
-              <div className={styles.SectionFooterRight}>
-                <button className={styles.Normal}>
-                  <span className={styles.Content}>Submit</span>
-                </button>
-              </div>
-            </SectionFooter>
-          </Section>
-        ) : <div /> } */}
+        { data.role == 'user' ? <UserDashboard auth={auth} type={data.role} /> : '' }
+        { data.role == 'member' ? <MemberDashboard auth={auth} type={data.role} /> : '' }
+        { data.role == 'staff' ? <StaffDashboard auth={auth} type={data.role} /> : '' }
+        { data.role == 'admin' ? <AdminDashboard auth={auth} type={data.role} /> : '' }
       </DashboardMain>
     </DashboardComponent>
   )
