@@ -14,8 +14,9 @@ import styles from '../styles/components/MembershipForm.module.scss'
 export default function MembershipForm() {
   const [previousCourseShown, setPreviousCourseShown] = useState(false)
   const togglePreviousCourseShown = () => setPreviousCourseShown(!previousCourseShown)
-
+  
   const [status, setStatus] = useState({
+    disabled: true,
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
@@ -40,10 +41,36 @@ export default function MembershipForm() {
       [e.target.id]: e.target.value
     }))
     setStatus({
+      disabled: true,
       submitted: false,
       submitting: false,
       info: { error: false, msg: null }
     })
+    if (inputs) {
+      let i = 0;
+      const length = Object.values(inputs).length
+      Object.values(inputs).forEach(val => {
+        if(val !== '') { i++ }
+      })
+      
+      if (i == length) {
+        setStatus({
+          disabled: false,
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: null }
+        })
+      }
+
+      if (i == (length - 1) && inputs.previousCourse == '') {
+        setStatus({
+          disabled: false,
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: null }
+        })
+      }
+    }
   }
 
   const handleSubmit = async e => {
@@ -63,6 +90,7 @@ export default function MembershipForm() {
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
+        disabled: false,
         submitted: true,
         submitting: false,
         info: { error: false, msg: msg }
@@ -80,11 +108,12 @@ export default function MembershipForm() {
       })
       setTimeout(() => {
         setStatus({
+          disabled: true,
           submitted: false,
           submitting: false,
           info: { error: false, msg: msg }
         })
-      }, 5000);
+      }, 2500)
     } else {
       setStatus({
         info: { error: true, msg: msg }
@@ -209,7 +238,8 @@ export default function MembershipForm() {
               type='submit'
               id='submit'
               name='submit'
-              disabled={status.submitting}
+              className={`${status.disabled == true ? styles.ButtonDisabled : styles.ButtonActive}`}
+              disabled={status.disabled == true ? true : false}
             >
               <span className={styles.Prefix}>
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">

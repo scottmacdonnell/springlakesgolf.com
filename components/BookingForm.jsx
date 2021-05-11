@@ -11,6 +11,7 @@ import styles from '../styles/components/BookingForm.module.scss'
 
 export default function BookingForm() {
   const [status, setStatus] = useState({
+    disabled: true,
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
@@ -27,6 +28,7 @@ export default function BookingForm() {
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
+        disabled: false,
         submitted: true,
         submitting: false,
         info: { error: false, msg: msg }
@@ -38,6 +40,14 @@ export default function BookingForm() {
         phone: '',
         message: ''
       })
+      setTimeout(() => {
+        setStatus({
+          disabled: true,
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: msg }
+        })
+      }, 2500)
     } else {
       setStatus({
         info: { error: true, msg: msg }
@@ -52,15 +62,37 @@ export default function BookingForm() {
       [e.target.id]: e.target.value
     }))
     setStatus({
+      disabled: true,
       submitted: false,
       submitting: false,
       info: { error: false, msg: null }
     })
+    if (inputs) {
+      let i = 0;
+      const length = Object.values(inputs).length
+      Object.values(inputs).forEach(val => {
+        if(val !== '') { i++ }
+      })
+      
+      if (i == length) {
+        setStatus({
+          disabled: false,
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: null }
+        })
+      }
+    }
   }
 
   const handleSubmit = async e => {
     e.preventDefault()
-    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    setStatus({
+      disabled: false,
+      submitted: false,
+      submitting: true,
+      info: { error: false, msg: null }
+    })
     const res = await fetch('/api/email/send-event-booking-inquiry', {
       method: 'POST',
       headers: {
@@ -129,7 +161,8 @@ export default function BookingForm() {
               type='submit'
               id='submit'
               name='submit'
-              disabled={status.submitting}
+              className={`${status.disabled == true ? styles.ButtonDisabled : styles.ButtonActive}`}
+              disabled={status.disabled == true ? true : false}
             >
               <span className={styles.Prefix}>
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
