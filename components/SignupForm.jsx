@@ -48,7 +48,7 @@ export default function SignupForm({ auth }) {
 
         <span className={styles.Spacer} />
 
-        <ProviderAuth auth={auth} />
+        <ProviderAuth auth={auth} register />
 
         <span className={styles.Spacer} />
 
