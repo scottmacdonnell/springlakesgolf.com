@@ -32,7 +32,7 @@ export default function EmailSignup() {
           </main>
         
           <footer>
-            <Footer />
+            <Footer noContact />
           </footer>
         </>
       )}

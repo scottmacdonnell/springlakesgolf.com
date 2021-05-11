@@ -32,7 +32,7 @@ export default function EmailLogin() {
           </main>
 
           <footer>
-            <Footer />
+            <Footer noContact />
           </footer>
         </>
       )}

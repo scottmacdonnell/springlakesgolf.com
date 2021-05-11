@@ -32,7 +32,7 @@ export default function Signup() {
           </main>
         
           <footer>
-            <Footer />
+            <Footer noContact />
           </footer>
         </>
       )}
