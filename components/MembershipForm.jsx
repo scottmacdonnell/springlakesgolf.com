@@ -252,7 +252,7 @@ export default function MembershipForm() {
               <span className={styles.Content}>
                 {!status.submitting ? (
                   !status.submitted ? (
-                    'Become a Member'
+                    'Request a Membership'
                   ) : (
                         <div className={styles.ButtonCheck}>
                           <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
