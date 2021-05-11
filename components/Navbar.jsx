@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
+import Avatar from './ui/Avatar'
+
 import styles from '../styles/components/Navbar.module.scss'
 
 export default function Navbar({
@@ -45,13 +47,13 @@ function Mobile({
         </div>
       ) : ''}
 
-      {/* <Link href="/member">
+      <Link href="/member">
         <div className={styles.MobileMember}>
           <Avatar
             src={auth?.user?.photoUrl}
           />
         </div>
-      </Link> */}
+      </Link>
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
@@ -80,13 +82,13 @@ function Desktop({
         {mainNav ? <MainNav /> : ''}
       </div>
 
-      {/* <Link href="/member">
+      <Link href="/member/dashboard">
         <div className={styles.DesktopMember}>
           <Avatar
             src={auth?.user?.photoUrl}
           />
         </div>
-      </Link> */}
+      </Link>
     </div>
   )
 }
