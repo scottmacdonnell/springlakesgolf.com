@@ -20,7 +20,7 @@ export default function Events() {
     >
       <div style={{ background: '#648767' }}>
         <header>
-          <Navbar mainNav />
+          <Navbar auth={auth} mainNav />
         </header>
 
         <main>

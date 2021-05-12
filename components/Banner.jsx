@@ -9,6 +9,7 @@ export default function Banner({
   image,
   chevron,
   subtitle,
+  auth,
   index = false,
   noImage = false
 }) {
@@ -30,7 +31,6 @@ export default function Banner({
       <div
         className={styles.BannerContent}
         style={{background: background }}
-      
       >
         <div className={styles.BannerContentWrapper}>
           <div className={styles.BannerContainer}>
@@ -38,7 +38,7 @@ export default function Banner({
               <div className={styles.BannerMain}>
                 <h1>{title}</h1>
                 {subtitle ? (
-                  <span>Canada’s Only Private 54 Hole Golf Course</span>
+                  <span>{auth?.user?.name ? `Welcome, ${auth.user.name}` : "Canada’s Only Private 54 Hole Golf Course"}</span>
                 ) : ''}
               </div>
 

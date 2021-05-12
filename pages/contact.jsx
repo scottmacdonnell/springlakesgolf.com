@@ -7,7 +7,12 @@ import ImageFeature from '../components/ImageFeature'
 import GoogleMaps from '../components/GoogleMaps'
 import Footer from '../components/Footer'
 
+import { useAuth } from '../lib/auth'
+
 export default function Contact() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+
   return (
     <Page
       className="Contact"
@@ -15,7 +20,7 @@ export default function Contact() {
       slug="/contact"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

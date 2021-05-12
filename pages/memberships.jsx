@@ -18,7 +18,7 @@ export default function Memberships() {
       slug="/memberships"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

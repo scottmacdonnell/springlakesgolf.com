@@ -4,7 +4,12 @@ import Banner from '../components/Banner'
 import GameShowcase from '../components/GameShowcase'
 import Footer from '../components/Footer'
 
+import { useAuth } from '../lib/auth'
+
 export default function Game() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+
   return (
     <Page
       className="Game"
@@ -12,7 +17,7 @@ export default function Game() {
       slug="/game"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>
