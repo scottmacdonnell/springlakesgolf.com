@@ -4,7 +4,12 @@ import Banner from '../../components/Banner'
 import CourseOverview from '../../components/CourseOverview'
 import Footer from '../../components/Footer'
 
+import { useAuth } from '../../lib/auth'
+
 export default function CourseEast() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+  
   return (
     <Page
       className="CourseEast"
@@ -12,7 +17,7 @@ export default function CourseEast() {
       slug="/course/east"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>

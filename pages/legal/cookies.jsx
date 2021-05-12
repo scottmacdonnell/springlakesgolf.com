@@ -3,7 +3,12 @@ import Navbar from '../../components/Navbar'
 import CookiePolicy from '../../components/CookiePolicy'
 import Footer from '../../components/Footer'
 
+import { useAuth } from '../../lib/auth'
+
 export default function Cookies() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+
   return (
     <Page
       className="Cookies"
@@ -11,7 +16,7 @@ export default function Cookies() {
       slug="/legal/cookies"
     >
       <header>
-        <Navbar mainNav invert />
+        <Navbar auth={auth} mainNav invert />
       </header>
 
       <main>

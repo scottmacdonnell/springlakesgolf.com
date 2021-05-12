@@ -24,7 +24,7 @@ export default function EmailLogin() {
       { auth.user ? <div /> : (
         <>
           <header>
-            <Navbar invert mainNav />
+            <Navbar auth={auth} invert mainNav />
           </header>
 
           <main>

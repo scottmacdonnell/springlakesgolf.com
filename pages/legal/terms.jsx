@@ -3,7 +3,12 @@ import Navbar from '../../components/Navbar'
 import TermsOfService from '../../components/TermsOfService'
 import Footer from '../../components/Footer'
 
+import { useAuth } from '../../lib/auth'
+
 export default function Terms() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+
   return (
     <Page
       className="Terms"
@@ -11,7 +16,7 @@ export default function Terms() {
       slug="/legal/terms"
     >
       <header>
-        <Navbar mainNav invert />
+        <Navbar auth={auth} mainNav invert />
       </header>
 
       <main>

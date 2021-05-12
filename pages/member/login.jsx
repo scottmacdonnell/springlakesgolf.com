@@ -24,7 +24,7 @@ export default function Login() {
       { auth.user ? <div /> : (
         <>
           <header>
-            <Navbar invert mainNav />
+            <Navbar auth={auth} invert mainNav />
           </header>
 
           <main>
