@@ -12,16 +12,6 @@ import fetcher from '../lib/fetcher'
 import styles from '../styles/components/Dashboard.module.scss'
 
 export default function Dashboard({ auth }) {
-  const { data } = useSWR(`/api/user/type/${auth.user.uid}`, fetcher)
-
-  if (!data) {
-    return null
-  }
-
-  const type = data.role
-
-  console.log(type)
-
   return (
     <DashboardComponent>
       <DashboardHeader>
@@ -36,11 +26,11 @@ export default function Dashboard({ auth }) {
       </DashboardHeader>
 
       <DashboardMain>
-        { type == 'user' ? <UserDashboard auth={auth} type={type} /> : '' }
-        { type == 'member' ? <MemberDashboard auth={auth} type={type} /> : '' }
-        { type == 'staff' ? <StaffDashboard auth={auth} type={type} /> : '' }
-        { type == 'admin' ? <AdminDashboard auth={auth} type={type} /> : '' }
-        {/* { type == 'user' ? (
+        { auth.user.role == 'user' ? <UserDashboard auth={auth} type={auth.user.role} /> : '' }
+        { auth.user.role == 'member' ? <MemberDashboard auth={auth} type={auth.user.role} /> : '' }
+        { auth.user.role == 'staff' ? <StaffDashboard auth={auth} type={auth.user.role} /> : '' }
+        { auth.user.role == 'admin' ? <AdminDashboard auth={auth} type={auth.user.role} /> : '' }
+        {/* { auth.user.role == 'user' ? (
           <Section>
             <SectionHeader>
               <div className={styles.SectionHeaderLeft}>
@@ -182,8 +172,6 @@ function UserDashboard({
     })
     const data = await fetch('/api/user/membercode/get-code')
     const res = await data.json()
-    console.log(res.code)
-    console.log(inputs.inputCode)
     if (res.code !== inputs.inputCode) {
       setStatus({
         disabled: false,

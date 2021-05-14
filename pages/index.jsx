@@ -1,3 +1,5 @@
+import useSWR from 'swr'
+
 import Page from '../components/Page'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -5,10 +7,11 @@ import Hallway from '../components/Hallway'
 import Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
+import fetcher from '../lib/fetcher'
+
 
 export default function Index() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -31,7 +34,7 @@ export default function Index() {
         />
 
         <div id="main" />
-        <Hallway auth={authStatus} />
+        <Hallway auth={auth} />
       </main>
 
       <footer>
