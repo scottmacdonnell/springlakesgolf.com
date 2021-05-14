@@ -6,6 +6,7 @@ import ContactForm from './ContactForm'
 import styles from '../styles/components/Footer.module.scss'
 
 export default function Footer({
+  auth,
   noContact = false
 }) {
   return (
@@ -14,8 +15,12 @@ export default function Footer({
       <FooterComponent>
         <FooterHeader>
           <FooterNavMain />
-          {/* <FooterNavClub /> */}
-          {/* <FooterNavMember /> */}
+          { auth?.user?.role !== 'member' ? 
+            ''
+          : 
+            <FooterNavClub />
+          }
+          <FooterNavMember />
           <FooterNavLegal />
         </FooterHeader>
 

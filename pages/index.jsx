@@ -25,7 +25,7 @@ export default function Index() {
       <main>
         <Banner
           title="Spring Lakes Golf Club"
-          image={auth ? "/images/index/members/banner.jpg" : "/images/index/public/banner.jpg"}
+          image={auth?.user?.role !== 'member' ? "/images/index/public/banner.jpg" : "/images/index/members/banner.jpg" }
           chevron="#main"
           alignImage="top"
           subtitle
@@ -38,7 +38,7 @@ export default function Index() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )
