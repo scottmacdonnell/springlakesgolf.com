@@ -32,7 +32,7 @@ export default function Login() {
           </main>
         
           <footer>
-            <Footer noContact />
+            <Footer auth={auth} noContact />
           </footer>
         </>
       )}

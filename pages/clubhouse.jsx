@@ -8,7 +8,6 @@ import { useAuth } from '../lib/auth'
 
 export default function Clubhouse() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -30,7 +29,7 @@ export default function Clubhouse() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

@@ -7,7 +7,6 @@ import { useAuth } from '../../lib/auth'
 
 export default function Cookies() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -24,7 +23,7 @@ export default function Cookies() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

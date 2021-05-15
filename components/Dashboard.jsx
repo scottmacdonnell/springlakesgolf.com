@@ -306,7 +306,9 @@ function MemberDashboard({
         </SectionHeader>
 
         <SectionMain>
-          
+          <p>
+            You have successfully activated your member account.
+          </p>
         </SectionMain>
 
         <SectionFooter>
@@ -317,13 +319,13 @@ function MemberDashboard({
           </div>
 
           <div className={styles.SectionFooterRight}>
-            <button className={styles.Inverted} onClick={(e) => auth.signOut()}>
+            <button className={styles.Normal} onClick={(e) => auth.signOut()}>
               <span className={styles.Content}>Log Out</span>
             </button>
 
-            <button className={styles.Normal}>
+            {/* <button className={styles.Normal}>
               <span className={styles.Content}>Settings</span>
-            </button>
+            </button> */}
           </div>
         </SectionFooter>
       </Section>
@@ -349,7 +351,9 @@ function StaffDashboard({
         </SectionHeader>
 
         <SectionMain>
-          
+          <p>
+            You have successfully activated your staff account.
+          </p>
         </SectionMain>
 
         <SectionFooter>
@@ -389,7 +393,9 @@ function AdminDashboard({
         </SectionHeader>
 
         <SectionMain>
-          
+          <p>
+            You have successfully activated your admin account.
+          </p>
         </SectionMain>
 
         <SectionFooter>

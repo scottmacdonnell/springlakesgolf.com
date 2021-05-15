@@ -32,7 +32,7 @@ export default function EmailLogin() {
           </main>
 
           <footer>
-            <Footer noContact />
+            <Footer auth={auth} noContact />
           </footer>
         </>
       )}

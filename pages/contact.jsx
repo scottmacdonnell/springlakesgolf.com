@@ -11,7 +11,6 @@ import { useAuth } from '../lib/auth'
 
 export default function Contact() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -74,7 +73,7 @@ export default function Contact() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

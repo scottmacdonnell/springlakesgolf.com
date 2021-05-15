@@ -30,7 +30,7 @@ export default function Courses() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

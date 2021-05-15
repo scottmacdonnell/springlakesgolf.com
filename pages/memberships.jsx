@@ -9,7 +9,6 @@ import { useAuth } from '../lib/auth'
 
 export default function Memberships() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -27,14 +26,14 @@ export default function Memberships() {
           image="/images/memberships/banner.jpg"
         />
 
-        <MembershipShowcase member={authStatus} />
+        <MembershipShowcase auth={auth} />
 
         <div id="membershipForm" />
         <MembershipForm />
       </main>
 
       <footer>
-        <Footer noContact />
+        <Footer auth={auth} noContact />
       </footer>
     </Page>
   )

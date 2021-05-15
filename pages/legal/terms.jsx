@@ -7,7 +7,6 @@ import { useAuth } from '../../lib/auth'
 
 export default function Terms() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -24,7 +23,7 @@ export default function Terms() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

@@ -44,7 +44,7 @@ export default function CourseSouth() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

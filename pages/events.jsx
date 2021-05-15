@@ -10,7 +10,6 @@ import { useAuth } from '../lib/auth'
 
 export default function Events() {
   const auth = useAuth()
-  const authStatus = auth.user ? true : false
 
   return (
     <Page
@@ -26,14 +25,14 @@ export default function Events() {
         <main>
           <EventsBanner />
 
-          <EventsShowcase member={authStatus} />
+          <EventsShowcase auth={auth} />
 
           <BookingForm />
         </main>
       </div>
 
       <footer>
-        <Footer noContact />
+        <Footer auth={auth} noContact />
       </footer>
     </Page>
   )

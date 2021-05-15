@@ -44,7 +44,7 @@ export default function CourseEast() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

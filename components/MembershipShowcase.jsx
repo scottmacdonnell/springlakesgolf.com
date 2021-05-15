@@ -5,7 +5,7 @@ import Modal from './ui/Modal'
 
 import styles from '../styles/components/MembershipShowcase.module.scss'
 
-export default function MembershipShowcase({ member }) {
+export default function MembershipShowcase({ auth }) {
   return (
     <MembershipShowcaseComponent>
       <MembershipShowcaseHeader>
@@ -78,7 +78,9 @@ export default function MembershipShowcase({ member }) {
           </MembershipShowcaseCardButtons>
         </MembershipShowcaseMainItem>
 
-        {member ? (
+        { auth?.user?.role !== 'member' ? 
+          ''
+        :
           <>
             <MembershipShowcaseMainItem>
               <MembershipShowcaseCard
@@ -102,7 +104,7 @@ export default function MembershipShowcase({ member }) {
               </MembershipShowcaseCard>
             </MembershipShowcaseMainItem>
           </>
-        ) : ''}
+        }
       </MembershipShowcaseMain>
     </MembershipShowcaseComponent>
   )
