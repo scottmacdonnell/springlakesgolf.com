@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import styles from '../styles/components/ProviderAuth.module.scss'
 
-export default function ProviderAuth({ auth }) {
+export default function ProviderAuth({ auth, register = false }) {
   return (
     <div className={styles.ProviderAuth}>
       <button className={styles.FacebookAuth} onClick={(e) => auth.signInWithFacebook()}>
@@ -11,7 +11,7 @@ export default function ProviderAuth({ auth }) {
         </span>
 
         <span className={styles.Content}>
-          Sign in with Facebook
+          {register ? "Sign up with Facebook" : "Sign in with Facebook"}
         </span>
       </button>
 
@@ -23,7 +23,7 @@ export default function ProviderAuth({ auth }) {
         </span>
 
         <span className={styles.Content}>
-          Sign in with Google
+          {register ? "Sign up with Google" : "Sign in with Google"}
         </span>
       </button>
 
@@ -35,7 +35,7 @@ export default function ProviderAuth({ auth }) {
         </span>
 
         <span className={styles.Content}>
-          Sign in with Twitter
+          {register ? "Sign up with Twitter" : "Sign in with Twitter"}
         </span>
       </button>
 
@@ -51,7 +51,7 @@ export default function ProviderAuth({ auth }) {
           </span>
 
           <span className={styles.Content}>
-            Sign in with Email
+            {register ? "Sign up with Email" : "Sign in with Email"}
           </span>
         </button>
       </Link>

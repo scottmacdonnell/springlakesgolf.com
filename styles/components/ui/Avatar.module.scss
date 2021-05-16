@@ -6,6 +6,7 @@
 }
 
 .AvatarDisabled {
-  border-radius: 50%;
-  background-color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

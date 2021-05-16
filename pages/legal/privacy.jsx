@@ -3,7 +3,11 @@ import Navbar from '../../components/Navbar'
 import PrivacyPolicy from '../../components/PrivacyPolicy'
 import Footer from '../../components/Footer'
 
+import { useAuth } from '../../lib/auth'
+
 export default function Privacy() {
+  const auth = useAuth()
+
   return (
     <Page
       className="Privacy"
@@ -11,7 +15,7 @@ export default function Privacy() {
       slug="/legal/privacy"
     >
       <header>
-        <Navbar mainNav invert />
+        <Navbar auth={auth} mainNav invert />
       </header>
 
       <main>
@@ -19,7 +23,7 @@ export default function Privacy() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )

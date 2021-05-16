@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import useSWR from 'swr'
+
+import fetcher from '../lib/fetcher'
 
 import styles from '../styles/components/Hallway.module.scss'
 
 export default function Hallway({ auth }) {
-
   return (
     <HallwayComponent>
-      {auth ? <HallwayMembers /> : <HallwayPublic /> }
+      { auth?.user?.role !== 'member' ? <HallwayPublic /> : <HallwayMembers /> }
     </HallwayComponent>
   )
 }

@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 
 import Page from '../../components/Page'
 import Navbar from '../../components/Navbar'
@@ -33,7 +32,7 @@ export default function Member() {
           </main>
         
           <footer>
-            <Footer />
+            <Footer auth={auth} noContact />
           </footer>
         </>
       ) : '' }

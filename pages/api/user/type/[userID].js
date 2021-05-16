@@ -1,4 +1,4 @@
-import { getUser } from '../../../lib/db-admin'
+import { getUser } from '../../../../lib/db-admin'
 
 export default async function (req, res) {
   const {

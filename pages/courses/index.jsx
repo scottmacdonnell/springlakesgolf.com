@@ -4,7 +4,12 @@ import Banner from '../../components/Banner'
 import CoursesShowcase from '../../components/CoursesShowcase'
 import Footer from '../../components/Footer'
 
+import { useAuth } from '../../lib/auth'
+
 export default function Courses() {
+  const auth = useAuth()
+  const authStatus = auth.user ? true : false
+
   return (
     <Page
       className="Courses"
@@ -12,7 +17,7 @@ export default function Courses() {
       slug="/courses"
     >
       <header>
-        <Navbar mainNav />
+        <Navbar auth={auth} mainNav />
       </header>
 
       <main>
@@ -25,7 +30,7 @@ export default function Courses() {
       </main>
 
       <footer>
-        <Footer />
+        <Footer auth={auth} />
       </footer>
     </Page>
   )
