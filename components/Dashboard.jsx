@@ -104,7 +104,7 @@ function UserDashboard({
 }) {
 
   const [status, setStatus] = useState({
-    disabled: true,
+    disabled: false,
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
@@ -127,7 +127,7 @@ function UserDashboard({
       })
       setTimeout(() => {
         setStatus({
-          disabled: true,
+          disabled: false,
           submitted: false,
           submitting: false,
           info: { error: false, msg: msg }
@@ -147,7 +147,7 @@ function UserDashboard({
       [e.target.id]: e.target.value
     }))
     setStatus({
-      disabled: true,
+      disabled: false,
       submitted: false,
       submitting: false,
       info: { error: false, msg: null }
@@ -272,9 +272,9 @@ function UserDashboard({
 
         <SectionFooter>
           <div className={styles.SectionFooterLeft}>
-            <button className={styles.Caution} onClick={(e) => auth.signOut()}>
+            {/* <button className={styles.Caution} onClick={(e) => auth.signOut()}>
               <span className={styles.Content}>Delete Account</span>
-            </button>
+            </button> */}
           </div>
 
           <div className={styles.SectionFooterRight}>
@@ -313,9 +313,9 @@ function MemberDashboard({
 
         <SectionFooter>
           <div className={styles.SectionFooterLeft}>
-            <button className={styles.Caution} onClick={(e) => auth.signOut()}>
+            {/* <button className={styles.Caution} onClick={(e) => auth.signOut()}>
               <span className={styles.Content}>Delete Account</span>
-            </button>
+            </button> */}
           </div>
 
           <div className={styles.SectionFooterRight}>
