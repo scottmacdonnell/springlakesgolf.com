@@ -156,7 +156,7 @@ function FooterNavMember(props) {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               href="/member/account"
               style={{ display: 'contents' }}
@@ -165,7 +165,7 @@ function FooterNavMember(props) {
                 <span>Settings</span>
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
