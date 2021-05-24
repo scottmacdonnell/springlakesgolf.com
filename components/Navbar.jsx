@@ -47,7 +47,7 @@ function Mobile({
         </div>
       ) : ''}
 
-      <Link href="/member">
+      <Link href="/member/dashboard">
         <div className={styles.MobileMember}>
           <Avatar
             src={auth?.user?.photoUrl}
