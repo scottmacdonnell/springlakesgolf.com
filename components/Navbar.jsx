@@ -58,7 +58,7 @@ function Mobile({
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
           <div className={styles.MobileWrapper}>
-            <MainNav />
+            <MainNav auth={auth} />
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ function Desktop({
       </div>
 
       <div className={styles.DesktopMain}>
-        {mainNav ? <MainNav /> : ''}
+        {mainNav ? <MainNav auth={auth} /> : ''}
       </div>
 
       <Link href="/member/dashboard">
@@ -93,30 +93,60 @@ function Desktop({
   )
 }
 
-function MainNav() {
+function MainNav({ auth }) {
+
+  console.log()
   return (
     <nav className={styles.MainNav}>
-      <Link href='/'>
-        <a>Home</a>
-      </Link>{' '}
-      <Link href='/about'>
-        <a>About Us</a>
-      </Link>{' '}
-      <Link href='/memberships'>
-        <a>Memberships</a>
-      </Link>{' '}
-      <Link href='/game'>
-        <a>Game Improvement</a>
-      </Link>{' '}
-      <Link href='/clubhouse'>
-        <a>Clubhouse</a>
-      </Link>{' '}
-      <Link href='/events'>
-        <a>Events</a>
-      </Link>{' '}
-      <Link href='/contact'>
-        <a>Contact Us</a>
-      </Link>
+      { auth?.user?.role !== 'member' ? 
+        <>
+          <Link href='/'>
+            <a>Home</a>
+          </Link>{' '}
+          <Link href='/about'>
+            <a>About Us</a>
+          </Link>{' '}
+          <Link href='/memberships'>
+            <a>Memberships</a>
+          </Link>{' '}
+          <Link href='/game'>
+            <a>Game Improvement</a>
+          </Link>{' '}
+          <Link href='/clubhouse'>
+            <a>Clubhouse</a>
+          </Link>{' '}
+          <Link href='/events'>
+            <a>Events</a>
+          </Link>{' '}
+          <Link href='/contact'>
+            <a>Contact Us</a>
+          </Link>
+        </>
+      :
+        <>
+          <Link href='/'>
+            <a>Home</a>
+          </Link>{' '}
+          <Link href='/courses'>
+            <a>The Courses</a>
+          </Link>{' '}
+          <Link href='/memberships'>
+            <a>Memberships</a>
+          </Link>{' '}
+          <Link href='/clubhouse'>
+            <a>Clubhouse</a>
+          </Link>{' '}
+          <Link href='/newsletter'>
+            <a>Newsletter</a>
+          </Link>{' '}
+          <Link href='/events'>
+            <a>Events</a>
+          </Link>{' '}
+          <Link href='/contact'>
+            <a>Contact Us</a>
+          </Link>
+        </>
+      }
     </nav>
   )
 }
