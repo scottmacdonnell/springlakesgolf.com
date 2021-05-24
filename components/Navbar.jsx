@@ -27,7 +27,7 @@ function Mobile({
   const [mobileNavShown, setMobileNavShown] = useState(false)
   const toggle = () => setMobileNavShown(!mobileNavShown)
   return (
-    <div className={`${styles.Mobile} ${mobileNavShown ? styles.MobileActive : ''}`}>
+    <div className={`${styles.Mobile} ${mobileNavShown ? styles.MobileActive : ''} ${mainNav ? styles.MobileNavShown : ''}`}>
       <div className={styles.MobileFlag}>
         <Link href="/">
           <a style={{ display: 'contents' }}><Flag /></a>
@@ -42,7 +42,7 @@ function Mobile({
         </div>
       </Link>
 
-      {mainNav ? (
+      { mainNav ? (
         <div className={styles.MobileMain}>
           <div className={styles.MobileToggle} onClick={toggle}>
             <div className={styles.IconContainer}>
@@ -53,7 +53,7 @@ function Mobile({
             </div>
           </div>
         </div>
-      ) : ''}
+      ) : '' }
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>

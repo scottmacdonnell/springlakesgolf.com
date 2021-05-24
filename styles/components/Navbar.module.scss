@@ -33,8 +33,7 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
   }
   @media (max-width: $breakpointMedium) {
     display: grid;
-    grid-template-columns: auto 32px 20px;
-    // grid-template-columns: auto 20px;
+    grid-template-columns: auto 32px;
     grid-template-rows: 1fr;
     gap: 2rem;
     .MobileFlag {
@@ -43,7 +42,7 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
       justify-content: flex-start;
       svg {
         color: inherit;
-        height: 5rem;
+        height: 6rem;
       }
     }
     .MobileMain {
@@ -145,6 +144,10 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
   nav {
     display: none;
   }
+}
+
+.MobileNavShown {
+  grid-template-columns: auto 32px 20px;
 }
 
 .MobileActive {
