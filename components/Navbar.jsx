@@ -34,6 +34,14 @@ function Mobile({
         </Link>
       </div>
 
+      <Link href="/member/dashboard">
+        <div className={styles.MobileMember}>
+          <Avatar
+            src={auth?.user?.photoUrl}
+          />
+        </div>
+      </Link>
+
       {mainNav ? (
         <div className={styles.MobileMain}>
           <div className={styles.MobileToggle} onClick={toggle}>
@@ -46,14 +54,6 @@ function Mobile({
           </div>
         </div>
       ) : ''}
-
-      <Link href="/member/dashboard">
-        <div className={styles.MobileMember}>
-          <Avatar
-            src={auth?.user?.photoUrl}
-          />
-        </div>
-      </Link>
 
       <div className={styles.MobileContent}>
         <div className={styles.MobileContainer}>
