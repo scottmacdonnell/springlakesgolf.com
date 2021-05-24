@@ -1,7 +1,5 @@
 import Page from '../components/Page'
-import Navbar from '../components/Navbar'
-import Banner from '../components/Banner'
-import Hallway from '../components/Hallway'
+import Maintenance from '../components/Maintenance'
 import Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
@@ -19,7 +17,7 @@ export default function Newsletter() {
       </header>
 
       <main>
-        <h5>Coming Soon</h5>
+        <Maintenance />
       </main>
 
       <footer>
