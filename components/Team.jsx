@@ -29,7 +29,7 @@ export default function Team() {
             image="/images/about/chris.jpg"
           >
             <h5>Chris</h5>
-            <p>Golf Superintendent</p>
+            <p>Golf Course Superintendent</p>
             <br/>
             <Link href="mailto:chris@springlakesgolf.com">
               <a><p>chris@springlakesgolf.com</p></a>
