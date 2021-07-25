@@ -1,10 +1,10 @@
 {
-  "name": "springlakesgolf",
+  "name": "springlakesgolf.com",
   "productName": "Spring Lakes Golf Club",
   "version": "1.5.1",
   "description": "The website for Spring Lakes Golf Club.",
-  "repository": "https://github.com/scottmacdonnell/springlakesgolf.git",
-  "author": "Scott MacDonnell <scottsmacdonnell@gmail.com>",
+  "repository": "https://github.com/scottmacdonnell/springlakesgolf.com.git",
+  "author": "Scott MacDonnell <scott@scottmacdonnell.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
