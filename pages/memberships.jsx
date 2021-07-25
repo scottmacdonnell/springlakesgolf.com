@@ -5,6 +5,9 @@ import MembershipShowcase from  '../components/MembershipShowcase'
 import MembershipForm from '../components/MembershipForm'
 import Footer from '../components/Footer'
 
+import * as Text from '../components/ui/Text'
+import Box from '../components/utils/Box'
+
 import { useAuth } from '../lib/auth'
 
 export default function Memberships() {
@@ -27,6 +30,29 @@ export default function Memberships() {
         />
 
         <MembershipShowcase auth={auth} />
+
+        <Box>
+          <div
+            style={{
+              textAlign: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <Text.SHeading
+              style={{
+                textAlign: 'center',
+                maxWidth: '48ch',
+                marginBottom: '16px'
+              }}
+            >
+              Spring Lakes will be accepting Membership Applications for the 2022 season. Prices will be sent out in September 2021.
+            </Text.SHeading>
+          </div>
+        </Box>
+
+        
 
         <div id="membershipForm" />
         <MembershipForm />
