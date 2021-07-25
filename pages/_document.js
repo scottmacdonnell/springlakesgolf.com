@@ -18,7 +18,9 @@ class MainDocument extends Document {
           <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#845ef7" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <meta name="msapplication-TileColor" content="#2b5797" />
-          <meta name="theme-color" content="#041e42" />
+          {/* <meta name="theme-color" content="#041e42" /> */}
+          <meta name="theme-color" content="#D3E5FF" media="(prefers-color-scheme: light)" />
+          <meta name="theme-color" content="#041e42" media="(prefers-color-scheme: dark)" />
           <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
           <link rel="alternate" type="application/rss+xml" href="/favicon/feed.xml" />
         </Head>
