@@ -170,7 +170,7 @@ function UserDashboard({
       submitting: true,
       info: { error: false, msg: null }
     })
-    const data = await fetch('/api/user/membercode/get-code')
+    const data = await fetch('/api/user/membercode/code')
     const res = await data.json()
     if (res.code !== inputs.inputCode) {
       setStatus({
