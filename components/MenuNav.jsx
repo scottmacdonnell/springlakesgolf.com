@@ -19,13 +19,13 @@ export default function MenuNav() {
           <MenuCardLarge 
             title="Stanley's Nest Menu"
             image="/images/clubhouse/menucard-stanley.jpg"
-            link="/docs/clubhouse/full-time.pdf"
+            link="/docs/clubhouse/stanley.pdf"
           />
 
           <MenuCardLarge
             title="Halfway House Menu"
             image="/images/clubhouse/menucard-halfway.jpg"
-            link="/docs/clubhouse/full-time.pdf"
+            link="/docs/clubhouse/halfway.pdf"
           />
         </div>
         {/* <div className={styles.MenuCardsSmall}>
