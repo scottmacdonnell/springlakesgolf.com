@@ -1,0 +1,19 @@
+@import '../../breakpoints';
+
+.Loader {
+  //Only Chrome 29+
+  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    height: 100vh;
+    min-height: $breakpointSmall;
+  }
+
+  // Safari
+  @media screen and (min-width: $breakpointMedium) {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+  }
+  @media screen and (max-width: $breakpointMedium) {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+  }
+}

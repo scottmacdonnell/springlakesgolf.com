@@ -36,8 +36,8 @@ export default function Contact() {
           <div>
             <h5>Hours</h5>
             <ul>
-              <li><strong>Week:</strong> 7:30am - Twilight</li>
-              <li><strong>Weekend:</strong> 7:00am - Twilight</li>
+              <li>7:00am - Twilight</li>
+              <li>* both week and weekend *</li>
             </ul>
           </div>
 
@@ -60,10 +60,14 @@ export default function Contact() {
           <div>
             <h5>Extentions</h5>
             <ul>
-              <li><strong>Proshop:</strong> 231</li>
-              <li><strong>Restaurant:</strong> 224</li>
-              <li><strong>Simulators:</strong>braeden@springlakesgolf.com</li>
-              <li><strong>General Inquiries:</strong> 229</li>
+              <li><strong>Reception / General Inquiries:</strong> 224</li>
+              <li><strong>Pro-shop:</strong> 231</li>
+              <li><strong>Restaurant:</strong> 223</li>
+              <li><strong>Shayne Dysart:</strong> 236</li>
+              <li><strong>Jim Hargrave:</strong> 241</li>
+              <li><strong>Chris Contois:</strong> 243</li>
+              <li><strong>Evelyn McLean (accounting):</strong> 235</li>
+              <li><strong>Laura Piccione:</strong> 224</li>
             </ul>
           </div>
 

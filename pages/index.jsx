@@ -4,13 +4,14 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import Hallway from '../components/Hallway'
 import Footer from '../components/Footer'
+import Loader from '../components/utils/Loader'
 
 import { useAuth } from '../lib/auth'
 
 export default function Index() {
   const auth = useAuth()
 
-  return (
+  return auth.loading ? <Page><Loader /></Page> : (
     <Page
       className="Index"
       slug="/"
