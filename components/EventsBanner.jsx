@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import * as Text from '../components/ui/Text'
+
 import styles from '../styles/components/EventsBanner.module.scss'
 
 export default function EventsBanner({
@@ -21,7 +23,21 @@ export default function EventsBanner({
             <div className={styles.BannerGrid}>
               <div className={styles.BannerMain}>
                 <h1>Events</h1>
-                <span>Unfortunately, until there is further breakthough in Covid-19 cases, we will be postponing any upcoming events. We will be more than happy to start scheduling events once the circumstances allow.</span>
+                <span>
+                  {"As Ontario has entered Stage 3, we will be accepting all event requests. With that said, we have minimal dates for the 2021 season. Please contact "}
+
+                  <Text.Anchor
+                    href="mailto:laura@springlakesgolf.com"
+                    style={{
+                      color: '#D3E5FF'
+                    }}
+                    isExternal
+                  >
+                    laura@springlakesgolf.com
+                  </Text.Anchor>
+                  
+                  {" to assist you in any event."}
+                </span>
               </div>
             </div>
           </div>
