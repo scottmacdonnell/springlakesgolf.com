@@ -1,11 +1,13 @@
 import Link from 'next/link'
 
 import Page from '../components/Page'
+import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
 import GoogleMaps from '../components/GoogleMaps'
-import Footer from '../components/Footer'
+import ContactForm from '../components/ContactForm'
+import * as Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
 
@@ -77,8 +79,23 @@ export default function Contact() {
       </main>
 
       <footer>
-        <Footer auth={auth} />
+        <ContactForm />
+        <FooterSection />
       </footer>
     </Page>
+  )
+}
+
+function FooterSection() {
+  return (
+    <Footer.Wrapper>
+      <Content.Public>
+        <Footer.Public />
+      </Content.Public>
+
+      <Content.Members>
+        <Footer.Members />
+      </Content.Members>
+    </Footer.Wrapper>
   )
 }

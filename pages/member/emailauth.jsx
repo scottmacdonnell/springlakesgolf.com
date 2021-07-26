@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
 
 import Page from '../../components/Page'
+import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import EmailAuth from '../../components/EmailAuth'
-import Footer from '../../components/Footer'
+import * as Footer from '../../components/Footer'
 
 import { useAuth } from '../../lib/auth'
 
@@ -32,10 +33,24 @@ export default function EmailLogin() {
           </main>
 
           <footer>
-            <Footer auth={auth} noContact />
+            <FooterSection />
           </footer>
         </>
       )}
     </Page>
+  )
+}
+
+function FooterSection() {
+  return (
+    <Footer.Wrapper>
+      <Content.Public>
+        <Footer.Public />
+      </Content.Public>
+
+      <Content.Members>
+        <Footer.Members />
+      </Content.Members>
+    </Footer.Wrapper>
   )
 }

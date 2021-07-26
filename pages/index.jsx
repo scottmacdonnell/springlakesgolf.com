@@ -3,7 +3,8 @@ import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import * as Hallway from '../components/Hallway'
-import Footer from '../components/Footer'
+import ContactForm from '../components/ContactForm'
+import * as Footer from '../components/Footer'
 import Loader from '../components/utils/Loader'
 
 import { useAuth } from '../lib/auth'
@@ -36,7 +37,8 @@ export default function Index() {
       </main>
 
       <footer>
-        <Footer auth={auth} />
+        <ContactForm />
+        <FooterSection />
       </footer>
     </Page>
   )
@@ -143,5 +145,19 @@ function HallwaySection() {
         />
       </Content.Members>
     </Hallway.Wrapper>
+  )
+}
+
+function FooterSection() {
+  return (
+    <Footer.Wrapper>
+      <Content.Public>
+        <Footer.Public />
+      </Content.Public>
+
+      <Content.Members>
+        <Footer.Members />
+      </Content.Members>
+    </Footer.Wrapper>
   )
 }

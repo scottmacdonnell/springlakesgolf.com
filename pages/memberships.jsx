@@ -1,9 +1,10 @@
 import Page from '../components/Page'
+import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import MembershipShowcase from  '../components/MembershipShowcase'
 import MembershipForm from '../components/MembershipForm'
-import Footer from '../components/Footer'
+import * as Footer from '../components/Footer'
 
 import * as Text from '../components/ui/Text'
 import Box from '../components/utils/Box'
@@ -59,8 +60,22 @@ export default function Memberships() {
       </main>
 
       <footer>
-        <Footer auth={auth} noContact />
+        <FooterSection />
       </footer>
     </Page>
+  )
+}
+
+function FooterSection() {
+  return (
+    <Footer.Wrapper>
+      <Content.Public>
+        <Footer.Public />
+      </Content.Public>
+
+      <Content.Members>
+        <Footer.Members />
+      </Content.Members>
+    </Footer.Wrapper>
   )
 }

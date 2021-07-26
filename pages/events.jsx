@@ -1,10 +1,11 @@
 import Page from '../components/Page'
+import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import EventsBanner from '../components/EventsBanner'
 import TextFeature from '../components/ui/TextFeature'
 import EventsShowcase from '../components/EventsShowcase'
 import BookingForm from '../components/BookingForm'
-import Footer from '../components/Footer'
+import * as Footer from '../components/Footer'
 
 import { useAuth } from '../lib/auth'
 
@@ -32,8 +33,22 @@ export default function Events() {
       </div>
 
       <footer>
-        <Footer auth={auth} noContact />
+        <FooterSection />
       </footer>
     </Page>
+  )
+}
+
+function FooterSection() {
+  return (
+    <Footer.Wrapper>
+      <Content.Public>
+        <Footer.Public />
+      </Content.Public>
+
+      <Content.Members>
+        <Footer.Members />
+      </Content.Members>
+    </Footer.Wrapper>
   )
 }
