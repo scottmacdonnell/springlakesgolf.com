@@ -1,0 +1,137 @@
+@import '../breakpoints';
+
+.InfoBox {
+  margin-top: 2rem;
+  padding: 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 280px;
+  grid-template-rows: 1fr;
+  gap: 16px;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.Holes,
+.Par {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  .Label {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  .Value {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #666;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.Yardage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 0;
+  .Label {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  .Value {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-rows: 1fr;
+    grid-auto-rows: auto;
+  }
+}
+
+.Overview {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    max-width: 76ch;
+  }
+}
+
+.Images {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 2rem;
+  @media screen and (max-width: $breakpointSmall) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.Image {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  span {
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    color: #888888;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 20px 0px 0 0;
+  }
+}

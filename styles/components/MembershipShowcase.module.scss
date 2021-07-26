@@ -100,6 +100,7 @@
       align-items: flex-start;
       .Button1 {
         margin: 2rem 0;
+        text-align: center;
       }
     }
   }
@@ -115,6 +116,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr;
       gap: 2rem;
+      text-align: center;
     }
   }
 }

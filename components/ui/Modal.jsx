@@ -13,7 +13,7 @@ export default function Modal({
 
   return (
     <>
-      <button type="button" onClick={handleClick} className={styles.ModalButton}>{children}</button>
+      <div type="button" onClick={handleClick} className={styles.ModalButton}>{children}</div>
       <div className={`${isOpen ? styles.ModalActive : styles.Modal}`}>
         <div className={styles.ModalOverlay} />
 
@@ -22,7 +22,7 @@ export default function Modal({
             <div className={styles.ModalFocusTrap}>
               <div className={styles.ModalToggle} onClick={handleClick}>
 
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
                   <path d="M18 6L6 18"/>
                   <path d="M6 6l12 12"/>
                 </svg>
