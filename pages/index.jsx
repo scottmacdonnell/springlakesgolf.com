@@ -112,38 +112,6 @@ function HallwaySection() {
           image="/images/index/members/hallway-contact.jpg"
         />
       </Content.Members>
-      <Content.Members>
-        <Hallway.Card
-          title="The Courses"
-          link="/courses"
-          image="/images/index/members/hallway-courses.jpg"
-        />
-        <Hallway.Card
-          title="Memberships"
-          link="/memberships"
-          image="/images/index/members/hallway-memberships.jpg"
-        />
-        <Hallway.Card
-          title="Clubhouse & Dining"
-          link="/clubhouse"
-          image="/images/index/members/hallway-clubhouse.jpg"
-        />
-        <Hallway.Card
-          title="Newsletter"
-          link="/newsletter"
-          image="/images/index/members/hallway-newsletter.jpg"
-        />
-        <Hallway.Card
-          title="Events"
-          link="/events"
-          image="/images/index/public/hallway-events.jpg"
-        />
-        <Hallway.Card
-          title="Contact Us"
-          link="/contact"
-          image="/images/index/members/hallway-contact.jpg"
-        />
-      </Content.Members>
     </Hallway.Wrapper>
   )
 }
