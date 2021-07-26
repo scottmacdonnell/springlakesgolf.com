@@ -1,6 +1,6 @@
 @import '../breakpoints';
 
-.Hallway {
+.Wrapper {
   margin: 0;
   padding: 0.25rem;
   display: grid;
@@ -13,7 +13,7 @@
   }
 }
 
-.HallwayCard {
+.Card {
   grid-area: span 1;
   position: relative;
   top: 0;
@@ -23,6 +23,7 @@
   text-align: center;
 
   h2 {
+    margin-top: 16px;
     max-width: 12ch;
   }
 
@@ -41,13 +42,13 @@
     }
   }
 
-  .HallwayCardImage {
+  .CardImage {
     img {
       width: 100%;
       height: 100%;
     }
   }
-  .HallwayCardContent {
+  .CardContent {
     position: absolute;
     top: 0;
     right: 0;
@@ -57,7 +58,7 @@
     background-color: rgba(0, 0, 0, 0.45);
     overflow: auto;
     padding: 2rem;
-    .HallwayCardContentWrapper {
+    .CardContentWrapper {
       display: block;
       width: 100%;
       height: 100%;

@@ -11,7 +11,7 @@ export const Public = (props) => {
   )
 }
 
-export const Member = (props) => {
+export const Members = (props) => {
   const auth = useAuth()
 
   return auth.loading ? '' : (
