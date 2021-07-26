@@ -2,7 +2,7 @@ import Page from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import PrivacyPolicy from '../../components/PrivacyPolicy'
-import * as Footer from '../components/Footer'
+import * as Footer from '../../components/Footer'
 
 import { useAuth } from '../../lib/auth'
 
