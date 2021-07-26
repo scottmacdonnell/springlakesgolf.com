@@ -121,8 +121,7 @@ export const Members = () => {
           <NavTitle>Member</NavTitle>
 
           <NavContent>
-            <NavItem href="/member/login">Login</NavItem>
-            <NavItem href="/member/signup">Sign Up</NavItem>
+            <NavItem href="/member/dashboard">Dashboard</NavItem>
           </NavContent>
         </Nav>
 

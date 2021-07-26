@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 
 import Page from '../../components/Page'
+import Loader from '../../components/utils/Loader'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import EmailAuth from '../../components/EmailAuth'
@@ -16,7 +17,7 @@ export default function EmailLogin() {
     router.push('/member/dashboard')
   }
   
-  return (
+  return auth.loading ? <Page><Loader /></Page> : (
     <Page
       className="EmailLogin"
       pageName="Log In with Email"

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 
 import Page from '../../components/Page'
+import Loader from '../../components/utils/Loader'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import LoginForm from '../../components/LoginForm'
@@ -16,7 +17,7 @@ export default function Login() {
     router.push('/member/dashboard')
   }
   
-  return (
+  return auth.loading ? <Page><Loader /></Page> : (
     <Page
       className="Login"
       pageName="Log In"
