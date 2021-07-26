@@ -1,8 +1,7 @@
 import Page from '../../components/Page'
-import * as Content from '../components/Content'
+import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import PrivacyPolicy from '../../components/PrivacyPolicy'
-import ContactForm from '../components/ContactForm'
 import * as Footer from '../components/Footer'
 
 import { useAuth } from '../../lib/auth'
