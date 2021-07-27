@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import Container from './ui/Container'
 import Modal from './ui/Modal'
+import * as Text from './ui/Text'
 
 import styles from '../styles/components/GameShowcase.module.scss'
 
@@ -103,56 +104,40 @@ export default function GameShowcase() {
               <CoachingIcon />
             </span>
           </GameShowcaseCard>
-          
-          <RatesModal>
-            <h5>Teaching & Coaching Rates</h5>
 
-            <p><strong>Individual lesson rates</strong></p>
-            <ul>
-              <li>30 minute lesson — $40</li>
-              <li>60 minute lesson — $80</li>
-            </ul>
-            
-            <p><strong>Two person lesson rates</strong></p>
-            <ul>
-              <li>30 minute lesson — $50</li>
-              <li>60 minute lesson — $100</li>
-            </ul>
+          <Modal content={(
+            <div>
+              <Text.Heading4>Teaching & Coaching Rates</Text.Heading4>
+              <br />
+              <Text.Heading6>Individual lesson rates</Text.Heading6>
+              <Text.Paragraph>30 minute lesson — $40<br />60 minute lesson — $80</Text.Paragraph>
 
-            <p><strong>9-hole playing lesson</strong></p>
-            <ul>
-              <li>2 hours — $160</li>
-            </ul>
+              <Text.Heading6>Two person lesson rates</Text.Heading6>
+              <Text.Paragraph>30 minute lesson — $50<br />60 minute lesson — $100</Text.Paragraph>
+              
+              <Text.Heading6>9-hole playing lesson</Text.Heading6>
+              <Text.Paragraph>2 hours — $160</Text.Paragraph>
 
-            <p><strong>Monthly performance coaching package</strong> — $500</p>
-            <ul>
-              <li>Four 1 hour lessons</li>
-              <li>One playing lesson</li>
-              <li>Driving range tips upon request</li>
-              <li>Skills assessment</li>
-            </ul>
+              <Text.Heading6>Monthly performance coaching package - $500</Text.Heading6>
+              <Text.Paragraph>Four 1 hour lessons<br />One playing lesson<br />Driving range tips upon request<br />Skills assessment</Text.Paragraph>
 
-            <p><strong>Six lesson package</strong></p>
-            <ul>
-              <li>30 minutes each — $200</li>
-              <li>60 minutes each — $400</li>
-            </ul>
+              <Text.Heading6>Six lesson package</Text.Heading6>
+              <Text.Paragraph>30 minutes each — $200<br />60 minutes each — $400</Text.Paragraph>
 
-            <p><strong>Ball fitting lessons</strong></p>
-            <ul>
-              <li>Includes one dozen golf balls — $135</li>
-            </ul>
+              <Text.Heading6>Ball fitting lessons</Text.Heading6>
+              <Text.Paragraph>Includes one dozen golf balls — $135</Text.Paragraph>
 
-            <p><strong>Golf Club Regripping Service</strong></p>
-            <ul>
-              Wide selection of grips available.<br/>Inquire in the Pro Shop.
-            </ul>
+              <Text.Heading6>Golf Club Regripping Service</Text.Heading6>
+              <Text.Paragraph>Wide selection of grips available.<br/>Inquire in the Pro Shop.</Text.Paragraph>
 
-            <p><strong>Winter Lessons - 2021/22</strong></p>
-            <ul>
-              In an effort to keep your swing tuned up during the winter months, private lessons will be offered by appointment only.
-            </ul>
-          </RatesModal>
+              <Text.Heading6>Winter Lessons - 2021/22</Text.Heading6>
+              <Text.Paragraph>In an effort to keep your swing tuned up during the winter months, private lessons will be offered by appointment only.</Text.Paragraph>
+            </div>
+          )}>
+            <div className={styles.GameShowcaseCard}>
+              <Text.Heading3>Teaching & Coaching Rates</Text.Heading3>
+            </div>
+          </Modal>
 
           {/* <GameShowcaseCard
             href="/docs/game/fall_golf.pdf"
