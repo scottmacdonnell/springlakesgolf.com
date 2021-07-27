@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import Page from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
@@ -9,14 +7,15 @@ import * as Team from '../components/Team'
 import ContactForm from '../components/ContactForm'
 import * as Footer from '../components/Footer'
 import * as Text from '../components/ui/Text'
-import Box, { BoxGrid } from '../components/utils/Box'
+import Box from '../components/utils/Box'
+import Loader from '../components/utils/Loader'
 
 import { useAuth } from '../lib/auth'
 
 export default function About() {
   const auth = useAuth()
 
-  return (
+  return auth.loading ? <Page><Loader /></Page> : (
     <Page
       className="About"
       pageName="About"
