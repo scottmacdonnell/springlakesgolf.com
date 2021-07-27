@@ -1,11 +1,15 @@
+import Image from 'next/image'
+
 import Page from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import ImageFeature from '../components/ImageFeature'
-import Team from '../components/Team'
+import * as Team from '../components/Team'
 import ContactForm from '../components/ContactForm'
 import * as Footer from '../components/Footer'
+import * as Text from '../components/ui/Text'
+import Box, { BoxGrid } from '../components/utils/Box'
 
 import { useAuth } from '../lib/auth'
 
@@ -27,25 +31,8 @@ export default function About() {
           title="About Us"
           image="/images/about/banner.jpg"
         />
-
-        <ImageFeature
-          imageSrc="/images/about/bob.jpg"
-        >
-          <h2>Owners Note - Our History</h2>
-
-          <p>Starting over 25 years ago, I took over as the Head Golf Professional at Spring Lakes Golf Club. Fast forward to present time, and I have been the owner for 5 years. Over my tenure, I have been able to watch this course grow and flourish. From repaving the parking lot a day after purchasing the club, to renovating the restaurant bar and adding golf simulators in 2021, my goal remains to make Spring Lakes the best private club in Canada.</p>
-
-          <p>I am happy to say that I am very proud of what this course has become.</p>
-
-          <p>I value the importance of being part of a club and the relationships it helps create.  During a time of uncertainty, we were able to revive social interaction at Spring Lakes by introducing Stanley’s Nest; our outdoor front barbecue area!  I have updated the halfway house, as well as made numerous changes throughout the clubhouse.</p>
-
-          <p>I would like to personally thank all the members who put their trust in my hands. To the long standing members, to the members who returned, and to the potential future members reading this; I will continue to steer this club in the right direction while offering what is essential to me, affordable prices.</p>
-
-          <p>Thank you,</p>
-          <BobSignature />
-        </ImageFeature>
-
-        <Team />
+        <OwnersNoteSection />
+        <TeamSection />
       </main>
 
       <footer>
@@ -53,6 +40,83 @@ export default function About() {
         <FooterSection />
       </footer>
     </Page>
+  )
+}
+
+function OwnersNoteSection() {
+  return (
+    <Box>
+      <ImageFeature
+        imageSrc="/images/about/bob.jpg"
+      >
+        <Text.Heading2>Owners Note - Our History</Text.Heading2>
+        <Text.Paragraph>Starting over 25 years ago, I took over as the Head Golf Professional at Spring Lakes Golf Club. Fast forward to present time, and I have been the owner for 5 years. Over my tenure, I have been able to watch this course grow and flourish. From repaving the parking lot a day after purchasing the club, to renovating the restaurant bar and adding golf simulators in 2021, my goal remains to make Spring Lakes the best private club in Canada.</Text.Paragraph>
+        <Text.Paragraph>I am happy to say that I am very proud of what this course has become.</Text.Paragraph>
+        <Text.Paragraph>I value the importance of being part of a club and the relationships it helps create.  During a time of uncertainty, we were able to revive social interaction at Spring Lakes by introducing Stanley’s Nest; our outdoor front barbecue area!  I have updated the halfway house, as well as made numerous changes throughout the clubhouse.</Text.Paragraph>
+        <Text.Paragraph>I would like to personally thank all the members who put their trust in my hands. To the long standing members, to the members who returned, and to the potential future members reading this; I will continue to steer this club in the right direction while offering what is essential to me, affordable prices.</Text.Paragraph>
+        <Text.Paragraph>Thank you,</Text.Paragraph>
+        <BobSignature />
+      </ImageFeature>
+    </Box>
+  )
+}
+
+function TeamSection() {
+  return (
+    <Box>
+      <div 
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center'
+        }}
+      >
+        <Text.Heading2>Meet Our Team</Text.Heading2>
+      </div>
+
+      <Team.Wrapper>
+        <Team.Card
+          photo="/images/about/jim.jpg"
+        >
+          <Text.Heading5>Jim</Text.Heading5>
+          <Text.Paragraph>General Manager</Text.Paragraph>
+          <Text.Anchor href="mailto:jim@springlakesgolf.com">
+            <Text.Paragraph>jim@springlakesgolf.com</Text.Paragraph>
+          </Text.Anchor>
+        </Team.Card>
+
+        <Team.Card
+          photo="/images/about/chris.jpg"
+        >
+          <Text.Heading5>Chris</Text.Heading5>
+          <Text.Paragraph>Golf Course Superintendent</Text.Paragraph>
+          <Text.Anchor href="mailto:chris@springlakesgolf.com">
+            <Text.Paragraph>chris@springlakesgolf.com</Text.Paragraph>
+          </Text.Anchor>
+        </Team.Card>
+
+        <Team.Card
+          photo="/images/about/shayne.jpg"
+        >
+          <Text.Heading5>Shayne</Text.Heading5>
+          <Text.Paragraph>Head Professional, P.G.A</Text.Paragraph>
+          <Text.Anchor href="mailto:shayne@springlakesgolf.com">
+            <Text.Paragraph>shayne@springlakesgolf.com</Text.Paragraph>
+          </Text.Anchor>
+        </Team.Card>
+
+        <Team.Card
+          photo="/images/about/laura.jpg"
+        >
+          <Text.Heading5>Laura</Text.Heading5>
+          <Text.Paragraph>Club House Manager</Text.Paragraph>
+          <Text.Anchor href="mailto:laura@springlakesgolf.com">
+            <Text.Paragraph>laura@springlakesgolf.com</Text.Paragraph>
+          </Text.Anchor>
+        </Team.Card>
+      </Team.Wrapper>
+    </Box>
   )
 }
 
