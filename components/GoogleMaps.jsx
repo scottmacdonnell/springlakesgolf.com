@@ -1,6 +1,8 @@
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
+import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel'
 
 import Container from './ui/Container'
+import * as Text from './ui/Text'
 
 const locationInfo = {
   name: "Spring Lakes Golf Club",
@@ -13,10 +15,10 @@ let defaultOptions = {
   styles: [
     {
       featureType: "administrative",
-      elementType: "labels.text.fill",
+      elementType: "labels",
       stylers: [
         {
-          color: "#8A8f98",
+          visibility: "off"
         },
       ],
     },
@@ -25,7 +27,31 @@ let defaultOptions = {
       elementType: "all",
       stylers: [
         {
-          color: "#fafafa",
+          visibility: "on",
+        },
+      ],
+    },
+    {
+      featureType: "landscape",
+      elementType: "geometry",
+      stylers: [
+        {
+          saturation: "0"
+        },
+        {
+          lightness: "0"
+        },
+        {
+          gamma: "1.00"
+        }
+      ],
+    },
+    {
+      featureType: "landscape",
+      elementType: "labels",
+      stylers: [
+        {
+          visibility: "off"
         },
       ],
     },
@@ -34,7 +60,7 @@ let defaultOptions = {
       elementType: "all",
       stylers: [
         {
-          density: "sparse",
+          visibility: "on",
         },
       ],
     },
@@ -43,34 +69,34 @@ let defaultOptions = {
       elementType: "geometry",
       stylers: [
         {
+          visibility: "on",
+        },
+      ],
+    },
+    {
+      featureType: "poi",
+      elementType: "labels",
+      stylers: [
+        {
           visibility: "off",
         },
       ],
     },
     {
       featureType: "road",
-      elementType: "all",
+      elementType: "geometry.stroke",
       stylers: [
         {
-          saturation: -100,
+          visibility: "off",
         },
         {
-          lightness: 45,
+          weight: "1.43",
         },
       ],
     },
     {
-      featureType: "road.highway",
-      elementType: "all",
-      stylers: [
-        {
-          visibility: "simplified",
-        },
-      ],
-    },
-    {
-      featureType: "road.arterial",
-      elementType: "labels.icon",
+      featureType: "road",
+      elementType: "labels",
       stylers: [
         {
           visibility: "off",
@@ -88,16 +114,13 @@ let defaultOptions = {
     },
     {
       featureType: "water",
-      elementType: "all",
+      elementType: "labels",
       stylers: [
         {
-          color: "#adc2df",
-        },
-        {
-          visibility: "on",
+          visibility: "off",
         },
       ],
-    },
+    }
   ],
 }
 
@@ -112,24 +135,33 @@ const RegularMap = withScriptjs(
       defaultCenter={locationInfo.location}
       defaultOptions={defaultOptions}
     >
-      <Marker
+      <MarkerWithLabel
         position={locationInfo.location}
-      />
+        labelAnchor={new google.maps.Point(-16, 16)}
+        labelStyle={{
+          background: `#FFF`,
+          padding: `8px 16px`,
+          fontSize: '10px',
+          color: `#000`,
+          borderRadius: '5px',
+          borderColor: '#666',
+        }}
+      >
+        <div>
+          <Text.Heading6 style={{ fontSize: '16px' }}>Spring Lakes Golf Club</Text.Heading6>
+          <Text.Paragraph style={{ margin: '0', fontSize: '12px' }}>4962 Stouffville Rd</Text.Paragraph>
+          <Text.Paragraph style={{ margin: '0', fontSize: '12px' }}>Whitchurch-Stouffville, ON L4A 3S8</Text.Paragraph>
+        </div>
+      </MarkerWithLabel>
     </GoogleMap>
   ))
 )
 
 export default function GoogleMaps() {
-  return (
-    <Container>
-      <div style={{ margin: '1rem 0', padding: '2rem 0' }}>
-        <RegularMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`}
-          loadingElement={<div style={loadingElementStyle} />}
-          containerElement={<div style={containerElementStyle} />}
-          mapElement={<div style={mapElementStyle} />}
-        />
-      </div>
-    </Container>
-  )
+  return <RegularMap
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`}
+    loadingElement={<div style={loadingElementStyle} />}
+    containerElement={<div style={containerElementStyle} />}
+    mapElement={<div style={mapElementStyle} />}
+  />
 }

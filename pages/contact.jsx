@@ -8,6 +8,8 @@ import ImageFeature from '../components/ImageFeature'
 import GoogleMaps from '../components/GoogleMaps'
 import ContactForm from '../components/ContactForm'
 import * as Footer from '../components/Footer'
+import * as Text from '../components/ui/Text'
+import Box from '../components/utils/Box'
 
 import { useAuth } from '../lib/auth'
 
@@ -30,53 +32,8 @@ export default function Contact() {
             title="Contact Us"
             image="/images/contact/banner.jpg"
           />
-
-          <ImageFeature
-            imageSrc="/images/contact/info.jpg"
-          >
-            <h3>Spring Lakes Golf Club</h3>
-            <p>4962 Stouffville Rd, Whitchurch-Stouffville, ON L4A 3S8</p>
-            <div>
-              <h5>Hours</h5>
-              <ul>
-                <li>7:00am - Twilight</li>
-                <li>* both week and weekend *</li>
-              </ul>
-            </div>
-
-            <div>
-              <h5>Email</h5>
-              <ul>
-                <li>
-                  <Link href="mailto:info@springlakesgolf.com">
-                    <a>info@springlakesgolf.com</a>
-                  </Link>
-                </li>
-              </ul>
-
-              <h5>Phone</h5>
-              <ul>
-                <li>(905)640-3633</li>
-              </ul>
-            </div>
-
-            <div>
-              <h5>Extentions</h5>
-              <ul>
-                <li><strong>Reception / General Inquiries:</strong> 224</li>
-                <li><strong>Pro-shop:</strong> 231</li>
-                <li><strong>Restaurant:</strong> 223</li>
-                <li><strong>Shayne Dysart:</strong> 236</li>
-                <li><strong>Jim Hargrave:</strong> 241</li>
-                <li><strong>Chris Contois:</strong> 243</li>
-                <li><strong>Evelyn McLean (accounting):</strong> 235</li>
-                <li><strong>Laura Piccione:</strong> 224</li>
-              </ul>
-            </div>
-
-          </ImageFeature>
-
-          <GoogleMaps />
+          <InfoSection />
+          <MapSection />
         </main>
 
         <footer>
@@ -85,6 +42,64 @@ export default function Contact() {
         </footer>
       </Animation>
     </Page>
+  )
+}
+
+function InfoSection() {
+  return (
+    <Box>
+      <ImageFeature
+        imageSrc="/images/contact/info.jpg"
+      >
+        <Text.Heading3>Spring Lakes Golf Club</Text.Heading3>
+        <Text.SHeading>4962 Stouffville Rd, Whitchurch-Stouffville, ON L4A 3S8</Text.SHeading>
+
+        <div style={{ margin: '8px' }} />
+
+        <div>
+          <Text.Heading5>Hours</Text.Heading5>
+          <Text.Paragraph>7:00am - Twilight</Text.Paragraph>
+        </div>
+
+        <div style={{ margin: '8px' }} />
+
+        <div>
+          <Text.Heading5>Email</Text.Heading5>
+          <Text.Anchor href="mailto:info@springlakesgolf.com">
+            <Text.Paragraph>info@springlakesgolf.com</Text.Paragraph>
+          </Text.Anchor>
+        </div>
+
+        <div style={{ margin: '8px' }} />
+
+        <div>
+          <Text.Heading5>Phone</Text.Heading5>
+          <Text.Paragraph>(905)640-3633</Text.Paragraph>
+        </div>
+
+        <div style={{ margin: '8px' }} />
+        
+        <div>
+          <Text.Heading5>Extentions</Text.Heading5>
+          <Text.Paragraph><strong>Reception / General Inquiries:</strong> 224</Text.Paragraph>
+          <Text.Paragraph><strong>Pro-shop:</strong> 231</Text.Paragraph>
+          <Text.Paragraph><strong>Restaurant:</strong> 223</Text.Paragraph>
+          <Text.Paragraph><strong>Shayne Dysart:</strong> 236</Text.Paragraph>
+          <Text.Paragraph><strong>Jim Hargrave:</strong> 241</Text.Paragraph>
+          <Text.Paragraph><strong>Chris Contois:</strong> 243</Text.Paragraph>
+          <Text.Paragraph><strong>Evelyn McLean (accounting):</strong> 235</Text.Paragraph>
+          <Text.Paragraph><strong>Laura Piccione:</strong> 224</Text.Paragraph>
+        </div>
+      </ImageFeature>
+    </Box>
+  )
+}
+
+function MapSection() {
+  return (
+    <Box>
+      <GoogleMaps />
+    </Box>
   )
 }
 
