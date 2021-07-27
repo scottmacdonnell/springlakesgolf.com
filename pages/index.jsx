@@ -99,8 +99,8 @@ function HallwaySection() {
           image="/images/index/members/hallway-clubhouse.jpg"
         />
         <Hallway.Card
-          title="Newsletter"
-          link="/newsletter"
+          title="Calendars"
+          link="/docs/calendars/aug-sep.pdf"
           image="/images/index/members/hallway-newsletter.jpg"
         />
         <Hallway.Card
