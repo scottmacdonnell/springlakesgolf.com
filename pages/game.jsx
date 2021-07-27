@@ -1,4 +1,4 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -17,23 +17,25 @@ export default function Game() {
       pageName="Game Improvement"
       slug="/game"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner 
-          title="Game Improvement"
-          image="/images/game/banner.jpg"
-        />
+        <main>
+          <Banner 
+            title="Game Improvement"
+            image="/images/game/banner.jpg"
+          />
 
-        <GameShowcase />
-      </main>
+          <GameShowcase />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

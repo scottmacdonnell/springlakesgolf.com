@@ -1,4 +1,4 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -17,29 +17,31 @@ export default function Index() {
       className="Index"
       slug="/"
     >
-      <header>
-        <Navbar auth={auth} />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} />
+        </header>
 
-      <main>
-        <Banner
-          title="Spring Lakes Golf Club"
-          image={auth?.user?.role !== 'member' ? "/images/index/public/banner.jpg" : "/images/index/members/banner.jpg" }
-          chevron="#main"
-          alignImage="top"
-          subtitle
-          auth={auth}
-          index
-        />
+        <main>
+          <Banner
+            title="Spring Lakes Golf Club"
+            image={auth?.user?.role !== 'member' ? "/images/index/public/banner.jpg" : "/images/index/members/banner.jpg" }
+            chevron="#main"
+            alignImage="top"
+            subtitle
+            auth={auth}
+            index
+          />
 
-        <div id="main" />
-        <HallwaySection />
-      </main>
+          <div id="main" />
+          <HallwaySection />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

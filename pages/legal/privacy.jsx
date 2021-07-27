@@ -1,4 +1,4 @@
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import PrivacyPolicy from '../../components/PrivacyPolicy'
@@ -15,17 +15,19 @@ export default function Privacy() {
       pageName="Privacy Policy"
       slug="/legal/privacy"
     >
-      <header>
-        <Navbar auth={auth} mainNav invert />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav invert />
+        </header>
 
-      <main>
-        <PrivacyPolicy />
-      </main>
+        <main>
+          <PrivacyPolicy />
+        </main>
 
-      <footer>
-        <FooterSection />
-      </footer>
+        <footer>
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

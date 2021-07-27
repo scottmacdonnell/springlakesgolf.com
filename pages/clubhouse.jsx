@@ -1,4 +1,4 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -17,23 +17,24 @@ export default function Clubhouse() {
       pageName="Clubhouse & Dining"
       slug="/clubhouse"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner 
-          title="Clubhouse & Dining"
-          image="/images/clubhouse/banner.jpg"
-        />
+        <main>
+          <Banner 
+            title="Clubhouse & Dining"
+            image="/images/clubhouse/banner.jpg"
+          />
+          <MenuNav />
+        </main>
 
-        <MenuNav />
-      </main>
-
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

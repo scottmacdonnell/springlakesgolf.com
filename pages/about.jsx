@@ -1,4 +1,4 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -21,23 +21,25 @@ export default function About() {
       pageName="About"
       slug="/about"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner
-          title="About Us"
-          image="/images/about/banner.jpg"
-        />
-        <OwnersNoteSection />
-        <TeamSection />
-      </main>
+        <main>
+          <Banner
+            title="About Us"
+            image="/images/about/banner.jpg"
+          />
+          <OwnersNoteSection />
+          <TeamSection />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

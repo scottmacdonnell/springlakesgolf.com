@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import Loader from '../../components/utils/Loader'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
@@ -24,7 +24,7 @@ export default function Member() {
       slug="/member"
     >
       { auth.user ? (
-        <>
+        <Animation>
           <header>
             <Navbar auth={auth} invert mainNav />
           </header>
@@ -36,7 +36,7 @@ export default function Member() {
           <footer>
             <FooterSection />
           </footer>
-        </>
+        </Animation>
       ) : '' }
     </Page>
   )

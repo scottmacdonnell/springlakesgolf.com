@@ -1,4 +1,4 @@
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import Banner from '../../components/Banner'
@@ -18,23 +18,25 @@ export default function Courses() {
       pageName="The Courses"
       slug="/courses"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner 
-          title="The Courses"
-          image="/images/courses/banner.jpg"
-        />
+        <main>
+          <Banner 
+            title="The Courses"
+            image="/images/courses/banner.jpg"
+          />
 
-        <CoursesShowcase />
-      </main>
+          <CoursesShowcase />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

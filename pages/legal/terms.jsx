@@ -1,4 +1,4 @@
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import TermsOfService from '../../components/TermsOfService'
@@ -16,18 +16,20 @@ export default function Terms() {
       pageName="Terms of Service"
       slug="/legal/terms"
     >
-      <header>
-        <Navbar auth={auth} mainNav invert />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav invert />
+        </header>
 
-      <main>
-        <TermsOfService />
-      </main>
+        <main>
+          <TermsOfService />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

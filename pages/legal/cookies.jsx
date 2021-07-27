@@ -1,4 +1,4 @@
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import CookiePolicy from '../../components/CookiePolicy'
@@ -16,18 +16,20 @@ export default function Cookies() {
       pageName="Cookie Policy"
       slug="/legal/cookies"
     >
-      <header>
-        <Navbar auth={auth} mainNav invert />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav invert />
+        </header>
 
-      <main>
-        <CookiePolicy />
-      </main>
+        <main>
+          <CookiePolicy />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

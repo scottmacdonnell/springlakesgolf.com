@@ -1,8 +1,7 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import EventsBanner from '../components/EventsBanner'
-import TextFeature from '../components/ui/TextFeature'
 import EventsShowcase from '../components/EventsShowcase'
 import BookingForm from '../components/BookingForm'
 import * as Footer from '../components/Footer'
@@ -18,23 +17,25 @@ export default function Events() {
       pageName="Events"
       slug="/events"
     >
-      <div style={{ background: '#648767' }}>
-        <header>
-          <Navbar auth={auth} mainNav />
-        </header>
+      <Animation>
+        <div style={{ background: '#648767' }}>
+          <header>
+            <Navbar auth={auth} mainNav />
+          </header>
 
-        <main>
-          <EventsBanner />
+          <main>
+            <EventsBanner />
 
-          <EventsShowcase auth={auth} />
+            <EventsShowcase auth={auth} />
 
-          <BookingForm />
-        </main>
-      </div>
+            <BookingForm />
+          </main>
+        </div>
 
-      <footer>
-        <FooterSection />
-      </footer>
+        <footer>
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

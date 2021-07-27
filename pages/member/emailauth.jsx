@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import Loader from '../../components/utils/Loader'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
@@ -24,7 +24,7 @@ export default function EmailLogin() {
       slug="/member/emailauth"
     >
       { auth.user ? <div /> : (
-        <>
+        <Animation>
           <header>
             <Navbar auth={auth} invert mainNav />
           </header>
@@ -36,7 +36,7 @@ export default function EmailLogin() {
           <footer>
             <FooterSection />
           </footer>
-        </>
+        </Animation>
       )}
     </Page>
   )

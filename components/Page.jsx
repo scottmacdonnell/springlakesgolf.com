@@ -7,6 +7,8 @@ export default function Page({
   slug,
   description,
   imageURL,
+  className,
+  noIndex
 }) {
   const siteName = 'Spring Lakes Golf Club'
   const siteURL = 'https://springlakesgolf.com'
@@ -21,7 +23,6 @@ export default function Page({
   return (
     <>
       <Head>
-        <title>{formattedPageName}</title>
         <meta name="description" content={formattedDescription} key="description" />
         <meta name="og:site_name" property="og:site_name" content={siteName} key="og:sitename" />
         <meta name="og:title" property="og:title" content={formattedPageName} key="og:title" />
@@ -31,11 +32,30 @@ export default function Page({
         <meta name="twitter:title" content={formattedPageName} key="twitter:title" />
         <meta name="twitter:description" content={formattedDescription} key="twitter:description" />
         <meta name="twitter:image" content={formattedImage} key="twitter:image" />
+        { noIndex ? <meta name="robots" content="noindex" /> : '' }
+        <title>{formattedPageName}</title>
       </Head>
-
-      <motion.div initial="exit" animate="enter" exit="exit">
+      
+      <motion.div initial="exit" animate="enter" exit="exit" className={className} key={className}>
         {children}
       </motion.div>
     </>
+  )
+}
+
+export const Animation = (props) => {
+  const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+  
+  const pageVariants = {
+    exit: { opacity: 0, transition },
+    enter: { opacity: 1, transition: { delay: 0.5, ...transition } },
+  }
+
+  return (
+    <motion.div
+      variants={pageVariants}
+    >
+      {props.children}
+    </motion.div>
   )
 }

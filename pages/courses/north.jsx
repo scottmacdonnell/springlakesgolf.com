@@ -1,8 +1,7 @@
-import Page from '../../components/Page'
+import Page, { Animation } from '../../components/Page'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
 import Banner from '../../components/Banner'
-import CourseOverview from '../../components/CourseOverview'
 import * as Course from '../../components/Course'
 import ContactForm from '../../components/ContactForm'
 import * as Footer from '../../components/Footer'
@@ -21,24 +20,26 @@ export default function CourseNorth() {
       pageName="The North Course"
       slug="/course/north"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner 
-          title="The North Course"
-          image="/images/courses/north/banner.jpg"
-        />
-        <InfoBoxSection />
-        <OverviewSection />
-        <ImagesSection />
-      </main>
+        <main>
+          <Banner 
+            title="The North Course"
+            image="/images/courses/north/banner.jpg"
+          />
+          <InfoBoxSection />
+          <OverviewSection />
+          <ImagesSection />
+        </main>
 
-      <footer>
-        <ContactForm />
-        <FooterSection />
-      </footer>
+        <footer>
+          <ContactForm />
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

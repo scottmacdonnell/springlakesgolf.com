@@ -1,4 +1,4 @@
-import Page from '../components/Page'
+import Page, { Animation } from '../components/Page'
 import * as Content from '../components/Content'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
@@ -20,48 +20,47 @@ export default function Memberships() {
       pageName="Memberships"
       slug="/memberships"
     >
-      <header>
-        <Navbar auth={auth} mainNav />
-      </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} mainNav />
+        </header>
 
-      <main>
-        <Banner
-          title="Memberships"
-          image="/images/memberships/banner.jpg"
-        />
+        <main>
+          <Banner
+            title="Memberships"
+            image="/images/memberships/banner.jpg"
+          />
 
-        <MembershipShowcase auth={auth} />
+          <MembershipShowcase auth={auth} />
 
-        <Box>
-          <div
-            style={{
-              textAlign: 'center',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-          >
-            <Text.SHeading
+          <Box>
+            <div
               style={{
                 textAlign: 'center',
-                maxWidth: '48ch',
-                marginBottom: '16px'
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
               }}
             >
-              Spring Lakes will be accepting Membership Applications for the 2022 season. Prices will be sent out in September 2021.
-            </Text.SHeading>
-          </div>
-        </Box>
+              <Text.SHeading
+                style={{
+                  textAlign: 'center',
+                  maxWidth: '48ch',
+                  marginBottom: '16px'
+                }}
+              >
+                Spring Lakes will be accepting Membership Applications for the 2022 season. Prices will be sent out in September 2021.
+              </Text.SHeading>
+            </div>
+          </Box>
+          <div id="membershipForm" />
+          <MembershipForm />
+        </main>
 
-        
-
-        <div id="membershipForm" />
-        <MembershipForm />
-      </main>
-
-      <footer>
-        <FooterSection />
-      </footer>
+        <footer>
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }
