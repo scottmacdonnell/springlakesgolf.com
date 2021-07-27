@@ -12,13 +12,13 @@
   
     @media only screen and (max-width: $breakpointMedium) {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, auto);
+      grid-auto-rows: repeat(2, auto);
     }
 }
 
 .Card {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   gap: 2rem;
 
