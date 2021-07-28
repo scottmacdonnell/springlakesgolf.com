@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import styles from '../styles/components/EmailAuth.module.scss'
 
-export default function EmailAuth({ auth }) {
+export default function EmailRegister({ auth }) {
   const [status, setStatus] = useState({
     disabled: true,
     submitted: false,
@@ -53,16 +53,26 @@ export default function EmailAuth({ auth }) {
       submitting: true,
       info: { error: false, msg: null }
     })
-    auth.signInWithEmail(inputs.email, inputs.password)
-    if (!auth.loading) {
-      console.log(auth.user)
+    auth.signUpWithEmail(inputs.email, inputs.password).catch((error) => {
       setStatus({
         disabled: false,
-        submitted: false,
-        submitting: false,
-        info: { error: false, msg: null }
+        submiting: false,
+        submitted: true,
+        info: {
+          error: true,
+          msg: error.message
+        }
       })
-    }
+    })
+    // if (!auth.loading) {
+    //   console.log(auth.user)
+    //   setStatus({
+    //     disabled: false,
+    //     submitted: false,
+    //     submitting: false,
+    //     info: { error: false, msg: null }
+    //   })
+    // }
   }
 
   console.log(auth.user)
@@ -127,7 +137,7 @@ export default function EmailAuth({ auth }) {
               <span className={styles.Content}>
                 {!status.submitting ? (
                   !status.submitted ? (
-                    'Continue with Email'
+                    'Sign up with Email'
                   ) : (
                         <div className={styles.ButtonCheck}>
                           <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
@@ -143,6 +153,7 @@ export default function EmailAuth({ auth }) {
               </span>
             </button>
         </form>
+        {status.error ? <div>{status.error.msg}</div> : <div />}
       </div>
     </div>
   )

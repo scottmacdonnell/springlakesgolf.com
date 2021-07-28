@@ -13,15 +13,19 @@ export default function Member() {
   const router = useRouter()
   const auth = useAuth()
 
+  if (auth.loading) {
+    return <Page><Loader /></Page>
+  }
+
   if (!auth.user && typeof window !== 'undefined') {
-    router.push('/member/login')
+    router.push('/auth/login')
   }
   
-  return auth.loading ? <Page><Loader /></Page> : (
+  return (
     <Page
       className="Member"
       pageName="Member"
-      slug="/member"
+      slug="/member/dashboard"
     >
       { auth.user ? (
         <Animation>

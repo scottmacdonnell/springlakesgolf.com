@@ -1,36 +1,33 @@
-import { useRouter } from 'next/router'
-
 import Page, { Animation } from '../../components/Page'
 import Loader from '../../components/utils/Loader'
 import * as Content from '../../components/Content'
 import Navbar from '../../components/Navbar'
-import SignupForm from '../../components/SignupForm'
+import LogInProviders from '../../components/LogInProviders'
 import * as Footer from '../../components/Footer'
 
 import { useAuth } from '../../lib/auth'
 
-export default function Signup() {
-  const router = useRouter()
+export default function AuthLogIn() {
   const auth = useAuth()
 
-  if (auth.user && typeof window !== 'undefined') {
-    router.push('/member/dashboard')
+  if (auth.loading) {
+    return <Page><Loader /></Page>
   }
   
-  return auth.loading ? <Page><Loader /></Page> : (
+  return (
     <Page
-      className="Signup"
-      pageName="Sign Up"
-      slug="/member/signup"
+      className="AuthLogIn"
+      pageName="Log In"
+      slug="/auth/login"
     >
-      { auth.user ? <div /> : (
+      { auth.user ? '' : (
         <Animation>
           <header>
             <Navbar auth={auth} invert mainNav />
           </header>
 
           <main>
-            <SignupForm auth={auth} />
+            <LogInProviders />
           </main>
         
           <footer>

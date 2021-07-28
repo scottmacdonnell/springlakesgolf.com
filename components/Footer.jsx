@@ -41,8 +41,8 @@ export const Public = () => {
           <NavTitle>Member</NavTitle>
 
           <NavContent>
-            <NavItem href="/member/login">Login</NavItem>
-            <NavItem href="/member/signup">Sign Up</NavItem>
+            <NavItem href="/auth/login">Login</NavItem>
+            <NavItem href="/auth/signup">Sign Up</NavItem>
           </NavContent>
         </Nav>
 
