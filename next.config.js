@@ -8,7 +8,8 @@ module.exports = {
       'lh4.googleusercontent.com',
       'lh5.googleusercontent.com',
       'lh6.googleusercontent.com',
-      'pbs.twimg.com'
+      'pbs.twimg.com',
+      'abs.twimg.com'
     ],
   },
 }
