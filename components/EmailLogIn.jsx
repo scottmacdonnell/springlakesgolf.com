@@ -73,7 +73,13 @@ export default function EmailLogIn() {
         })
         .catch(error => {
           // An error occurred. Set error message to be displayed to user
-          setStatus({ ...status, info: { error: true, msg: error.message }})
+          console.log(error)
+          setStatus({ 
+            disabled: false,
+            submitting: false,
+            submitted: true,
+            info: { error: true, msg: error.message }
+          })
         })
     else {
       setInputs({
@@ -94,6 +100,16 @@ export default function EmailLogIn() {
       <InnerWrapper>
         <Form.Element onSubmit={onSubmit}>
           <Text.Heading2>Email Log In</Text.Heading2>
+
+          {status.info.error == true ? (
+            <div>
+              <Form.Spacer />
+              <Text.Paragraph
+                style={{ color: '#E00' }}
+              >{status.info.msg}</Text.Paragraph>
+              <Form.Spacer />
+            </div>
+          ) : ''}
 
           <Form.Spacer />
 

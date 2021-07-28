@@ -9,10 +9,6 @@ import { useAuth } from '../../lib/auth'
 
 export default function AuthSignUp() {
   const auth = useAuth()
-
-  if (auth.loading) {
-    return <Page><Loader /></Page>
-  }
   
   return (
     <Page
@@ -20,21 +16,19 @@ export default function AuthSignUp() {
       pageName="Sign Up"
       slug="/auth/signup"
     >
-      { auth.user ? <div /> : (
-        <Animation>
-          <header>
-            <Navbar auth={auth} invert mainNav />
-          </header>
+      <Animation>
+        <header>
+          <Navbar auth={auth} invert mainNav />
+        </header>
 
-          <main>
-            <SignUpProviders />
-          </main>
-        
-          <footer>
-            <FooterSection />
-          </footer>
-        </Animation>
-      )}
+        <main>
+          <SignUpProviders />
+        </main>
+      
+        <footer>
+          <FooterSection />
+        </footer>
+      </Animation>
     </Page>
   )
 }

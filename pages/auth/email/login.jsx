@@ -9,10 +9,6 @@ import { useAuth } from '../../../lib/auth'
 
 export default function AuthEmailLogIn() {
   const auth = useAuth()
-
-  if (auth.loading) {
-    return <Page><Loader /></Page>
-  }
   
   return (
     <Page

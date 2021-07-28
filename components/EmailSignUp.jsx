@@ -113,6 +113,16 @@ export default function EmailSignUp() {
         <Form.Element onSubmit={onSubmit}>
           <Text.Heading2>Email Sign Up</Text.Heading2>
 
+          {status.info.error == true ? (
+            <div>
+              <Form.Spacer />
+              <Text.Paragraph
+                style={{ color: '#E00' }}
+              >{status.info.msg}</Text.Paragraph>
+              <Form.Spacer />
+            </div>
+          ) : ''}
+
           <Form.Spacer />
 
           <Form.InputEmail
