@@ -5,7 +5,7 @@ import styles from '../styles/components/ProviderAuth.module.scss'
 export default function ProviderAuth({ auth, register = false }) {
   return (
     <div className={styles.ProviderAuth}>
-      <button className={styles.FacebookAuth} onClick={(e) => auth.signInWithFacebook()}>
+      {/* <button className={styles.FacebookAuth} onClick={(e) => auth.signInWithFacebook()}>
         <span className={styles.Prefix}>
           <FacebookLogo />
         </span>
@@ -15,7 +15,7 @@ export default function ProviderAuth({ auth, register = false }) {
         </span>
       </button>
 
-      <span className={styles.Spacer} />
+      <span className={styles.Spacer} /> */}
 
       <button className={styles.GoogleAuth} onClick={(e) => auth.signInWithGoogle()}>
         <span className={styles.Prefix}>
@@ -27,7 +27,7 @@ export default function ProviderAuth({ auth, register = false }) {
         </span>
       </button>
 
-      {/* <span className={styles.Spacer} />
+      <span className={styles.Spacer} />
 
       <button className={styles.TwitterAuth} onClick={(e) => auth.signInWithTwitter()}>
         <span className={styles.Prefix}>
@@ -39,9 +39,9 @@ export default function ProviderAuth({ auth, register = false }) {
         </span>
       </button>
 
-      <span className={styles.Spacer} />
+      {/* <span className={styles.Spacer} />
 
-      <Link href="/member/emailauth">
+      <Link href={register ? "/member/emailregister" : "/member/emailauth"}>
         <button className={styles.EmailAuth}>
           <span className={styles.Prefix}>
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
