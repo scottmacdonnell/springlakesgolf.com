@@ -16,7 +16,7 @@ export default function EmailSignUp() {
   const auth = useAuth()
 
   const [status, setStatus] = useState({
-    disabled: true,
+    disabled: false,
     submitting: false,
     submitted: false,
     info: { error: false, msg: null }
@@ -49,27 +49,11 @@ export default function EmailSignUp() {
       [e.target.id]: e.target.value
     }))
     setStatus({
-      disabled: true,
+      disabled: false,
       submitting: false,
       submitted: false,
       info: { error: false, msg: null }
     })
-    if (inputs) {
-      let i = 0;
-      const length = Object.values(inputs).length
-      Object.values(inputs).forEach(val => {
-        if(val !== '') { i++ }
-      })
-      
-      if (i == length) {
-        setStatus({
-          disabled: false,
-          submitting: false,
-          submitted: false,
-          info: { error: false, msg: null }
-        })
-      }
-    }
   }
 
   const onSubmit = async (e) => {
@@ -99,7 +83,7 @@ export default function EmailSignUp() {
         secondPassword: ''
       })
       setStatus({
-        disabled: true,
+        disabled: false,
         submitting: false,
         submitted: false,
         info: { error: true, msg: "Password do not match" }}

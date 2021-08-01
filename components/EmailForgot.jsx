@@ -7,9 +7,9 @@ import Spinner from './utils/Spinner'
 
 import { useAuth } from '../lib/auth'
 
-import styles from '../styles/components/EmailLogIn.module.scss'
+import styles from '../styles/components/EmailForgot.module.scss'
 
-export default function EmailLogIn() {
+export default function EmailForgot() {
   const router = useRouter()
   const auth = useAuth()
 
@@ -22,7 +22,6 @@ export default function EmailLogIn() {
 
   const [inputs, setInputs] = useState({
     email: '',
-    password: '',
   })
 
   const handleChange = e => {
@@ -49,11 +48,15 @@ export default function EmailLogIn() {
       info: { error: false, msg: null }
     })
 
-    if(inputs.email && inputs.password)
-      await auth.signInWithEmailAndPassword(inputs.email, inputs.password)
+    if(inputs.email)
+      await auth.forgotPassword(inputs.email)
         .then(authUser => {
-          console.log("Success. The user is signed in.")
-          router.push("/member/dashboard")
+          setStatus({ 
+            disabled: false,
+            submitting: false,
+            submitted: true,
+            info: { error: false, msg: "Password reset email sent successfully." }
+          })
         })
         .catch(error => {
           // An error occurred. Set error message to be displayed to user
@@ -83,13 +86,23 @@ export default function EmailLogIn() {
     <Wrapper>
       <InnerWrapper>
         <Form.Element onSubmit={onSubmit}>
-          <Text.Heading2>Email Log In</Text.Heading2>
+          <Text.Heading2>Forgot Password</Text.Heading2>
 
           {status.info.error == true ? (
             <div>
               <Form.Spacer />
               <Text.Paragraph
                 style={{ color: '#E00' }}
+              >{status.info.msg}</Text.Paragraph>
+              <Form.Spacer />
+            </div>
+          ) : ''}
+
+          {status.info.error == false && status.info.msg ? (
+            <div>
+              <Form.Spacer />
+              <Text.Paragraph
+                style={{ color: '#0cce6b' }}
               >{status.info.msg}</Text.Paragraph>
               <Form.Spacer />
             </div>
@@ -110,19 +123,6 @@ export default function EmailLogIn() {
 
           <Form.Spacer />
 
-          <Form.InputPassword
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            autoComplete="off"
-            onChange={handleChange}
-            value={inputs.password}
-            aria-required
-          />
-
-          <Form.Spacer />
-
           <SubmitButton
             id="submit"
             name="submit"
@@ -130,16 +130,8 @@ export default function EmailLogIn() {
             disabled={status.disabled == true ? true : false}
             status={status}
           >
-            Log In with Email
+            Send Password Reset Email
           </SubmitButton>
-
-          <div>
-            <Text.Anchor
-              href="/auth/email/forgot"
-            >
-              <Text.Paragraph style={{ textAlign: 'center' }}>Forgot your password? Reset it here!</Text.Paragraph>
-            </Text.Anchor>
-          </div>
         </Form.Element>
       </InnerWrapper>
     </Wrapper>

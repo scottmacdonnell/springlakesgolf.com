@@ -17,7 +17,7 @@
 .DS_Store
 *.pem
 local
-/local
+/_local
 /original
 
 # debug
