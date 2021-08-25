@@ -19,4 +19,3 @@ export const usePasswordValidation = ({ firstPassword = "", secondPassword = "" 
   
   return [validLength, hasNumber, upperCase, lowerCase, match, specialChar];
 }
-
