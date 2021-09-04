@@ -29,7 +29,7 @@ export default function About() {
         <main>
           <Banner
             title="About Us"
-            image="/images/about/banner.jpg"
+            image="/images/about/banner2.jpg"
           />
           <OwnersNoteSection />
           <TeamSection />
