@@ -38,7 +38,7 @@ export default function MembershipShowcase({ auth }) {
             <Text.Paragraph>Newly introduced, Option 5 is our 9 hole full membership package.Option 5 similar to Option 3 is a 9 hole membership that includes the 9 hole package, 7 days a week Option 5 members are limited to the East Course only, one round a day. Option 5 members who wish to play 18 will pay the rate for 9 holes based on weekday or weekend rates.</Text.Paragraph>
           </ViewOptions>
 
-          <PrintPDF href="/docs/memberships/new.pdf" />
+          <PrintPDF href="/docs/memberships/new_2022.pdf" />
         </MembershipShowcaseCardButtons>
       </MembershipShowcaseNewMember>
 
@@ -57,7 +57,7 @@ export default function MembershipShowcase({ auth }) {
               <Text.Paragraph>This package was introduced last year! With tremendous success, we have looked to continue offering this package moving forward. The Junior Intermediate membership is priced to be affordable for all students. This membership is meant to bridge the gap from our junior to adult members. The Junior Intermediate package is for ages 18-25 for individuals in school. All green fees are included in this membership cost. </Text.Paragraph>
             </ViewOptions>
 
-            <PrintPDF href="/docs/memberships/ji.pdf" />
+            <PrintPDF href="/docs/memberships/ji_2022.pdf" />
           </MembershipShowcaseCardButtons>
         </MembershipShowcaseMainItem>
 
@@ -75,7 +75,7 @@ export default function MembershipShowcase({ auth }) {
               <Text.Paragraph>Our Junior Package is a joy to offer.  This package is geared towards our younger demographic (7-18) with a love for the game. Our Junior packages allow golfers to golf as often as they wish at an annual set fee.  Restrictions apply, please read membership applications accordingly.</Text.Paragraph>
             </ViewOptions>
 
-            <PrintPDF href="/docs/memberships/juinor.pdf" />
+            <PrintPDF href="/docs/memberships/juinor_2022.pdf" />
           </MembershipShowcaseCardButtons>
         </MembershipShowcaseMainItem>
 
@@ -85,7 +85,7 @@ export default function MembershipShowcase({ auth }) {
           <>
             <MembershipShowcaseMainItem>
               <MembershipShowcaseCard
-                href="/docs/memberships/renewal.pdf"
+                href="/docs/memberships/renewal_2022.pdf"
               >
                 <h3>Membership Renewal</h3>
                 <span className={styles.Prefix}>
