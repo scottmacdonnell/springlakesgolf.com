@@ -96,9 +96,9 @@ export default function MembershipShowcase({ auth }) {
 
             <MembershipShowcaseMainItem>
               <MembershipShowcaseCard
-                href="/docs/memberships/ratesheet.pdf"
+                href="/docs/memberships/ratesheet_2022.pdf"
               >
-                <h3>2021 Rate Sheet</h3>
+                <h3>2022 Rate Sheet</h3>
                 <span className={styles.Prefix}>
                   <GolfRatesIcon />
                 </span>
