@@ -58,7 +58,7 @@ function InfoSection() {
 
         <div>
           <Text.Heading5>Hours</Text.Heading5>
-          <Text.Paragraph>7:00am - Twilight</Text.Paragraph>
+          <Text.Paragraph>8:00am - Twilight</Text.Paragraph>
         </div>
 
         <div style={{ margin: '8px' }} />
