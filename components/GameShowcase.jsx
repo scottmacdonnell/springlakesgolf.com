@@ -16,7 +16,7 @@ export default function GameShowcase() {
 
         <GameShowcaseMain>
           <GameShowcaseCard
-            href="/docs/game/mens_golf.pdf"
+            href="/docs/game/mens2022.pdf"
           >
             <h3>Men's Extreme Clinic</h3>
             <span className={styles.Prefix}>
@@ -25,7 +25,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/ladiesboot.pdf"
+            href="/docs/game/ladiesboot2022.pdf"
           >
             <h3>Ladies Boot Camp</h3>
             <span className={styles.Prefix}>
@@ -34,7 +34,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/spring_golf.pdf"
+            href="/docs/game/spring2022.pdf"
           >
             <h3>Golf "101" Spring Clinic</h3>
             <span className={styles.Prefix}>
@@ -43,7 +43,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/fall_golf.pdf"
+            href="/docs/game/fall2022.pdf"
           >
             <h3>Golf "101" Fall Clinic</h3>
             <span className={styles.Prefix}>
@@ -52,7 +52,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/tuneuptues.pdf"
+            href="/docs/game/tuneuptues2022.pdf"
           >
             <h3>Tune-up Tuesday</h3>
             <span className={styles.Prefix}>
@@ -61,7 +61,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/littleswingers.pdf"
+            href="/docs/game/littleswingers2022.pdf"
           >
             <h3>Junior Summer Camps</h3>
             <span className={styles.Prefix}>
@@ -70,7 +70,7 @@ export default function GameShowcase() {
           </GameShowcaseCard>
 
           <GameShowcaseCard
-            href="/docs/game/free.pdf"
+            href="/docs/game/freejunior2022.pdf"
           >
             <h3>Free Junior Clinics</h3>
             <span className={styles.Prefix}>
