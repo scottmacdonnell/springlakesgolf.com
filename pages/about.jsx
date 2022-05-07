@@ -78,16 +78,6 @@ function TeamSection() {
 
       <Team.Wrapper>
         <Team.Card
-          photo="/images/about/jim.jpg"
-        >
-          <Text.Heading5>Jim</Text.Heading5>
-          <Text.Paragraph>General Manager</Text.Paragraph>
-          <Text.Anchor href="mailto:jim@springlakesgolf.com">
-            <Text.Paragraph>jim@springlakesgolf.com</Text.Paragraph>
-          </Text.Anchor>
-        </Team.Card>
-
-        <Team.Card
           photo="/images/about/chris.jpg"
         >
           <Text.Heading5>Chris</Text.Heading5>
