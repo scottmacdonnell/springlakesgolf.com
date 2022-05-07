@@ -47,12 +47,13 @@ export const Public = () => {
         </Nav>
 
         <Nav>
-          <NavTitle>Legal</NavTitle>
+          <NavTitle>Notice</NavTitle>
 
           <NavContent>
             <NavItem href="/legal/privacy">Privacy Policy</NavItem>
             <NavItem href="/legal/terms">Terms of Service</NavItem>
             <NavItem href="/legal/cookies">Cookie Policy</NavItem>
+            <NavItem href="/docs/misc/rulesregulations2022.pdf">Rules &amp; Regulations</NavItem>
           </NavContent>
         </Nav>
       </Directory>
@@ -126,12 +127,13 @@ export const Members = () => {
         </Nav>
 
         <Nav>
-          <NavTitle>Legal</NavTitle>
+          <NavTitle>Notice</NavTitle>
 
           <NavContent>
             <NavItem href="/legal/privacy">Privacy Policy</NavItem>
             <NavItem href="/legal/terms">Terms of Service</NavItem>
             <NavItem href="/legal/cookies">Cookie Policy</NavItem>
+            <NavItem href="/docs/misc/rulesregulations2022.pdf">Rules &amp; Regulations</NavItem>
           </NavContent>
         </Nav>
       </Directory>
